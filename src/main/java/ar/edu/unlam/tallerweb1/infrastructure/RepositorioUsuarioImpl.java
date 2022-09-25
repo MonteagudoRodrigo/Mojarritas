@@ -53,4 +53,9 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 		sessionFactory.getCurrentSession().update(usuario);
 	}
 
+	@Override
+	public void registrarUsuario(String email, String password, String nombre, String apellido) {
+		
+	}
+
 }
