@@ -9,6 +9,8 @@
 		<title>meetings</title>
 	<!-- Bootstrap core CSS -->
 	    <link href="css/bootstrap.css" rel="stylesheet" >
+	<!-- fontawesome-->	
+		<link href="css/all.css" rel="stylesheet">
 	<!-- Meeting CSS -->
 		<link href="css/login.css" rel="stylesheet">   
 
@@ -27,8 +29,8 @@
 					<hr class="colorgraph"><br>
 
 					<%--Elementos de entrada de datos, el elemento path debe indicar en que atributo del objeto usuario se guardan los datos ingresados--%>
-					<form:input path="email" id="email" type="email" class="form-control my-3" />
-					<form:input path="password" type="password" id="password" class="form-control my-3"/>     		  
+					<form:input path="email" id="email" type="email" class="form-control my-3" placeholder="Nombre de usuario" />
+					<form:input path="password" type="password" id="password" class="form-control my-3" placeholder="Contrase�a"/>     		  
 					<div class="d-grid center">
 						<button class="btn btn-primary" Type="Submit">Ingresar</button>
 					</div>
@@ -41,8 +43,11 @@
 				
 				<%--Bloque que es visible si el elemento error no esta vacio	--%>
 				<c:if test="${not empty error}">
-			        <h4><span>${error}</span></h4>
-			        <br>
+					<div class="alert alert-warning" role="alert">
+						<i class="fa-solid fa-triangle-exclamation"></i>
+						${error}
+					</div>
+			        
 		        </c:if>
 				${msg}
 			</div>
