@@ -37,13 +37,13 @@
 					
 				</form:form>
 				<div class="d-grid mt-4">
-					<h2 class="text-light fs-2 text-center">¿aún no estás registrado?</h2>
+					<h2 class="text-light fs-2 text-center">ï¿½aï¿½n no estï¿½s registrado?</h2>
 					<a class="btn btn-primary btn-meet" href="registro">Quiero registrarme</a>
 				</div>
 				
 				<%--Bloque que es visible si el elemento error no esta vacio	--%>
 				<c:if test="${not empty error}">
-					<div class="alert alert-warning" role="alert">
+					<div class="alert alert-danger" role="alert">
 						<i class="fa-solid fa-triangle-exclamation"></i>
 						${error}
 					</div>
