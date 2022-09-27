@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+body{
+	background-color: #1b1c22;
+}
+
+.login-container{
+    max-width: 430px!important;
+}
+
+.btn-meet{
+    background-color: #f01e4c!important;
+    border-color: #f01e4c!important;
+}
