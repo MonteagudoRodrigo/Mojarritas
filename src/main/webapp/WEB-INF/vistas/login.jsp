@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>meetings</title>
 	<!-- Bootstrap core CSS -->
-	    <link href="css/bootstrap.min.css" rel="stylesheet" >
+	    <link href="css/bootstrap.css" rel="stylesheet" >
 	<!-- Meeting CSS -->
 		<link href="css/login.css" rel="stylesheet">   
 
