@@ -29,8 +29,8 @@
 					<hr class="colorgraph"><br>
 
 					<%--Elementos de entrada de datos, el elemento path debe indicar en que atributo del objeto usuario se guardan los datos ingresados--%>
-					<form:input path="email" id="email" type="email" class="form-control my-3" placeholder="Nombre de usuario" />
-					<form:input path="password" type="password" id="password" class="form-control my-3" placeholder="Contraseï¿½a"/>     		  
+					<form:input path="email" id="email" type="email" class="form-control my-3" placeholder="ingrese su email" />
+					<form:input path="password" type="password" id="password" class="form-control my-3" placeholder="Contraseña"/>     		  
 					<div class="d-grid center">
 						<button class="btn btn-primary" Type="Submit">Ingresar</button>
 					</div>
