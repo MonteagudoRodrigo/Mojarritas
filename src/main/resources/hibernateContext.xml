@@ -18,7 +18,7 @@
 	<bean id="dataSource"
 		  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3307/meeting" />
+		<property name="url" value="jdbc:mysql://localhost:3307/meeting?serverTimezone=JST" />
 		<property name="username" value="root" />
 		<property name="password" value="123456" />
 	</bean>
@@ -32,8 +32,10 @@
 		<property name="hibernateProperties">
 			<props>
 				<prop key="jpa.database">MYSQL</prop>
-				<prop key="hibernate.validator.apply_to_ddl">false</prop>
-				<prop key="hibernate.validator.autoregister_listeners">false</prop>
+				<!--<prop key="hibernate.validator.apply_to_ddl">false</prop>  -->
+				<!--<prop key="hibernate.validator.autoregister_listeners">false</prop>  -->
+				<prop key="jpa.showSql">true</prop>
+				<prop key="jpa.generateDbl">true</prop>
 				<!--Dialecto especifico del motor de base de datos utilizado-->
 				<!--Hay que cambiarlo si se cambia de motor de base de datos-->
 				<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>

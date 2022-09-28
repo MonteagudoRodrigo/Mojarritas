@@ -18,9 +18,10 @@ public class Usuario {
 	// para el resto de los atributo no se usan anotaciones entonces se usa el default de hibernate: la columna se llama igual que
 	// el atributo, la misma admite nulos, y el tipo de dato se deduce del tipo de dato de java.
 	private String email;
-	private String password;
+	private String pass;
 	private String nombre;
 	private String apellido;
+	private String usuario;
 	//private Boolean activo = false;
 	
 	public Long getId() {
@@ -29,6 +30,13 @@ public class Usuario {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	public void setUsuario(String usuatio) {
+		this.usuario = usuario;
+	}
+	public String getUsuario() {
+		return this.usuario;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -36,16 +44,16 @@ public class Usuario {
 		this.email = email;
 	}
 	public String getPassword() {
-		return password;
+		return pass;
 	}
 	public void setPassword(String password) {
-		this.password = password;
+		this.pass = password;
 	}
 	public Boolean getActivo() {
 	//	return activo;
 	}
 	public void setActivo(Boolean activo) {
-		this.activo = activo;
+		//this.activo = activo;
 	}
 
 	public boolean activo() {
