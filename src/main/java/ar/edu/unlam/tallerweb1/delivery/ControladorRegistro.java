@@ -31,6 +31,7 @@ public class ControladorRegistro {
 	
 	@RequestMapping(path = "/validar-registro", method = RequestMethod.POST)
 	public ModelAndView validarRegistro(@ModelAttribute("datosRegistro") DatosRegistro datosRegistro, HttpServletRequest request) {
+		
 		ModelMap model = new ModelMap();
 		
 		this.servicioRegistro.registrarUsuario(datosRegistro.getEmail(), datosRegistro.getPassword(),datosRegistro.getNombre(),datosRegistro.getApellido(),datosRegistro.getUsername());
