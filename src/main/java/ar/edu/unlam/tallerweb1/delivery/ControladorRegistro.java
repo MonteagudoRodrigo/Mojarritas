@@ -34,7 +34,7 @@ public class ControladorRegistro {
 		
 		ModelMap model = new ModelMap();
 		
-		this.servicioRegistro.registrarUsuario(datosRegistro.getEmail(), datosRegistro.getPassword(),datosRegistro.getNombre(),datosRegistro.getApellido(),datosRegistro.getUsername());
+		this.servicioRegistro.registrarUsuario(datosRegistro.getEmail(), datosRegistro.getPassword(),datosRegistro.getNombre(),datosRegistro.getApellido(), datosRegistro.getUsername());
 		
 		return new ModelAndView("registro", model);
 		

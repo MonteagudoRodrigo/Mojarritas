@@ -20,10 +20,11 @@
 
 					<%--Elementos de entrada de datos, el elemento path debe indicar en que atributo del objeto usuario se guardan los datos ingresados--%>
 					<form:input path="email" id="email" type="email" class="form-control" placeholder="Email" />
-					<form:input path="password" type="password" id="clave" class="form-control" placeholder="Contraseña" />   
+					<form:input path="password" type="password" id="clave" class="form-control" placeholder="Contraseï¿½a" />   
 					<form:input path="nombre" type="text" id="nombre" class="form-control" placeholder="Nombre" /> 		  
 					<form:input path="apellido" type="text" id="apellido" class="form-control" placeholder="Apellido" />
-					<form:input path="username" type="text" id="username"  class="form-control" placeholder="Nombre de usuario"/>
+					<form:input path="username" type="text" id="username" class="form-control" placeholder="Nombre de Usuario" />
+					
 					<button class="btn btn-lg btn-primary btn-block" Type="Submit"/>Registrarme</button>
 				</form:form>
 				<%--Bloque que es visible si el elemento error no esta vacio	--%>
