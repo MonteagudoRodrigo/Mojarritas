@@ -21,7 +21,7 @@
     <!-- RESUMEN USUARIO -->
     <%@ include file="resumen-usuario.jsp" %>
     
-    <main >
+    <main>
 		 <div class="main-content bg-light-gray" >
             Aqui menu y contenido
          </div>
