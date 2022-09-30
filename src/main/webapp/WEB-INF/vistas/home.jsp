@@ -14,37 +14,17 @@
     <link rel="stylesheet" href="css/global.css">
 </head>
 <body class="bg-dark">
+
+	<!-- CABECERA -->
     <%@ include file="cabecera.jsp" %>
     
-    <div class="container content px-0">
-        <div class="d-flex bg-dark-gray px-5 py-3">
-            <img src="profiles/default.png" alt="profile" class="profile bd-red-meet me-4">
-            <div>
-              <h5 class="text-light mb-0">@Mi usuario</h5> 
-              <small class="text-light">test@test</small> 
-            </div>
-            <div class="d-flex flex-col mx-auto text-light my-auto text-center">
-                <div class="px-5">
-                  <h6>Mis eventos</h6>
-                  <h5>0</h5>  
-                </div>
-                <div class="px-5">
-                    <h6>Mis amigos</h6>
-                    <h5>0</h5>
-                </div>
-                
-            </div>
-            
-        </div>
-        <div>
-
-        </div>
-        <div class="main-content bg-light-gray">
+    <!-- RESUMEN USUARIO -->
+    <%@ include file="resumen-usuario.jsp" %>
+    
+    <main class="main-content bg-light-gray">
+		 <div >
             Aqui menu y contenido
-        </div>
-    </div>
-    <main>
-
+         </div>
     </main>
 </body>
 <script src="js/bootstrap.bundle.js"  type="text/javascript"></script>

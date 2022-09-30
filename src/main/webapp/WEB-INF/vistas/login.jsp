@@ -1,5 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -30,14 +33,14 @@
 
 					<%--Elementos de entrada de datos, el elemento path debe indicar en que atributo del objeto usuario se guardan los datos ingresados--%>
 					<form:input path="email" id="email" type="email" class="form-control my-3" placeholder="ingrese su email" />
-					<form:input path="password" type="password" id="password" class="form-control my-3" placeholder="Contraseña"/>     		  
+					<form:input path="password" type="password" id="password" class="form-control my-3" placeholder="ContraseÃ±a"/>     		  
 					<div class="d-grid center">
 						<button class="btn btn-primary" Type="Submit">Ingresar</button>
 					</div>
 					
 				</form:form>
 				<div class="d-grid mt-4">
-					<h2 class="text-light fs-2 text-center">¿aún no estás registrado?</h2>
+					<h2 class="text-light fs-2 text-center">Â¿aÃºn no estÃ¡s registrado?</h2>
 					<a class="btn btn-primary btn-meet" href="registro">Quiero registrarme</a>
 				</div>
 				
