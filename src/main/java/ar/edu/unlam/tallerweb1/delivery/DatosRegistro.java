@@ -5,6 +5,7 @@ public class DatosRegistro {
     private String password;
     private String nombre;
     private String apellido;
+    private String username;
     
 	public String getEmail() {
 		return email;
@@ -29,6 +30,12 @@ public class DatosRegistro {
 	}
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
     
     

@@ -23,6 +23,7 @@
 					<form:input path="password" type="password" id="clave" class="form-control" placeholder="Contraseña" />   
 					<form:input path="nombre" type="text" id="nombre" class="form-control" placeholder="Nombre" /> 		  
 					<form:input path="apellido" type="text" id="apellido" class="form-control" placeholder="Apellido" />
+					<form:input path="username" type="text" id="username" class="form-control" placeholder="Nombre de Usuario" />
 					
 					<button class="btn btn-lg btn-primary btn-block" Type="Submit"/>Registrarme</button>
 				</form:form>
