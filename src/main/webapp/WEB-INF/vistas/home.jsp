@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,35 +14,7 @@
     <link rel="stylesheet" href="css/global.css">
 </head>
 <body class="bg-dark">
-    <nav class="navbar position-fixed w-100" style="background-color: var(--mt-light)">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="img/logo/Logo.png" class="mt-brand"  alt="meeting">
-            </a>
-             <ul class="nav d-flex fs-5 ">
-                <li class="nav-item">
-                    <a class="nav-link text-dark-gray" href="" title="Notificaciones">
-                        <i class="fa-solid fa-comment-dots "></i>
-                        
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark-gray" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Opciones">
-                        <i class="fa-solid fa-gear"></i> 
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
-                        <li><a class="dropdown-item" href="#">Configuración</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
-                    </ul>
-                </li>
-               
-            </ul>
-             
-        </div>
-       
-    </nav>
+    <%@ include file="cabecera.jsp" %>
     
     <div class="container content px-0">
         <div class="d-flex bg-dark-gray px-5 py-3">
