@@ -33,50 +33,45 @@ public class ControladorRegistro {
 	public ControladorRegistro(ServicioRegistro servicioRegistro) {
 		this.servicioRegistro = servicioRegistro;
 	}
-	
+
 	@RequestMapping(path = "/registro", method = RequestMethod.GET)
 	public ModelAndView irARegistro() {
 		ModelMap modelo = new ModelMap();
 		modelo.put("datosRegistro", new DatosRegistro());
 		return new ModelAndView("registro", modelo);
 	}
-	
+
 	@RequestMapping(path = "/validar-registro", method = RequestMethod.POST)
-	public ModelAndView validarRegistro(@ModelAttribute("datosRegistro") DatosRegistro datosRegistro, HttpServletRequest request, 
-										@RequestParam("archivoImagen") MultipartFile multipart ) {
-		
+	public ModelAndView validarRegistro(@ModelAttribute("datosRegistro") DatosRegistro datosRegistro,
+			HttpServletRequest request, @RequestParam("archivoImagen") MultipartFile multipart) {
+
 		ModelMap model = new ModelMap();
-		
+
 		Usuario usuario = new Usuario();
 
 		usuario.setEmail(datosRegistro.getEmail());
 		usuario.setPassword(datosRegistro.getPassword());
 		usuario.setNombre(datosRegistro.getNombre());
-		
-		
-		
-		//validamos la subida de archivo
-		if(!multipart.isEmpty()) {
+		usuario.setApellido(datosRegistro.getApellido());
+		usuario.setUsername(datosRegistro.getUsername());
+
+		// validamos la subida de archivo
+		if (!multipart.isEmpty()) {
 			Path directorioImagen = Paths.get("/img/");
-	        String ruta = directorioImagen.toFile().getAbsolutePath();
-			
-	     
+			String ruta = directorioImagen.toFile().getAbsolutePath();
+
 			System.out.println(ruta);
-			
-			
+
 			String nombreImagen = Archivos.guardarArchivo(multipart, ruta);
-			
+
 			usuario.setImagen(nombreImagen);
-		}else {
+		} else {
 			usuario.setImagen("default.png");
 		}
-		
-		
 
-		
 		this.servicioRegistro.registrarUsuario(usuario);
-		
-		
+		return new ModelAndView("registro", model);
+
 	}
-	
+
 }
