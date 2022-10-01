@@ -42,8 +42,18 @@
 
 .profile{
     border-radius: 50%;
-    width: 70px;
+  		
+	overflow: hidden;
+}
+
+.medium{
+	  width: 70px;
     height: 70px;
+}
+
+.large{
+	width: 200px;
+	height: 200px;
 }
 
 .bd-red-meet{
@@ -55,4 +65,26 @@
 
 .main-content{
     height: 900px!important;
+}
+
+.btn-meet{
+    background-color: var(--mt-red-meet)!important;
+    border-color: var(--mt-red-meet)!important;
+}
+
+.file{
+	position: relative;
+
+	height: 50px;
+	cursor: pointer;
+	color: white;
+	text-align: center;
+	margin: auto;
+	top: -50px;
+	opacity: .8;
+
+}
+
+input[type="file"]{
+	position: absolute;
 }
