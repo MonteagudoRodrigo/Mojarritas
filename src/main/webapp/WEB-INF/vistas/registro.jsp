@@ -14,9 +14,11 @@
 				<%--Definicion de un form asociado a la accion /validar-login por POST. Se indica ademas que el model attribute se--%>
 				<%--debe referenciar con el nombre usuario, spring mapea los elementos de la vista con los atributos de dicho objeto--%>
 					<%--para eso debe coincidir el valor del elemento path de cada input con el nombre de un atributo del objeto --%>
-				<form:form action="validar-registro" method="POST" modelAttribute="datosRegistro">
+				<form:form action="validar-registro" method="POST" modelAttribute="datosRegistro" enctype="multipart/form-data">
 			    	<h3 class="form-signin-heading">Registro</h3>
 					<hr class="colorgraph"><br>
+					
+					<input name="archivoImagen" id="imagen" type="file" class="form-control"/>
 
 					<%--Elementos de entrada de datos, el elemento path debe indicar en que atributo del objeto usuario se guardan los datos ingresados--%>
 					<form:input path="email" id="email" type="email" class="form-control" placeholder="Email" />

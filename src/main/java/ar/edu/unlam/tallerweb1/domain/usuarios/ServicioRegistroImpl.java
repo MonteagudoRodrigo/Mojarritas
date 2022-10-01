@@ -16,7 +16,7 @@ public class ServicioRegistroImpl implements ServicioRegistro{
 	}
 	
 	@Override
-	public void registrarUsuario(String email, String password, String nombre, String apellido) {
-		//TODO Terminar!
+	public void registrarUsuario(Usuario usuario) {
+		this.servicioRegistroDao.registrarUsuario(usuario);
 	}
 }

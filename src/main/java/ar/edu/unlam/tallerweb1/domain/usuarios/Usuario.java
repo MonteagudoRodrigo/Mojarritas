@@ -18,6 +18,7 @@ public class Usuario {
 	private String apellido;
 	private String username;
 	private String token;
+	private String imagen;
 	
 	
 	public String getToken() {
@@ -63,5 +64,11 @@ public class Usuario {
 	}
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
+	}
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 }
