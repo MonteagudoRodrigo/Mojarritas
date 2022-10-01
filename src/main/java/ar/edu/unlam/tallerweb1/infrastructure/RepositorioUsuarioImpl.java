@@ -2,11 +2,17 @@ package ar.edu.unlam.tallerweb1.infrastructure;
 
 import ar.edu.unlam.tallerweb1.domain.usuarios.RepositorioUsuario;
 import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
+
+import java.sql.SQLException;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.exception.ConstraintViolationException;
+import org.hibernate.exception.DataException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.util.NestedServletException;
 
 @Repository("repositorioUsuario")
 public class RepositorioUsuarioImpl implements RepositorioUsuario {
@@ -29,8 +35,11 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 	}
 
 	@Override
-	public void guardar(Usuario usuario) {
-		sessionFactory.getCurrentSession().save(usuario);
+	public Long guardar(Usuario usuario)throws ConstraintViolationException   {
+		
+			return (Long)sessionFactory.getCurrentSession().save(usuario);
+	
+		
 	}
 
 	@Override
@@ -46,8 +55,8 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 	}
 
 	@Override
-	public void registrarUsuario(Usuario usuario) {
-		this.guardar(usuario);
+	public Long registrarUsuario(Usuario usuario)throws ConstraintViolationException {
+		return this.guardar(usuario);
 	}
 
 }

@@ -68,8 +68,13 @@ public class ControladorRegistro {
 		} else {
 			usuario.setImagen("default.png");
 		}
-
-		this.servicioRegistro.registrarUsuario(usuario);
+		if(this.servicioRegistro.registrarUsuario(usuario)>0) {
+			model.put("msg", "guardado con EXITO!");
+		}else {
+			model.put("error", "error al guardar");
+		}
+			
+		
 		return new ModelAndView("registro", model);
 
 	}

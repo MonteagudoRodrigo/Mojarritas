@@ -5,6 +5,7 @@ import ar.edu.unlam.tallerweb1.domain.usuarios.ServicioLogin;
 import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.hibernate.SessionFactory;
 import org.junit.Test;
@@ -74,7 +75,11 @@ public class ConexionBaseDeDatosTest extends SpringTest{
        Usuario usuario2 = new Usuario(); 
        usuario2 = nuevoRepo.buscar(usuario.getEmail());
        
-       usuario.setNombre("pascual");
+       usuario2.setEmail(emailModificado);
+       usuario2.setPassword(claveModificada);
+       usuario2.setNombre(nombreModificado);
+       usuario2.setApellido(apellidoModificado);
+       usuario2.setUsername(usuarioModificado);
        nuevoRepo.modificar(usuario2);
        
        
@@ -82,7 +87,41 @@ public class ConexionBaseDeDatosTest extends SpringTest{
        
         
         
-        assertThat(usuario.getId()).isNotNull();
+        assertTrue( nuevoRepo.buscar(emailModificado).getApellido().equals(apellidoModificado) );
+    }
+    
+    
+    
+    @Test
+    @Transactional @Rollback
+    public void siNoGuardaRetornaCero(){
+    	String emailOriginal = "test@test";
+    	String passwordOriginal = "1234";
+    	String usuarioOriginal = "pepe";
+    	String nombreOriginal = "carlos";
+    	String apellidoOriginal = "menem";
+    	
+    	
+    	
+    	
+        Usuario usuario = new Usuario();
+        usuario.setEmail(emailOriginal);
+       
+        RepositorioUsuarioImpl nuevoRepo = new RepositorioUsuarioImpl(this.session().getSessionFactory());
+       System.out.println(nuevoRepo.guardar(usuario));
+       
+       
+       Usuario usuario2 = new Usuario();
+       usuario2.setEmail(emailOriginal);
+       System.out.println(nuevoRepo.guardar(usuario2));
+       
+       
+       
+       
+        
+      
+        
+       
     }
     
     
