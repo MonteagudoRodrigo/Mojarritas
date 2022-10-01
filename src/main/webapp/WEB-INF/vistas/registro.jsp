@@ -23,7 +23,7 @@
 					<img class = "w-75 my-5 mx-auto d-block"  src="img/logo/logo_dark.png" alt="">
 					<form:form action="validar-registro" method="POST" modelAttribute="datosRegistro">
 					<div class="d-grid center">
-						<h1 class="h3" style="color:white;text-align:center">Cre√° tu cuenta</h1>
+						<h1 class="h3" style="color:white;text-align:center">Cre· tu cuenta</h1>
 					</div>
 
 					<%--Elementos de entrada de datos, el elemento path debe indicar en que atributo del objeto usuario se guardan los datos ingresados--%>
