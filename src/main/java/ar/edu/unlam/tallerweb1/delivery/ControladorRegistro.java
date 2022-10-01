@@ -33,9 +33,17 @@ public class ControladorRegistro {
 	public ModelAndView validarRegistro(@ModelAttribute("datosRegistro") DatosRegistro datosRegistro, HttpServletRequest request) {
 		ModelMap model = new ModelMap();
 		
-		this.servicioRegistro.registrarUsuario(datosRegistro.getEmail(), datosRegistro.getPassword(),datosRegistro.getNombre(),datosRegistro.getApellido(), datosRegistro.getUsername());
+		Usuario usuario = new Usuario();
+		usuario.setEmail(datosRegistro.getEmail());
+		usuario.setPassword(datosRegistro.getPassword());
+		usuario.setNombre(datosRegistro.getNombre());
+		usuario.setApellido(datosRegistro.getApellido());
+		usuario.setUsername(datosRegistro.getUsername());
+		
+		this.servicioRegistro.registrarUsuario(usuario);
 		
 		return new ModelAndView("registro", model);
 		
 	}
+	
 }
