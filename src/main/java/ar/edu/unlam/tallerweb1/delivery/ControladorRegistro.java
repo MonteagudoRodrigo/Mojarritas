@@ -42,7 +42,7 @@ public class ControladorRegistro {
 		
 		this.servicioRegistro.registrarUsuario(usuario);
 		
-		return new ModelAndView("registro", model);
+		return new ModelAndView("redirect:/login");
 		
 	}
 	
