@@ -1,12 +1,14 @@
 package ar.edu.unlam.tallerweb1.delivery;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class DatosRegistro {
 	private String email;
     private String password;
     private String nombre;
     private String apellido;
     private String username;
-    private String imagen;
+    private MultipartFile imagen;
     
 	public String getUsername() {
 		return username;
@@ -14,10 +16,10 @@ public class DatosRegistro {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getImagen() {
+	public MultipartFile getImagen() {
 		return imagen;
 	}
-	public void setImagen(String imagen) {
+	public void setImagen(MultipartFile imagen) {
 		this.imagen = imagen;
 	}
 	public String getEmail() {

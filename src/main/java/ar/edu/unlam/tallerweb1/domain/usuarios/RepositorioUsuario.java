@@ -9,4 +9,6 @@ public interface RepositorioUsuario {
     Usuario buscar(String email);
 	void modificar(Usuario usuario);
 	void registrarUsuario(Usuario usuario);
+	Usuario buscarUsuario(String username);
+	
 }

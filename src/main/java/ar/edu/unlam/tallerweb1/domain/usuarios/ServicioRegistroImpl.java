@@ -19,4 +19,16 @@ public class ServicioRegistroImpl implements ServicioRegistro{
 	public void registrarUsuario(Usuario usuario) {
 		this.servicioRegistroDao.registrarUsuario(usuario);
 	}
+	
+	@Override
+	public Usuario existeEmail(String email) {
+		return servicioRegistroDao.buscar(email);
+	}
+	
+	@Override
+	public Usuario existeUsuario(String username) {
+		return servicioRegistroDao.buscarUsuario(username);
+	}
+	
+	
 }

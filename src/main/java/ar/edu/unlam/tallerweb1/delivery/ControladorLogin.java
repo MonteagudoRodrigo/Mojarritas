@@ -61,6 +61,8 @@ public class ControladorLogin {
 		}
 		return new ModelAndView("login", model);
 	}
+	
+	
 
 	@RequestMapping(path = "/home", method = RequestMethod.GET)
 	public ModelAndView irAHome() throws Exception {

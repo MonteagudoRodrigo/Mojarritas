@@ -41,23 +41,67 @@ public class ControladorRegistro {
 		return new ModelAndView("registro", modelo);
 	}
 	
+	@RequestMapping(path="/validar-usuario")
+	public ModelAndView validarUsuario(@ModelAttribute("datosRegistro") DatosRegistro datosRegistro, HttpServletRequest request) {
+		ModelMap model = new ModelMap();
+		
+		//validamos que no se repita el email
+				Usuario usuario = servicioRegistro.existeUsuario(datosRegistro.getUsername());
+				if(usuario == null) {
+					model.put("user_ok", "El nombre de usuario está disponible");
+				}else {
+					model.put("user_found", "El nombre de usuario ya está en uso");
+				}
+				
+				return new ModelAndView("registro", model);
+				
+				
+	}
+	
 	@RequestMapping(path = "/validar-registro", method = RequestMethod.POST)
-	public ModelAndView validarRegistro(@ModelAttribute("datosRegistro") DatosRegistro datosRegistro, HttpServletRequest request, 
-										@RequestParam("archivoImagen") MultipartFile multipart ) {
+	public ModelAndView validarRegistro(@ModelAttribute("datosRegistro") DatosRegistro datosRegistro, HttpServletRequest request ) {
+		
+		ModelMap model = new ModelMap();
+		
+		//validamos que no se repita el email
+		Usuario usuario = servicioRegistro.existeEmail(datosRegistro.getEmail());
+		
+		if(usuario != null) {
+			model.put("error", "Ya existe un perfil registrado con ese email");
+			return new ModelAndView("registro", model);
+		}
+		
+		usuario = servicioRegistro.existeUsuario(datosRegistro.getUsername());
+		
+		if(usuario != null) {
+			model.put("error", "El nombre se usuario no se encuentra disponible, verifiquelo antes de enviar");
+			return new ModelAndView("registro", model);
+		}
+		
+		return registrarUsuario(datosRegistro);
+		
+		
+	}
+	
+	private ModelAndView registrarUsuario(DatosRegistro datosRegistro) {
 		
 		ModelMap model = new ModelMap();
 		
 		Usuario usuario = new Usuario();
+		
 		usuario.setNombre(datosRegistro.getNombre());
 		usuario.setApellido(datosRegistro.getApellido());
 		usuario.setUsername(datosRegistro.getUsername());
 		usuario.setEmail(datosRegistro.getEmail());
+		usuario.setPassword(datosRegistro.getPassword());
+		
+		MultipartFile multipart = datosRegistro.getImagen();
 		
 		
 		
 		//validamos la subida de archivo
 		if(!multipart.isEmpty()) {
-			Path directorioImagen = Paths.get("/img/");
+			Path directorioImagen = Paths.get("D:\\FACULTAD\\TALLER WEB\\PROYECTOS\\Mojarritas\\src\\main\\webapp\\profiles");
 	        String ruta = directorioImagen.toFile().getAbsolutePath();
 			
 	     
@@ -74,6 +118,8 @@ public class ControladorRegistro {
 		
 		
 		this.servicioRegistro.registrarUsuario(usuario);
+		
+		model.put("msg", "Tu registro se realizó con éxito");
 		
 		return new ModelAndView("registro", model);
 		
