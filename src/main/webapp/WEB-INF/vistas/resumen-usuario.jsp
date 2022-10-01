@@ -1,6 +1,6 @@
 <div class="container content px-0">
         <div class="d-flex bg-dark-gray px-5 py-3">
-            <img src="profiles/default.png" alt="profile" class="profile bd-red-meet me-4">
+            <img src="profiles/images.jpg" alt="profile" class="profile bd-red-meet me-4">
             <div>
               <h5 class="text-light mb-0">@Mi usuario</h5> 
               <small class="text-light">test@test</small> 

@@ -10,12 +10,14 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -51,11 +53,11 @@ public class ControladorRegistro {
 		usuario.setUsername(datosRegistro.getUsername());
 		usuario.setEmail(datosRegistro.getEmail());
 		
-
+		
 		
 		//validamos la subida de archivo
 		if(!multipart.isEmpty()) {
-			Path directorioImagen = Paths.get("//src//main//webapp/profiles");
+			Path directorioImagen = Paths.get("/img/");
 	        String ruta = directorioImagen.toFile().getAbsolutePath();
 			
 	     
