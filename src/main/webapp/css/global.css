@@ -92,3 +92,8 @@
 input[type="file"]{
 	position: absolute;
 }
+
+.content-register-ok{
+	position: relative;
+	top: -80px;
+}

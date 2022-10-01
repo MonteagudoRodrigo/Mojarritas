@@ -38,6 +38,7 @@ public class ControladorRegistro {
 	public ModelAndView irARegistro() {
 		ModelMap modelo = new ModelMap();
 		modelo.put("datosRegistro", new DatosRegistro());
+		modelo.put("reg_ok", "");
 		return new ModelAndView("registro", modelo);
 	}
 	
@@ -119,7 +120,11 @@ public class ControladorRegistro {
 		
 		this.servicioRegistro.registrarUsuario(usuario);
 		
-		model.put("msg", "Tu registro se realizó con éxito");
+		//pasamos datos del usuario registrado para mostrar por pantalla
+		model.put("nombre", datosRegistro.getNombre());
+		model.put("apellido", datosRegistro.getApellido());
+		//informamos que se guardo correctamente
+		model.put("reg_ok", "ok");
 		
 		return new ModelAndView("registro", model);
 		
