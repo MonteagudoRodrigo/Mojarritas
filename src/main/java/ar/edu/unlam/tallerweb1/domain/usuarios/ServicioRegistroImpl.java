@@ -16,20 +16,7 @@ public class ServicioRegistroImpl implements ServicioRegistro{
 	}
 	
 	@Override
-	public void registrarUsuario(String email, String password, String nombre, String apellido, String username) {
-		//TODO Terminar!
-		
-		Usuario user = new Usuario();
-		user.setNombre(nombre);
-		user.setApellido(apellido);
-		user.setEmail(email);
-		user.setPassword(password);
-		user.setUsername(username);
-		
-		
-		this.servicioRegistroDao.guardar(user);
-		
-		
-		
+	public void registrarUsuario(Usuario usuario) {
+		this.servicioRegistroDao.registrarUsuario(usuario);
 	}
 }

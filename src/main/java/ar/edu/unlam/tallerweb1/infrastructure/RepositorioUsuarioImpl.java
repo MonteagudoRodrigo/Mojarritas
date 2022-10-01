@@ -46,8 +46,8 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 	}
 
 	@Override
-	public void registrarUsuario(String email, String password, String nombre, String apellido, String username) {
-		
+	public void registrarUsuario(Usuario usuario) {
+		this.guardar(usuario);
 	}
 
 }

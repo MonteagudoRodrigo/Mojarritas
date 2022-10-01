@@ -8,5 +8,5 @@ public interface RepositorioUsuario {
 	void guardar(Usuario usuario);
     Usuario buscar(String email);
 	void modificar(Usuario usuario);
-	void registrarUsuario(String email, String password, String nombre, String apellido, String username);
+	void registrarUsuario(Usuario usuario);
 }

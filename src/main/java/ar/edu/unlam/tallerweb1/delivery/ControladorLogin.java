@@ -1,6 +1,7 @@
 package ar.edu.unlam.tallerweb1.delivery;
 
 import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
+import ar.edu.unlam.tallerweb1.domain.Security.*;
 import ar.edu.unlam.tallerweb1.domain.usuarios.ServicioLogin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,10 +13,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
+
 @Controller
 public class ControladorLogin {
 
 	private ServicioLogin servicioLogin;
+	private ServicioSecurity servicioSecurity;
+	
+	private String userToken;
 
 	@Autowired
 	public ControladorLogin(ServicioLogin servicioLogin){
@@ -34,13 +39,23 @@ public class ControladorLogin {
 
 	
 	@RequestMapping(path = "/validar-login", method = RequestMethod.POST)
-	public ModelAndView validarLogin(@ModelAttribute("datosLogin") DatosLogin datosLogin, HttpServletRequest request) {
+	public ModelAndView validarLogin(@ModelAttribute("datosLogin") DatosLogin datosLogin, HttpServletRequest request) throws Exception {
 		ModelMap model = new ModelMap();
 
 		Usuario usuarioBuscado = servicioLogin.consultarUsuario(datosLogin.getEmail(), datosLogin.getPassword());
 		
 		if (usuarioBuscado != null) {
+			
+			servicioSecurity = new ServicioSecurity();
+			
+			this.userToken = servicioSecurity.generarToken(usuarioBuscado);
+			
+			usuarioBuscado.setToken(this.userToken);
+			
+			servicioLogin.actualizarUsuario(usuarioBuscado);
+			
 			return new ModelAndView("redirect:/home");
+			
 		} else {
 			model.put("error", "Usuario o clave incorrecta");
 		}
@@ -48,8 +63,13 @@ public class ControladorLogin {
 	}
 
 	@RequestMapping(path = "/home", method = RequestMethod.GET)
-	public ModelAndView irAHome() {
+	public ModelAndView irAHome() throws Exception {
 		
+		
+		if( this.userToken == null || !servicioSecurity.ValidaToken(this.userToken)) {
+			return new ModelAndView("redirect:/login");
+		}
+	
 		return new ModelAndView("home");
 	}
 
@@ -57,4 +77,6 @@ public class ControladorLogin {
 	public ModelAndView inicio() {
 		return new ModelAndView("redirect:/login");
 	}
+	
+	
 }

@@ -17,8 +17,16 @@ public class Usuario {
 	private String nombre;
 	private String apellido;
 	private String username;
+	private String token;
+	private String imagen;
 	
 	
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -56,5 +64,11 @@ public class Usuario {
 	}
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
+	}
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 }

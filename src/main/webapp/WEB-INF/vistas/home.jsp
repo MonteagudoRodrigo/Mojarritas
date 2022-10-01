@@ -1,18 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-	<head>
-		<!-- Bootstrap core CSS -->
-	    <link href="css/bootstrap.min.css" rel="stylesheet" >
-	    <!-- Bootstrap theme -->
-	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	</head>
-	<body>
-		<div class = "container">
-			<h1>Bienvenidos a Taller Web 1</h1>
-		</div>
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
-		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-		<script src="js/bootstrap.min.js" type="text/javascript"></script>
-	</body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meeting</title>
+    <!-- Bootstrap Core-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- Fonawesome-->
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/global.css">
+</head>
+<body class="bg-dark">
+
+	<!-- CABECERA -->
+    <%@ include file="cabecera.jsp" %>
+    
+    <!-- RESUMEN USUARIO -->
+    <%@ include file="resumen-usuario.jsp" %>
+    
+    <main class="container px-0">
+		 <div class="main-content bg-light-gray">
+            Aqui menu
+         </div>
+    </main>
+</body>
+<script src="js/bootstrap.bundle.js"  type="text/javascript"></script>
 </html>

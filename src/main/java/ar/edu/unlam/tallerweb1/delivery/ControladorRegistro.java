@@ -1,17 +1,29 @@
 package ar.edu.unlam.tallerweb1.delivery;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unlam.tallerweb1.domain.usuarios.ServicioRegistro;
 import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
+import ar.edu.unlam.tallerweb1.utils.Archivos;
 
 @Controller
 public class ControladorRegistro {
@@ -30,20 +42,40 @@ public class ControladorRegistro {
 	}
 	
 	@RequestMapping(path = "/validar-registro", method = RequestMethod.POST)
-	public ModelAndView validarRegistro(@ModelAttribute("datosRegistro") DatosRegistro datosRegistro, HttpServletRequest request) {
+	public ModelAndView validarRegistro(@ModelAttribute("datosRegistro") DatosRegistro datosRegistro, HttpServletRequest request, 
+										@RequestParam("archivoImagen") MultipartFile multipart ) {
 		
 		ModelMap model = new ModelMap();
 		
 		Usuario usuario = new Usuario();
+
 		usuario.setEmail(datosRegistro.getEmail());
 		usuario.setPassword(datosRegistro.getPassword());
 		usuario.setNombre(datosRegistro.getNombre());
-		usuario.setApellido(datosRegistro.getApellido());
-		usuario.setUsername(datosRegistro.getUsername());
+		
+		
+		
+		//validamos la subida de archivo
+		if(!multipart.isEmpty()) {
+			Path directorioImagen = Paths.get("/img/");
+	        String ruta = directorioImagen.toFile().getAbsolutePath();
+			
+	     
+			System.out.println(ruta);
+			
+			
+			String nombreImagen = Archivos.guardarArchivo(multipart, ruta);
+			
+			usuario.setImagen(nombreImagen);
+		}else {
+			usuario.setImagen("default.png");
+		}
+		
+		
+
 		
 		this.servicioRegistro.registrarUsuario(usuario);
 		
-		return new ModelAndView("registro", model);
 		
 	}
 	
