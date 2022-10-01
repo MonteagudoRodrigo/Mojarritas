@@ -28,7 +28,7 @@
 
 					<%--Elementos de entrada de datos, el elemento path debe indicar en que atributo del objeto usuario se guardan los datos ingresados--%>
 					<form:input path="email" id="email" type="email" class="form-control" placeholder="Email" />
-					<form:input path="password" type="password" id="clave" class="form-control" placeholder="Contraseï¿½a" />   
+					<form:input path="password" type="password" id="clave" class="form-control" placeholder="Contraseñia" />   
 					<form:input path="nombre" type="text" id="nombre" class="form-control" placeholder="Nombre" /> 		  
 					<form:input path="apellido" type="text" id="apellido" class="form-control" placeholder="Apellido" />
 					<form:input path="username" type="text" id="username" class="form-control" placeholder="Nombre de Usuario" />
