@@ -12,4 +12,17 @@ CREATE TABLE usuario(
                      pass varchar(50)
 );
 
+drop table if exists publicacion;
+CREATE TABLE publicacion(
+					id int auto_increment primary key,
+					usuarioId int,
+					lugarId int,
+					titulo varchar(50),
+					fecha varchar(50),
+					descripcion varchar(50),
+					cantParticipantes int,
+					cupo int
+);
+
 insert into usuario(nombre, apellido, username, email, pass) values ('nombre_test','appelido_test', 'username_test','test@test','12345');
+insert into publicacion(usuarioId, lugarId, titulo, fecha, descripcion, cantParticipantes, cupo) values (1,1,'Fiesta','2022-01-01 00:00','Publicacion de una fiesta',5,10);

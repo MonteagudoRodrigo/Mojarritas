@@ -23,12 +23,12 @@
 					<img class = "w-75 my-5 mx-auto d-block"  src="img/logo/logo_dark.png" alt="">
 					<form:form action="validar-registro" method="POST" modelAttribute="datosRegistro">
 					<div class="d-grid center">
-						<h1 class="h3" style="color:white;text-align:center">Cre√° tu cuenta</h1>
+						<h1 class="h3" style="color:white;text-align:center">Cre· tu cuenta</h1>
 					</div>
 
 					<%--Elementos de entrada de datos, el elemento path debe indicar en que atributo del objeto usuario se guardan los datos ingresados--%>
 					<form:input path="email" id="email" type="email" class="form-control my-3" placeholder="Email" />
-					<form:input path="password" type="password" id="password" class="form-control my-3" placeholder="Contrase√±a" />   
+					<form:input path="password" type="password" id="password" class="form-control my-3" placeholder="ContraseÒa" />   
 					<form:input path="nombre" type="text" id="nombre" class="form-control my-3" placeholder="Nombre" /> 		  
 					<form:input path="apellido" type="text" id="apellido" class="form-control my-3" placeholder="Apellido" />
 					<form:input path="username" type="text" id="username" class="form-control my-3" placeholder="Nombre de Usuario" />

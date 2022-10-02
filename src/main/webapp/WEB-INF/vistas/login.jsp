@@ -38,7 +38,7 @@
 					
 				</form:form>
 				<div class="d-grid mt-4">
-					<h2 class="text-light fs-2 text-center">�a�n no est�s registrado?</h2>
+					<h2 class="text-light fs-2 text-center">¿Aún estás registrado?</h2>
 					<a class="btn btn-primary btn-meet" href="registro">Quiero registrarme</a>
 				</div>
 				
