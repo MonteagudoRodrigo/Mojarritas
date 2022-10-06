@@ -113,7 +113,7 @@
 	                                        <div class="input-group my-3">
 	                                            <label class="input-group-text" for="inputGroupSelect01">Sexo</label>
 	                                            <form:select path="sexo" class="form-select" id="select-genero">
-		                                            <form:option value="0" selected="true">Seleccione</form:option>
+		                                            <form:option value="0" selected="true" hidden="true" disabled="true">Seleccione</form:option>
 		                                            <form:option value="1">Femenino</form:option>
 		                                            <form:option value="2">Masculino</form:option>
 	                                            </form:select>
@@ -128,7 +128,7 @@
 	                                            <div class="input-group me-3">
 	                                                <label class="input-group-text" for="select-dia">D</label>
 		                                                <select class="form-select" id="select-dia">
-		                                                	<option value="0" selected hidden="true" disabled>Dia</option>
+		                                                	<option value="0" selected hidden disabled>Dia</option>
 	                                               		</select>
 	                                            </div>
 	                                            <!-- MES -->
