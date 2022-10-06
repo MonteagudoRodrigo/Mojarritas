@@ -67,42 +67,56 @@
 	                                    </div>
 	                                    
 	                                   <div class="step-form">
-	                                        
+	                                   		<!-- HIDDEN CONTROLS VERIFICATIONS -->
+	                                        <form:input path="userVerify" type="hidden"/>
+	                                        <form:input path="emailVerify" type="hidden"/>
 	                                        <div class="input-group my-3">
-	                                        	 <form:form action="validar-usuario" id="form-user"  method="POST" modelAttribute="accountVerify">
+	                                        	
 	                                                <span class="input-group-text" id="basic-addon1">@</span>
-	                                                <form:input path="usuario" type="text" id="username" class="form-control" placeholder="Nombre de Usuario" aria-label="username" aria-describedby="basic-addon1" />
-		                                             <!-- 
-		                                            		<c:if test="${user_v_state.type eq AccountVerify.result.CHECK_OK}">	
+	                                                <form:input path="username" type="text" id="username" class="form-control" placeholder="Nombre de Usuario" aria-label="username" aria-describedby="basic-addon1" />
+		                                             
+		                                            		<c:if test="${user_v_state eq 'VERIFY_OK'}">	
 				                                             <span class="input-group-text verify ok" id="verifica-user">
 				                                                    <i class="fa-solid fa-check"></i>
 				                                             </span>
 		                                        			</c:if>
-		                                        			<c:if test="${user_v_state.type eq AccountVerify.result.CHECK_NO}">	
-				                                             <span class="input-group-text verify no" id="verifica-user">
-				                                                    <i class="fa-solid fa-x"></i>
-				                                             </span>
+		                                        			<c:if test="${user_v_state eq 'VERIFY_NO'}">	
+					                                             <span class="input-group-text verify no" id="verifica-user">
+					                                                    <i class="fa-solid fa-x"></i>
+					                                             </span>
 		                                        			</c:if>
-		                                        			<c:if test="${empty user_v_state}">	
-				                                             <span class="input-group-text verify ok" id="verifica-user" hidden="true">
-				                                                    <i class="fa-solid fa-check"></i>
-				                                             </span>
+		                                        			<c:if test="${user_v_state eq 'UNVERIFY'}">	
+					                                             <span class="input-group-text verify no" id="verifica-user" hidden="true">
+					                                                    <i class="fa-solid fa-x"></i>
+					                                             </span>
 		                                        			</c:if>
-			                      -->
-		                                               
+			                     
+		                                               	
 		                                               
 	                                                <button class="btn btn-primary" type="button" id="btn-valida-usuario">Verificar</button>
-	                                              </form:form>  
+	                                              
 	                                             
 	                                        </div>
-	                                         <form:input path="username" type="hidden" id="nombre-usuario" />
+	                                       
 	                                        <div class="input-group my-3">
 	                                            <span class="input-group-text" id="basic-addon1">@</span>
 	                                            <form:input path="email" id="email" type="email" class="form-control" placeholder="Email"  />
 		                                            
-			                                             <span class="input-group-text verify ${email_v_state}" id="verifica-email" ${verify_e_attr}>
-			                                                    <i class="fa-solid fa-${email_v_icon}"></i>
-			                                              </span>
+			                                            <c:if test="${email_v_state eq 'VERIFY_OK'}">	
+				                                             <span class="input-group-text verify ok" id="verifica-email">
+				                                                    <i class="fa-solid fa-check"></i>
+				                                             </span>
+		                                        			</c:if>
+		                                        			<c:if test="${email_v_state eq 'VERIFY_NO'}">	
+					                                             <span class="input-group-text verify no" id="verifica-email">
+					                                                    <i class="fa-solid fa-x"></i>
+					                                             </span>
+		                                        			</c:if>
+		                                        			<c:if test="${email_v_state eq 'UNVERIFY'}">	
+					                                             <span class="input-group-text verify no" id="verifica-email" hidden="true">
+					                                                    <i class="fa-solid fa-x"></i>
+					                                             </span>
+		                                        			</c:if>
 			                                              
 			                                     
 	                                            <button class="btn btn-primary" type="button" id="btn-valida-email">Verificar</button>
@@ -141,14 +155,14 @@
 	                                            <div class="input-group me-3">
 	                                                <label class="input-group-text" for="select-dia">D</label>
 		                                                <select class="form-select" id="select-dia">
-		                                                	<option value="0" selected hidden disabled>Dia</option>
+		                                                	
 	                                               		</select>
 	                                            </div>
 	                                            <!-- MES -->
 	                                            <div class="input-group me-3">
 	                                                <label class="input-group-text" for="select-dia">M</label>
 	                                                <select class="form-select" id="select-mes">
-	                                                	<option value="0" selected hidden="true" disabled>Mes</option>
+	                                                	
 	                                                
 	                                                </select>
 	                                            </div>
@@ -156,13 +170,13 @@
 	                                            <div class="input-group">
 	                                                <label class="input-group-text" for="select-dia">A</label>
 	                                                <select class="form-select" id="select-anio">
-	                                                	<option value="0" selected hidden="true" disabled>Año</option>
+	                                                	
 	                                                
 	                                                </select>
 	                                            </div>
 	                                        </div>
 	                                        
-	                                        <form:input path="nacimiento" type="hidden" name="fnac" id="fnac"/>
+	                                        <form:input path="nacimiento" type="text" name="fnac" id="fnac"/>
 	                                        
 	                                    </div>
 	                                </div>

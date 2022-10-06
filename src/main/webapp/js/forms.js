@@ -1,6 +1,7 @@
 
 //formulario
 var frm = document.getElementById("form");
+
 //cantidad de step
 var cant_steps = document.getElementsByClassName("step").length;
 //boton Next
@@ -50,11 +51,9 @@ setProgress(curStep);
 generarCalendario();
 
 
-//valida user email
-var existe_usuario = flag_user.classList.contains("no");
-var existe_email = flag_email.classList.contains("no");
 
-console.log(existe_email);
+
+
 
 //============LISTENERS=======================
 next.addEventListener("click", function(){
@@ -104,7 +103,8 @@ btn_val_email.addEventListener("click", function(){
 });
 
 btn_val_user.addEventListener("click", function(){
-	let frm_user = document.getElementById("form-user");
+	console.log("click");
+	
 
 	if(input_username.value == ''){
 			alerta[0].classList.remove("hidden");
@@ -113,12 +113,12 @@ btn_val_user.addEventListener("click", function(){
 			return false;
 	}
 	alerta[0].classList.add("hidden");	
-	frm_user.submit();
+	frm.removeAttribute("action");		
+	frm.setAttribute("action","validar-usuario");
+	frm.submit();
 });
 
-document.getElementById("form-user").addEventListener("submit", function(){
-	console.log("submit usuario");
-});
+
 
 //limpiar verificacion al escribir en user y email
 input_username.addEventListener("keyup", function(){
@@ -181,6 +181,9 @@ function showStep(curStep){
 
 function validaCuenta(curStep){
 	//validaciones para datos de cuenta
+	//valida user email
+var existe_usuario = flag_user.classList.contains("no");
+var existe_email = flag_email.classList.contains("no");
 	
 	if(curStep == 1){
 		if(flag_user.hasAttribute('hidden')){
@@ -295,6 +298,7 @@ function generarCalendario(){
 	}
 
 	dia.value = hoy.getDay();
+	fnac.value = new Date(Number(anio.value), Number(mes.value),Number(dia.value)).toLocaleDateString();
 
 }
 
@@ -354,9 +358,10 @@ mes.addEventListener("change", function(){
 		
 		cantDiasSelect = dia.childElementCount;
 	}
-
+	
+	console.log(this.value);
 	dia.value = dsel;
-	fnac.value = new Date(Number(anio.value), Number(this.value),Number(dia.value)).toLocaleDateString();
+	fnac.value = new Date(Number(anio.value), Number(this.value), Number(dia.value)).toLocaleDateString();
 });
 
 function verificarDatosUsuario(curStep){

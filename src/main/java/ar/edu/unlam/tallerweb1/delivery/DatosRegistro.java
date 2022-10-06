@@ -1,18 +1,25 @@
 package ar.edu.unlam.tallerweb1.delivery;
 
-import org.hibernate.type.DateType;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class DatosRegistro {
 	private String email;
     private String password;
-
     private String nombre;
     private String apellido;
     private String username;
     private String sexo;
     private String nacimiento;
     private MultipartFile imagen;
+    private state userVerify = state.UNVERIFY;
+    private state emailVerify = state.UNVERIFY;
+  
+    public enum state{
+    	UNVERIFY,
+    	VERIFY_OK,
+    	VERIFY_NO
+    }
     
 	public String getUsername() {
 		return username;
@@ -61,6 +68,18 @@ public class DatosRegistro {
 	}
 	public void setNacimiento(String nacimiento) {
 		this.nacimiento = nacimiento;
+	}
+	public state getUserVerify() {
+		return userVerify;
+	}
+	public void setUserVerify(state userVerify) {
+		this.userVerify = userVerify;
+	}
+	public state getEmailVerify() {
+		return emailVerify;
+	}
+	public void setEmailVerify(state emailVerify) {
+		this.emailVerify = emailVerify;
 	}
 
     

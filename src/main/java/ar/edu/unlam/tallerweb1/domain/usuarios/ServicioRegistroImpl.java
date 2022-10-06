@@ -3,7 +3,6 @@ package ar.edu.unlam.tallerweb1.domain.usuarios;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import org.hibernate.type.DateType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,7 +38,7 @@ public class ServicioRegistroImpl implements ServicioRegistro{
 		try {
 			usuario.setNacimiento(new SimpleDateFormat("yyyy-mm-dd").parse(datos.getNacimiento()));
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
 		usuario.setPassword(datos.getPassword());
