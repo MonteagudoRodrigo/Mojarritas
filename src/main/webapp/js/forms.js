@@ -104,7 +104,8 @@ btn_val_email.addEventListener("click", function(){
 });
 
 btn_val_user.addEventListener("click", function(){
-	console.log("click");
+	let frm_user = document.getElementById("form-user");
+
 	if(input_username.value == ''){
 			alerta[0].classList.remove("hidden");
 			alert_msg.innerHTML="Debe ingresar un nombre de usuario";
@@ -112,9 +113,11 @@ btn_val_user.addEventListener("click", function(){
 			return false;
 	}
 	alerta[0].classList.add("hidden");	
-	frm.removeAttribute("action");	
-	frm.setAttribute("action","validar-usuario");
-	frm.submit();
+	frm_user.submit();
+});
+
+document.getElementById("form-user").addEventListener("submit", function(){
+	console.log("submit usuario");
 });
 
 //limpiar verificacion al escribir en user y email

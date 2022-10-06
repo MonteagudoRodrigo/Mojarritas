@@ -22,9 +22,7 @@ public class ControladorRegistro{
 	
 	@Autowired
 	public ControladorRegistro(ServicioRegistro servicioRegistro) {
-		this.servicioRegistro = servicioRegistro;
-		
-		
+		this.servicioRegistro = servicioRegistro;	
 	}
 	
 	@RequestMapping(path = "/registro", method = RequestMethod.GET)
@@ -34,6 +32,7 @@ public class ControladorRegistro{
 		
 		modelo.put("upload_folder",AppConfig.getUploadDir());
 		modelo.put("datosRegistro", new DatosRegistro());
+		modelo.put("accountVerify", new AccountVerify());
 		
 		//pasamos las configuraciones de verificacion inicial
 		//para usuario y email
@@ -45,44 +44,44 @@ public class ControladorRegistro{
 		return new ModelAndView("registro", modelo);
 	}
 	
-	@RequestMapping(path="/validar-usuario")
-	public ModelAndView validarUsuario(@ModelAttribute("datosRegistro") DatosRegistro datosRegistro, HttpServletRequest request) {
+	@RequestMapping(path="/validar-usuario" , method = RequestMethod.POST)
+	public ModelAndView validarUsuario(@ModelAttribute("accountVerify") AccountVerify accountVerify, HttpServletRequest request) {
 		ModelMap model = new ModelMap();
-		System.out.println(datosRegistro.toString());
+		
 		//validamos que no exista el nombre de usuario
-				long res = servicioRegistro.existeUsuario(datosRegistro.getUsername());
+				long res = servicioRegistro.existeUsuario(accountVerify.getUsuario());
 				System.out.println(res);
 				if(res > 0) {
-					model.put("user_v_state", "no");
-					
-					model.put("user_v_icon", "x");
+					model.put("user_v_state", AccountVerify.result.CHECK_NO);
 					
 				}else {
-					model.put("user_v_state", "ok");
-					model.put("user_v_icon", "check");
+					model.put("user_v_state", AccountVerify.result.CHECK_OK);
 				}
+				
+				model.put("error_state", "hidden");
 				
 				return new ModelAndView("registro", model);
 				
 				
 	}
 	
-	@RequestMapping(path="/validar-email")
+	@RequestMapping(path="/validar-email" , method = RequestMethod.POST)
 	public ModelAndView validarEmail(@ModelAttribute("datosRegistro") DatosRegistro datosRegistro, HttpServletRequest request) {
-		ModelMap model = new ModelMap();
+		ModelMap modelo = new ModelMap();
 		
 		//validamos que no exista el email
 				long res = servicioRegistro.existeEmail(datosRegistro.getEmail());
 				if(res> 0) {
-					model.put("email_v_state", "no");
-					model.put("email_v_icon", "x");
+					modelo.put("email_v_state", "no");
+					modelo.put("email_v_icon", "x");
 					
 				}else {
-					model.put("email_v_state", "ok");
-					model.put("email_v_icon", "check");
+					modelo.put("email_v_state", "ok");
+					modelo.put("email_v_icon", "check");
 				}
+				modelo.put("error_state", "hidden");
 				
-				return new ModelAndView("registro", model);
+				return new ModelAndView("registro", modelo);
 				
 				
 	}

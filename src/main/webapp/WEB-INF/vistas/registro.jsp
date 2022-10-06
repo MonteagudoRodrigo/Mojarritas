@@ -69,20 +69,33 @@
 	                                   <div class="step-form">
 	                                        
 	                                        <div class="input-group my-3">
+	                                        	 <form:form action="validar-usuario" id="form-user"  method="POST" modelAttribute="accountVerify">
 	                                                <span class="input-group-text" id="basic-addon1">@</span>
-	                                                <form:input path="username" type="text" id="username" class="form-control" placeholder="Nombre de Usuario" aria-label="username" aria-describedby="basic-addon1" />
-		                                            
-		                                            
-		                                             <span class="input-group-text verify ${user_v_state}" id="verifica-user" ${verify_u_attr}>
-		                                                    <i class="fa-solid fa-${user_v_icon}"></i>
-		                                              </span>
-		                                        
-			                     
+	                                                <form:input path="usuario" type="text" id="username" class="form-control" placeholder="Nombre de Usuario" aria-label="username" aria-describedby="basic-addon1" />
+		                                             <!-- 
+		                                            		<c:if test="${user_v_state.type eq AccountVerify.result.CHECK_OK}">	
+				                                             <span class="input-group-text verify ok" id="verifica-user">
+				                                                    <i class="fa-solid fa-check"></i>
+				                                             </span>
+		                                        			</c:if>
+		                                        			<c:if test="${user_v_state.type eq AccountVerify.result.CHECK_NO}">	
+				                                             <span class="input-group-text verify no" id="verifica-user">
+				                                                    <i class="fa-solid fa-x"></i>
+				                                             </span>
+		                                        			</c:if>
+		                                        			<c:if test="${empty user_v_state}">	
+				                                             <span class="input-group-text verify ok" id="verifica-user" hidden="true">
+				                                                    <i class="fa-solid fa-check"></i>
+				                                             </span>
+		                                        			</c:if>
+			                      -->
 		                                               
 		                                               
 	                                                <button class="btn btn-primary" type="button" id="btn-valida-usuario">Verificar</button>
-	                                                
+	                                              </form:form>  
+	                                             
 	                                        </div>
+	                                         <form:input path="username" type="hidden" id="nombre-usuario" />
 	                                        <div class="input-group my-3">
 	                                            <span class="input-group-text" id="basic-addon1">@</span>
 	                                            <form:input path="email" id="email" type="email" class="form-control" placeholder="Email"  />
