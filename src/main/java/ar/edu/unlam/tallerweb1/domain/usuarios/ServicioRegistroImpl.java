@@ -42,12 +42,12 @@ public class ServicioRegistroImpl implements ServicioRegistro{
 	
 	
 	@Override
-	public Usuario existeEmail(String email) {
+	public long existeEmail(String email) {
 		return servicioRegistroDao.buscar(email);
 	}
 	
 	@Override
-	public Usuario existeUsuario(String username) {
+	public long existeUsuario(String username) {
 		return servicioRegistroDao.buscarUsuario(username);
 	}
 	

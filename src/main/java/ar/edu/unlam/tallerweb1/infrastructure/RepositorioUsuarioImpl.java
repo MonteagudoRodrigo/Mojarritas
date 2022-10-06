@@ -7,6 +7,7 @@ import java.io.Serializable;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -38,11 +39,13 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 	}
 
 	@Override
-	public Usuario buscar(String email) {
+	public long buscar(String email) {
 		final Session session = sessionFactory.getCurrentSession();
-		return (Usuario) session.createCriteria(Usuario.class)
+		return (long) session.createCriteria(Usuario.class)
+				.setProjection(Projections.rowCount())
 				.add(Restrictions.eq("email", email))
 				.uniqueResult();
+				
 	}
 
 	@Override
@@ -56,8 +59,9 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 	}
 	
 	@Override
-	public Usuario buscarUsuario(String username) {
-		return (Usuario) sessionFactory.getCurrentSession().createCriteria(Usuario.class)
+	public long buscarUsuario(String username) {
+		return (long) sessionFactory.getCurrentSession().createCriteria(Usuario.class)
+				.setProjection(Projections.rowCount())
 				.add(Restrictions.eq("username", username))
 				.uniqueResult();
 	}

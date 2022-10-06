@@ -88,16 +88,31 @@ prev.addEventListener("click", function(){
 
 });
 
-btn_val_email.addEventListener("click", function(){
+btn_val_email.addEventListener("click", function(e){
 	console.log("click");
-	//frm.setAttribute("action","validar-usuario");
-	//frm.submit();
+	
+	if(input_email.value == ''){
+			alerta[0].classList.remove("hidden");
+			alert_msg.innerHTML="Debe ingresar un email";
+			
+			return false;
+	}
+	frm.removeAttribute("action");		
+	frm.setAttribute("action","validar-email");
+	frm.submit();
 });
 
 btn_val_user.addEventListener("click", function(){
 	console.log("click");
-	//frm.setAttribute("action","validar-usuario");
-	//frm.submit();
+	if(input_username.value == ''){
+			alerta[0].classList.remove("hidden");
+			alert_msg.innerHTML="Debe ingresar un nombre de usuario";
+			
+			return false;
+	}	
+	frm.removeAttribute("action");	
+	frm.setAttribute("action","validar-usuario");
+	frm.submit();
 });
 
 //limpiar verificacion al escribir en user y email
@@ -161,8 +176,9 @@ function showStep(curStep){
 
 function validaCuenta(curStep){
 	//validaciones para datos de cuenta
+	
 	if(curStep == 1){
-		if(flag_user.hasAttribute("hidden")){
+		if(flag_user.hasAttribute('hidden')){
 		alert_msg.innerHTML="Verifique el nombre de usuario para continuar";
 		alerta[0].classList.remove("hidden");
 		return false;

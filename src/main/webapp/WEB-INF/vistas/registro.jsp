@@ -61,7 +61,7 @@
                         <form:form action="validar-registro" id="form"  method="POST" modelAttribute="datosRegistro" enctype="multipart/form-data">
                         
 	                            <div id="step-parent" class="step-container">
-	                                <div class="step fadeIn activate">
+	                                <div class="step activate">
 	                                    <div class="step-tittle">
 	                                        <h4>Empecemos con los datos de tu cuenta</h4>
 	                                    </div>
@@ -73,7 +73,7 @@
 	                                                <form:input path="username" type="text" id="username" class="form-control" placeholder="Nombre de Usuario" aria-label="username" aria-describedby="basic-addon1" />
 		                                            
 		                                            
-			                                             <span class="input-group-text verify ${user_v_state}" id="verifica-user">
+			                                             <span class="input-group-text verify ${user_v_state}" id="verifica-user" ${verify_u_attr}>
 			                                                    <i class="fa-solid fa-${user_v_icon}"></i>
 			                                              </span>
 			                                        
@@ -85,17 +85,19 @@
 	                                        </div>
 	                                        <div class="input-group my-3">
 	                                            <span class="input-group-text" id="basic-addon1">@</span>
-	                                            <form:input path="email" id="email" type="email" class="form-control" placeholder="Email" />
+	                                            <form:input path="email" id="email" type="email" class="form-control" placeholder="Email"  />
 		                                            
-			                                             <span class="input-group-text verify ${email_v_state}" id="verifica-email">
+			                                             <span class="input-group-text verify ${email_v_state}" id="verifica-email" ${verify_e_attr}>
 			                                                    <i class="fa-solid fa-${email_v_icon}"></i>
 			                                              </span>
+			                                              
 			                                     
 	                                            <button class="btn btn-primary" type="button" id="btn-valida-email">Verificar</button>
 	                                        </div>
+	                                        <p>${verify_e_attr}</p>
 	                                        <div class="">
-	                                            <form:input path="password" type="password" id="password" class="form-control my-3" placeholder="Contraseña" required="true"/>   
-	                                            <input  type="password" id="password-repeat" class="form-control my-3" placeholder="Repite la Contraseña" required/> 
+	                                            <form:input path="password" type="password" id="password" class="form-control my-3" placeholder="Contraseña" />   
+	                                            <form:input path="rpt_password" type="password" id="password-repeat" class="form-control my-3" placeholder="Repite la Contraseña" /> 
 	                                        </div>
 	
 	                                    </div>
@@ -106,8 +108,8 @@
 	                                        <h4>Queremos conocerte un poco más</h4>
 	                                    </div>
 	                                    <div class="step-form">
-	                                        <form:input path="nombre" type="text" id="nombre" class="form-control  my-3" placeholder="Nombre" required="true"/> 		  
-	                                        <form:input path="apellido" type="text" id="apellido" class="form-control my-3" placeholder="Apellido" required="true"/>
+	                                        <form:input path="nombre" type="text" id="nombre" class="form-control  my-3" placeholder="Nombre"/> 		  
+	                                        <form:input path="apellido" type="text" id="apellido" class="form-control my-3" placeholder="Apellido" />
 	                                        <div class="input-group my-3">
 	                                            <label class="input-group-text" for="inputGroupSelect01">Sexo</label>
 	                                            <form:select path="sexo" class="form-select" id="select-genero">
@@ -147,7 +149,7 @@
 	                                            </div>
 	                                        </div>
 	                                        
-	                                        <input path="nacimiento" type="hidden" name="fnac" id="fnac">
+	                                        <form:input path="nacimiento" type="hidden" name="fnac" id="fnac"/>
 	                                        
 	                                    </div>
 	                                </div>
@@ -204,21 +206,21 @@
                     </div> 
                     
                     <!-- MENSAJE DE ERROR -->
-                    <c:if test="${not empty error}">
-	                    <div class="alert alert-danger d-flex align-items-center p-2 hidden" role="alert" >
+                    
+	                    <div class="alert alert-danger d-flex align-items-center p-2 ${error_state}" role="alert" >
 	                        <i class="fa-solid fa-triangle-exclamation me-3 ml-2"></i>
 	                        <div id="text-alert">
-	                        ${error}
+	                        ${error_msg}
 	                        </div>
 	                    </div>
-					</c:if>
+					
                     
                     <!-- BOTONES -->
                      <div id="frm-buttons">
                         <hr>
-                        <form:button class="btn btn-primary btn-secondary btn-step" id="prev-btn" type="button">Atras</form:button> 
-                        <form:button class="btn btn-primary btn-step" id="next-btn" type="button">Siguiente</form:button> 
-                        <form:button class="btn btn-primary btn-meet" id="submit-btn" type="submit">Confirmar Registro</form:button>
+                        <button class="btn btn-primary btn-secondary btn-step" id="prev-btn" type="button">Atras</button> 
+                        <button class="btn btn-primary btn-step" id="next-btn" type="button">Siguiente</button> 
+                        <button class="btn btn-primary btn-meet" id="submit-btn" type="submit">Confirmar Registro</button>
                     </div>
                         
                     

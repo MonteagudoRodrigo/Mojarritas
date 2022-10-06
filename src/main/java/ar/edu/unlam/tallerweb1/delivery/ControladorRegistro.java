@@ -13,14 +13,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unlam.tallerweb1.config.AppConfig;
 import ar.edu.unlam.tallerweb1.domain.usuarios.ServicioRegistro;
-import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
+
 
 
 @Controller
 public class ControladorRegistro{
 	private ServicioRegistro servicioRegistro;
-	private AppConfig cfg;
-
+	
 	@Autowired
 	public ControladorRegistro(ServicioRegistro servicioRegistro) {
 		this.servicioRegistro = servicioRegistro;
@@ -32,10 +31,16 @@ public class ControladorRegistro{
 		
 		ModelMap modelo = new ModelMap();
 		
-		modelo.put("upload_folder",cfg.getUploadDir());
+		modelo.put("upload_folder",AppConfig.getUploadDir());
 		modelo.put("datosRegistro", new DatosRegistro());
-		modelo.put("reg_ok", "");
-		modelo.put("register", "hidden");
+		
+		//pasamos las configuraciones de verificacion inicial
+		//para usuario y email
+		modelo.put("verify_u_attr", "hidden");
+		modelo.put("verify_e_attr", "hidden");
+		//config inicial de errores
+		modelo.put("error_state", "hidden");
+		
 		return new ModelAndView("registro", modelo);
 	}
 	
@@ -44,11 +49,15 @@ public class ControladorRegistro{
 		ModelMap model = new ModelMap();
 		
 		//validamos que no exista el nombre de usuario
-				Usuario usuario = servicioRegistro.existeUsuario(datosRegistro.getUsername());
-				if(usuario == null) {
-					model.put("user_ok", true);
+				long res = servicioRegistro.existeUsuario(datosRegistro.getUsername());
+				if(res > 0) {
+					model.put("user_v_state", "no");
+					
+					model.put("user_v_icon", "x");
+					
 				}else {
-					model.put("user_ok", false);
+					model.put("user_v_state", "ok");
+					model.put("user_v_icon", "check");
 				}
 				
 				return new ModelAndView("registro", model);
@@ -61,11 +70,14 @@ public class ControladorRegistro{
 		ModelMap model = new ModelMap();
 		
 		//validamos que no exista el email
-				Usuario usuario = servicioRegistro.existeEmail(datosRegistro.getEmail());
-				if(usuario == null) {
-					model.put("email_ok", true);
+				long res = servicioRegistro.existeEmail(datosRegistro.getEmail());
+				if(res> 0) {
+					model.put("email_v_state", "no");
+					model.put("email_v_icon", "x");
+					
 				}else {
-					model.put("email_ok", false);
+					model.put("email_v_state", "ok");
+					model.put("email_v_icon", "check");
 				}
 				
 				return new ModelAndView("registro", model);

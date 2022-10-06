@@ -6,6 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class DatosRegistro {
 	private String email;
     private String password;
+    private String rpt_password;
     private String nombre;
     private String apellido;
     private String username;
@@ -60,6 +61,12 @@ public class DatosRegistro {
 	}
 	public void setNacimiento(DateType nacimiento) {
 		this.nacimiento = nacimiento;
+	}
+	public String getRpt_password() {
+		return rpt_password;
+	}
+	public void setRpt_password(String rpt_password) {
+		this.rpt_password = rpt_password;
 	}
     
     
