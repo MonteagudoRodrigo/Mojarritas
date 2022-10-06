@@ -6,12 +6,12 @@ import org.springframework.web.multipart.MultipartFile;
 public class DatosRegistro {
 	private String email;
     private String password;
-    private String rptpassword;
+
     private String nombre;
     private String apellido;
     private String username;
-    private int sexo;
-    private DateType nacimiento;
+    private String sexo;
+    private String nacimiento;
     private MultipartFile imagen;
     
 	public String getUsername() {
@@ -50,24 +50,19 @@ public class DatosRegistro {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	public int getSexo() {
+	public String getSexo() {
 		return sexo;
 	}
-	public void setSexo(int sexo) {
+	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	public DateType getNacimiento() {
+	public String getNacimiento() {
 		return nacimiento;
 	}
-	public void setNacimiento(DateType nacimiento) {
+	public void setNacimiento(String nacimiento) {
 		this.nacimiento = nacimiento;
 	}
-	public String getRpt_password() {
-		return rptpassword;
-	}
-	public void setRpt_password(String rpt_password) {
-		this.rptpassword = rpt_password;
-	}
+
     
     
 }

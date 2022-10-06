@@ -1,5 +1,9 @@
 package ar.edu.unlam.tallerweb1.domain.usuarios;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import org.hibernate.type.DateType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,8 +35,13 @@ public class ServicioRegistroImpl implements ServicioRegistro{
 		usuario.setApellido(datos.getApellido());
 		usuario.setUsername(datos.getUsername());
 		usuario.setEmail(datos.getEmail());
-		usuario.setSexo(datos.getSexo());
-		usuario.setNacimiento(datos.getNacimiento());
+		usuario.setSexo(Integer.parseInt(datos.getSexo()));
+		try {
+			usuario.setNacimiento(new SimpleDateFormat("yyyy-mm-dd").parse(datos.getNacimiento()));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		usuario.setPassword(datos.getPassword());
 		
 		usuario.setImagen(Archivos.guardarArchivo(datos.getImagen(),  AppConfig.getUploadDir()));

@@ -1,5 +1,7 @@
 package ar.edu.unlam.tallerweb1.domain.usuarios;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +22,7 @@ public class Usuario {
 	private String apellido;
 	private String username;
 	private int sexo;
-	private DateType nacimiento;
+	private Date nacimiento;
 	private String token;
 	private String imagen;
 	
@@ -84,7 +86,7 @@ public class Usuario {
 	public DateType getNacimiento() {
 		return nacimiento;
 	}
-	public void setNacimiento(DateType nacimiento) {
-		this.nacimiento = nacimiento;
+	public void setNacimiento(Date date) {
+		this.nacimiento = date;
 	}
 }

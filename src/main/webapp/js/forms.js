@@ -88,7 +88,7 @@ prev.addEventListener("click", function(){
 
 });
 
-btn_val_email.addEventListener("click", function(e){
+btn_val_email.addEventListener("click", function(){
 	console.log("click");
 	
 	if(input_email.value == ''){
@@ -97,6 +97,7 @@ btn_val_email.addEventListener("click", function(e){
 			
 			return false;
 	}
+	alerta[0].classList.add("hidden");
 	frm.removeAttribute("action");		
 	frm.setAttribute("action","validar-email");
 	frm.submit();
@@ -109,7 +110,8 @@ btn_val_user.addEventListener("click", function(){
 			alert_msg.innerHTML="Debe ingresar un nombre de usuario";
 			
 			return false;
-	}	
+	}
+	alerta[0].classList.add("hidden");	
 	frm.removeAttribute("action");	
 	frm.setAttribute("action","validar-usuario");
 	frm.submit();
