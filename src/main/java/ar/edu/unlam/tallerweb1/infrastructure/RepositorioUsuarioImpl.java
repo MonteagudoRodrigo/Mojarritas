@@ -2,6 +2,9 @@ package ar.edu.unlam.tallerweb1.infrastructure;
 
 import ar.edu.unlam.tallerweb1.domain.usuarios.RepositorioUsuario;
 import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
+
+import java.io.Serializable;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -30,7 +33,8 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 
 	@Override
 	public void guardar(Usuario usuario) {
-		sessionFactory.getCurrentSession().save(usuario);
+		Serializable res = sessionFactory.getCurrentSession().save(usuario);
+		System.out.println(res.toString());
 	}
 
 	@Override

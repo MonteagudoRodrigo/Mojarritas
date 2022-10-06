@@ -1,5 +1,6 @@
 package ar.edu.unlam.tallerweb1.delivery;
 
+import org.hibernate.type.DateType;
 import org.springframework.web.multipart.MultipartFile;
 
 public class DatosRegistro {
@@ -8,6 +9,8 @@ public class DatosRegistro {
     private String nombre;
     private String apellido;
     private String username;
+    private int sexo;
+    private DateType nacimiento;
     private MultipartFile imagen;
     
 	public String getUsername() {
@@ -45,6 +48,18 @@ public class DatosRegistro {
 	}
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
+	}
+	public int getSexo() {
+		return sexo;
+	}
+	public void setSexo(int sexo) {
+		this.sexo = sexo;
+	}
+	public DateType getNacimiento() {
+		return nacimiento;
+	}
+	public void setNacimiento(DateType nacimiento) {
+		this.nacimiento = nacimiento;
 	}
     
     

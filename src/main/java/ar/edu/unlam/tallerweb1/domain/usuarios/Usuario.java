@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.type.DateType;
+
 @Entity
 public class Usuario {
 
@@ -17,6 +19,8 @@ public class Usuario {
 	private String nombre;
 	private String apellido;
 	private String username;
+	private int sexo;
+	private DateType nacimiento;
 	private String token;
 	private String imagen;
 	
@@ -70,5 +74,17 @@ public class Usuario {
 	}
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
+	}
+	public int getSexo() {
+		return sexo;
+	}
+	public void setSexo(int sexo) {
+		this.sexo = sexo;
+	}
+	public DateType getNacimiento() {
+		return nacimiento;
+	}
+	public void setNacimiento(DateType nacimiento) {
+		this.nacimiento = nacimiento;
 	}
 }
