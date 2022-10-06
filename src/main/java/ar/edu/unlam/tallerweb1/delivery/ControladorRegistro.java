@@ -35,6 +35,7 @@ public class ControladorRegistro{
 		modelo.put("upload_folder",cfg.getUploadDir());
 		modelo.put("datosRegistro", new DatosRegistro());
 		modelo.put("reg_ok", "");
+		modelo.put("register", true);
 		return new ModelAndView("registro", modelo);
 	}
 	

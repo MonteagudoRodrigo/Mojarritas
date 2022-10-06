@@ -292,10 +292,10 @@
       
 		
 		
-		<script src="./js/bootstrap.min.js" type="text/javascript"></script>
-		<script src="./js/bootstrap.bundle.js" type="text/javascript"></script>
-		<script src="./js/preview.js" type="text/javascript"></script>
-		<script src="./js/forms.js" type="text/javascript"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="js/bootstrap.bundle.js" type="text/javascript"></script>
+		<script src="js/preview.js" type="text/javascript"></script>
+		<script src="js/forms.js" type="text/javascript"></script>
 	</body>
 </body>
 </html>
