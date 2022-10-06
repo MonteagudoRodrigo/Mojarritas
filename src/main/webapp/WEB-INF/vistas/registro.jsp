@@ -25,12 +25,9 @@
         <div class="container-fluid text-center">
             <!--todo el contenido de registro-->
         
-        <c:if test="${register}">
-        	 <div id="register">
-        </c:if>
-        <c:if test="${not register}">
-	        <div id="register" class="hidden"> 
-        </c:if>    
+       
+	        <div id="register" class="${register}"> 
+   
             
                 <img src="img/logo/logo_dark.png" class="mt-brand mb-sm-5"  alt="meeting">  
                 
@@ -73,47 +70,28 @@
 	                                        
 	                                        <div class="input-group my-3">
 	                                                <span class="input-group-text" id="basic-addon1">@</span>
-	                                                <form:input path="username" type="text" id="username" class="form-control" placeholder="Nombre de Usuario" aria-label="username" aria-describedby="basic-addon1" required="true"/>
+	                                                <form:input path="username" type="text" id="username" class="form-control" placeholder="Nombre de Usuario" aria-label="username" aria-describedby="basic-addon1" />
 		                                            
-		                                            <c:if test="${empty user_ok}">
-			                                             <span class="input-group-text verify hidden" id="verifica-user">
-			                                                    <i class="fa-solid fa-check"></i>
+		                                            
+			                                             <span class="input-group-text verify ${user_v_state}" id="verifica-user">
+			                                                    <i class="fa-solid fa-${user_v_icon}"></i>
 			                                              </span>
-			                                        </c:if>
-			                                        <c:if test="${user_ok}">
-			                                             <span class="input-group-text verify ok" id="verifica-user">
-			                                                    <i class="fa-solid fa-check"></i>
-			                                              </span>
-			                                        </c:if>
-			                                        <c:if test="${not user_ok}">
-			                                             <span class="input-group-text verify no" id="verifica-user">
-			                                                    <i class="fa-solid fa-x"></i>
-			                                              </span>
-			                                        </c:if>
+			                                        
+			                     
 		                                               
 		                                               
-	                                                <form:button class="btn btn-primary" type="button" id="btn-valida-usuario">Verificar</form:button>
+	                                                <button class="btn btn-primary" type="button" id="btn-valida-usuario">Verificar</button>
 	                                                
 	                                        </div>
 	                                        <div class="input-group my-3">
 	                                            <span class="input-group-text" id="basic-addon1">@</span>
-	                                            <form:input path="email" id="email" type="email" class="form-control" placeholder="Email" required="true"/>
-		                                            <c:if test="${empty email_ok}">
-			                                             <span class="input-group-text verify hidden" id="verifica-email">
-			                                                    <i class="fa-solid fa-check"></i>
+	                                            <form:input path="email" id="email" type="email" class="form-control" placeholder="Email" />
+		                                            
+			                                             <span class="input-group-text verify ${email_v_state}" id="verifica-email">
+			                                                    <i class="fa-solid fa-${email_v_icon}"></i>
 			                                              </span>
-			                                        </c:if>
-			                                        <c:if test="${email_ok}">
-			                                             <span class="input-group-text verify ok" id="verifica-email">
-			                                                    <i class="fa-solid fa-check"></i>
-			                                              </span>
-			                                        </c:if>
-			                                        <c:if test="${not email_ok}">
-			                                             <span class="input-group-text verify no" id="verifica-email">
-			                                                    <i class="fa-solid fa-x"></i>
-			                                              </span>
-			                                        </c:if>
-	                                            <form:button class="btn btn-primary" type="button" id="btn-valida-email">Verificar</form:button>
+			                                     
+	                                            <button class="btn btn-primary" type="button" id="btn-valida-email">Verificar</button>
 	                                        </div>
 	                                        <div class="">
 	                                            <form:input path="password" type="password" id="password" class="form-control my-3" placeholder="Contraseña" required="true"/>   
