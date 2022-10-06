@@ -161,12 +161,8 @@
 	                                    <div class="step-form">
 	                                        <div class="d-grid center profile mx-auto large bd-red-meet mt-3">
 	                                          
-	                                            <c:if test="${empty datosRegistro.imagen}">
+	                                            
 	                                            <img class = "  mx-auto d-block large"  src="profiles/default.png" id="preview" alt="">
-	                                            </c:if>  
-	                                            <c:if test="${not empty datosRegistro.imagen}">      
-	                                            <img class = "  mx-auto d-block large"  src="${upload_folder}datosRegistro.imagen" id="preview" alt="">        
-	                                            </c:if>        
 	                                            
 	                                        </div>
 	                                        <div class="btn btn-primary mx-auto  text-center mt-3">
