@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="es">
-	<head>
+<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,8 +18,8 @@
 	    <!--CHECKMAARK-->
 	    <link href="css/checkmark.css" rel="stylesheet">     
 </head>
-<body>
-    <body class="bg-dark-gray">
+
+<body class="bg-dark-gray">
 		
         <!--CONTAINER GENERAL-->
         <div class="container-fluid text-center">
@@ -73,10 +73,10 @@
 	                                                <form:input path="username" type="text" id="username" class="form-control" placeholder="Nombre de Usuario" aria-label="username" aria-describedby="basic-addon1" />
 		                                            
 		                                            
-			                                             <span class="input-group-text verify ${user_v_state}" id="verifica-user" ${verify_u_attr}>
-			                                                    <i class="fa-solid fa-${user_v_icon}"></i>
-			                                              </span>
-			                                        
+		                                             <span class="input-group-text verify ${user_v_state}" id="verifica-user" ${verify_u_attr}>
+		                                                    <i class="fa-solid fa-${user_v_icon}"></i>
+		                                              </span>
+		                                        
 			                     
 		                                               
 		                                               
@@ -94,10 +94,10 @@
 			                                     
 	                                            <button class="btn btn-primary" type="button" id="btn-valida-email">Verificar</button>
 	                                        </div>
-	                                        <p>${verify_e_attr}</p>
+	                                    
 	                                        <div class="">
 	                                            <form:input path="password" type="password" id="password" class="form-control my-3" placeholder="Contraseña" />   
-	                                            <form:input path="rpt_password" type="password" id="password-repeat" class="form-control my-3" placeholder="Repite la Contraseña" /> 
+	                                            <input  type="password" id="password-repeat" class="form-control my-3" placeholder="Repite la Contraseña" /> 
 	                                        </div>
 	
 	                                    </div>
@@ -128,14 +128,14 @@
 	                                            <div class="input-group me-3">
 	                                                <label class="input-group-text" for="select-dia">D</label>
 		                                                <select class="form-select" id="select-dia">
-		                                                	<option value="0" selected hidden disabled>Dia</option>
+		                                                	<option value="0" selected hidden="true" disabled>Dia</option>
 	                                               		</select>
 	                                            </div>
 	                                            <!-- MES -->
 	                                            <div class="input-group me-3">
 	                                                <label class="input-group-text" for="select-dia">M</label>
 	                                                <select class="form-select" id="select-mes">
-	                                                	<option value="0" selected hidden disabled>Mes</option>
+	                                                	<option value="0" selected hidden="true" disabled>Mes</option>
 	                                                
 	                                                </select>
 	                                            </div>
@@ -143,7 +143,7 @@
 	                                            <div class="input-group">
 	                                                <label class="input-group-text" for="select-dia">A</label>
 	                                                <select class="form-select" id="select-anio">
-	                                                	<option value="0" selected hidden disabled>Año</option>
+	                                                	<option value="0" selected hidden="true" disabled>Año</option>
 	                                                
 	                                                </select>
 	                                            </div>

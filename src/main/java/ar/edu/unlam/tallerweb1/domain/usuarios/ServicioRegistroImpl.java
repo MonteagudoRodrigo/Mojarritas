@@ -3,7 +3,7 @@ package ar.edu.unlam.tallerweb1.domain.usuarios;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
+
 
 import ar.edu.unlam.tallerweb1.config.AppConfig;
 import ar.edu.unlam.tallerweb1.delivery.DatosRegistro;
@@ -14,7 +14,7 @@ import ar.edu.unlam.tallerweb1.utils.Archivos;
 public class ServicioRegistroImpl implements ServicioRegistro{
 
 	private RepositorioUsuario servicioRegistroDao;
-	private AppConfig config;
+	
 	
 	@Autowired
 	public ServicioRegistroImpl(RepositorioUsuario servicioRegistroDao){

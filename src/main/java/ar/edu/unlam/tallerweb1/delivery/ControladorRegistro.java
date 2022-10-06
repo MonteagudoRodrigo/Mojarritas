@@ -47,9 +47,10 @@ public class ControladorRegistro{
 	@RequestMapping(path="/validar-usuario")
 	public ModelAndView validarUsuario(@ModelAttribute("datosRegistro") DatosRegistro datosRegistro, HttpServletRequest request) {
 		ModelMap model = new ModelMap();
-		
+		System.out.println(datosRegistro.toString());
 		//validamos que no exista el nombre de usuario
 				long res = servicioRegistro.existeUsuario(datosRegistro.getUsername());
+				System.out.println(res);
 				if(res > 0) {
 					model.put("user_v_state", "no");
 					
