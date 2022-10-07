@@ -208,18 +208,18 @@ var existe_email = flag_email.classList.contains("no");
 		}
 		if(pass.value == ''){
 			alerta[0].classList.remove("hidden");
-			alert_msg.innerHTML="Debe ingresar una contraseña";
+			alert_msg.innerHTML="Debe ingresar una contrase&#241;a";
 			
 			return false;
 		}
 		if(pass_rpt.value == ''){
-			alert_msg.innerHTML="Debe repetir la contraseña";
+			alert_msg.innerHTML="Debe repetir la contrase&#241;a";
 			alerta[0].classList.remove("hidden");
 			return false;
 		}
 		
 		if(pass.value != pass_rpt.value){
-			alert_msg.innerHTML="Las contraseñas no coinciden";
+			alert_msg.innerHTML="Las contrase&#241;as no coinciden";
 			alerta[0].classList.remove("hidden");
 			return false;
 		}
@@ -241,7 +241,7 @@ var existe_email = flag_email.classList.contains("no");
 		}
 		if(sel_genero.value == '0'){
 			alerta[0].classList.remove("hidden");
-			alert_msg.innerHTML="Debe Seleccionar Género";
+			alert_msg.innerHTML="Debe Seleccionar G&#233;nero";
 			
 			return false;
 		}
