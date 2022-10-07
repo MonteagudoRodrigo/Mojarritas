@@ -176,7 +176,7 @@
 	                                            </div>
 	                                        </div>
 	                                        
-	                                        <form:input path="nacimiento" type="text" name="fnac" id="fnac"/>
+	                                        <form:input path="nacimiento" type="hidden" name="fnac" id="fnac"/>
 	                                        
 	                                    </div>
 	                                </div>

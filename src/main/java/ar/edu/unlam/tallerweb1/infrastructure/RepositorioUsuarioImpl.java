@@ -45,6 +45,7 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 				.setProjection(Projections.rowCount())
 				.add(Restrictions.eq("email", email))
 				.uniqueResult();
+		
 				
 	}
 

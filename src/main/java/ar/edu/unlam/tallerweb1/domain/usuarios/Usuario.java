@@ -1,13 +1,13 @@
 package ar.edu.unlam.tallerweb1.domain.usuarios;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.type.DateType;
+
 
 @Entity
 public class Usuario {
@@ -83,7 +83,7 @@ public class Usuario {
 	public void setSexo(int sexo) {
 		this.sexo = sexo;
 	}
-	public DateType getNacimiento() {
+	public Date getNacimiento() {
 		return nacimiento;
 	}
 	public void setNacimiento(Date date) {

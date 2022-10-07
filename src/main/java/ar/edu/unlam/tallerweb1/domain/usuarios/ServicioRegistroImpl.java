@@ -2,6 +2,9 @@ package ar.edu.unlam.tallerweb1.domain.usuarios;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,19 +38,28 @@ public class ServicioRegistroImpl implements ServicioRegistro{
 		usuario.setUsername(datos.getUsername());
 		usuario.setEmail(datos.getEmail());
 		usuario.setSexo(Integer.parseInt(datos.getSexo()));
-		try {
-			usuario.setNacimiento(new SimpleDateFormat("yyyy-mm-dd").parse(datos.getNacimiento()));
-		} catch (ParseException e) {
-			System.out.println(e.getMessage());
-			e.printStackTrace();
-		}
+		usuario.setNacimiento(this.formatearFecha(datos.getNacimiento()));
 		usuario.setPassword(datos.getPassword());
-		
 		usuario.setImagen(Archivos.guardarArchivo(datos.getImagen(),  AppConfig.getUploadDir()));
 		
 		this.servicioRegistroDao.registrarUsuario(usuario);
 	}
 	
+	
+	private java.sql.Date formatearFecha(String fecha) {
+
+	  	SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+        Date parsed = null;
+        
+        try {
+			parsed = format.parse(fecha);
+		} catch (ParseException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return new java.sql.Date(parsed.getTime());
+	}
 	
 	@Override
 	public long existeEmail(String email) {

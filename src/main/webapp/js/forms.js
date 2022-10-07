@@ -298,13 +298,13 @@ function generarCalendario(){
 	}
 
 	dia.value = hoy.getDay();
-	fnac.value = new Date(Number(anio.value), Number(mes.value),Number(dia.value)).toLocaleDateString();
+	fnac.value = anio.value + '' + mes.value.padStart(2,0) + '' + dia.value.padStart(2,0);
 
 }
 
 //cambios de fechas
 dia.addEventListener("change", function(){
-	fnac.value = new Date(Number(anio.value), Number(mes.value),Number(this.value)).toLocaleDateString();
+	fnac.value = anio.value + '' + mes.value.padStart(2,0) + '' + this.value.padStart(2,0);
 });
 
 anio.addEventListener("change", function(){
@@ -332,7 +332,7 @@ anio.addEventListener("change", function(){
 	}
 
 	dia.value = dsel;
-	fnac.value = new Date(Number(this.value), Number(mes.value),Number(dia.value)).toLocaleDateString();
+	fnac.value = this.value + '' + mes.value.padStart(2,0) + '' + dia.value.padStart(2,0);
 
 });
 
@@ -361,7 +361,7 @@ mes.addEventListener("change", function(){
 	
 	console.log(this.value);
 	dia.value = dsel;
-	fnac.value = new Date(Number(anio.value), Number(this.value), Number(dia.value)).toLocaleDateString();
+	fnac.value = anio.value + '' + this.value.padStart(2,0) + '' + dia.value.padStart(2,0);
 });
 
 function verificarDatosUsuario(curStep){

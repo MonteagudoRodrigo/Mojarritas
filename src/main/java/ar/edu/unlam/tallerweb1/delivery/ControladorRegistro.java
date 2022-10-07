@@ -94,6 +94,7 @@ public class ControladorRegistro{
 		model.put("nombre", datosRegistro.getNombre());
 		model.put("apellido", datosRegistro.getApellido());
 		//informamos que se guardo correctamente
+		model.put("register", "hidden");
 		model.put("reg_ok", "ok");
 		
 		return new ModelAndView("registro", model);
