@@ -2,8 +2,7 @@ package ar.edu.unlam.tallerweb1.domain.usuarios;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
