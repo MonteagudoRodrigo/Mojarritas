@@ -1,5 +1,7 @@
 package ar.edu.unlam.tallerweb1.infrastructure;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import ar.edu.unlam.tallerweb1.domain.publicaciones.Publicacion;
 import ar.edu.unlam.tallerweb1.domain.publicaciones.RepositorioPublicacion;
+import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
 
 @Repository("repositorioPublicacion")
 public class RepositorioPublicacionImpl implements RepositorioPublicacion{
@@ -49,6 +52,14 @@ public class RepositorioPublicacionImpl implements RepositorioPublicacion{
 		return (Publicacion) session.createCriteria(Publicacion.class)
 				.add(Restrictions.eq("id",id))
 				.uniqueResult();
+	}
+
+	@Override
+	public List<Publicacion> buscarPor(Usuario usuario) {
+		return this.sessionFactory.getCurrentSession()
+			.createCriteria(Publicacion.class)
+			.add(Restrictions.eq("usuario", usuario))
+			.list();
 	}
 
 }

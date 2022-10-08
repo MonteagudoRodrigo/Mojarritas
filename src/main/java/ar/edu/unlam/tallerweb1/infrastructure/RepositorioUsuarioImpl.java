@@ -50,4 +50,12 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 		this.guardar(usuario);
 	}
 
+	@Override
+	public Usuario buscarUsuario(String userName) {
+		final Session session = sessionFactory.getCurrentSession();
+		return (Usuario) session.createCriteria(Usuario.class)
+				.add(Restrictions.eq("username", userName))
+				.uniqueResult();
+	}
+
 }

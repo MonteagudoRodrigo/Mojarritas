@@ -20,4 +20,8 @@ public class ServicioPublicacionImpl implements ServicioPublicacion{
 		return servicioPublicacionDao.buscarPublicacion(id);
 	}
 
+	@Override
+	public void crearPublicacion(Publicacion publicacion) {
+		this.servicioPublicacionDao.crearPublicacion(publicacion);
+	}
 }

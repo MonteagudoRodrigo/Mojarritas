@@ -1,11 +1,14 @@
 package ar.edu.unlam.tallerweb1.domain.publicaciones;
 
-import java.util.Date;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
 
 @Entity
 public class Publicacion {
@@ -13,7 +16,10 @@ public class Publicacion {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Long usuarioId;
+	
+	@ManyToOne (optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private Usuario usuario;
+	
 	private Long lugarId;
 	private String titulo;
 	private String fecha;
@@ -24,14 +30,14 @@ public class Publicacion {
 	public Long getId() {
 		return id;
 	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 	public void setId(Long id) {
 		this.id = id;
-	}
-	public Long getUsuarioId() {
-		return usuarioId;
-	}
-	public void setUsuarioId(Long usuarioId) {
-		this.usuarioId = usuarioId;
 	}
 	public Long getLugarId() {
 		return lugarId;
