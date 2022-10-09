@@ -57,6 +57,20 @@ public class ControladorPublicacion {
 		HttpSession session = request.getSession();
 		
 		Publicacion publicacion = new Publicacion();
+		
+		String errores = (datosPublicacion.getTitulo())==""?"<br>TÍTULO":"";
+		errores = errores.concat((datosPublicacion.getDescripcion())==""?"<br>DESCRIPCIÓN":""); 
+		errores = errores.concat((datosPublicacion.getFecha())==""?"<br>FECHA":"");
+		errores = errores.concat((datosPublicacion.getLugar())==""?"<br>LUGAR":"");
+		errores = errores.concat((datosPublicacion.getCupo())==null?"<br>CUPO":"");
+		
+		if(errores!="") {
+			ModelMap modelo = new ModelMap();
+			modelo.put("error", errores.concat(" incompleto/s."));
+			return new ModelAndView("nuevaPublicacion",modelo);
+		}
+		
+		
 		publicacion.setTitulo(datosPublicacion.getTitulo());
 		publicacion.setDescripcion(datosPublicacion.getDescripcion());
 		publicacion.setUsuario((Usuario) session.getAttribute("usuario"));

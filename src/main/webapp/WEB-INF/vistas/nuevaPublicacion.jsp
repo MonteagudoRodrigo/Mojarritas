@@ -32,6 +32,14 @@
 						<button class="btn btn-primary" Type="Submit">Crear publicación</button>
 					</div>
 				</form:form>
+				<c:if test="${not empty error}">
+					<div class="alert alert-danger mt-4" role="alert">
+						<i class="fa-solid fa-triangle-exclamation"></i>
+						${error}
+					</div>
+			        
+		        </c:if>
+				${msg}
 			</div>
 		</div>
 		
