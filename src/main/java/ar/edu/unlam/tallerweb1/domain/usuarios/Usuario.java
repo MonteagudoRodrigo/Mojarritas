@@ -1,9 +1,13 @@
 package ar.edu.unlam.tallerweb1.domain.usuarios;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+
 
 @Entity
 public class Usuario {
@@ -17,8 +21,18 @@ public class Usuario {
 	private String nombre;
 	private String apellido;
 	private String username;
+	private int sexo;
+	private Date nacimiento;
+	private String token;
+	private String imagen;
 	
 	
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -56,5 +70,23 @@ public class Usuario {
 	}
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
+	}
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+	public int getSexo() {
+		return sexo;
+	}
+	public void setSexo(int sexo) {
+		this.sexo = sexo;
+	}
+	public Date getNacimiento() {
+		return nacimiento;
+	}
+	public void setNacimiento(Date date) {
+		this.nacimiento = date;
 	}
 }

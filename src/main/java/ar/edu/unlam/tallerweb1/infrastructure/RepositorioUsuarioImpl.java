@@ -46,8 +46,16 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 	}
 
 	@Override
-	public void registrarUsuario(String email, String password, String nombre, String apellido, String username) {
-		
+	public void registrarUsuario(Usuario usuario) {
+		this.guardar(usuario);
+	}
+
+	@Override
+	public Usuario buscarUsuario(String userName) {
+		final Session session = sessionFactory.getCurrentSession();
+		return (Usuario) session.createCriteria(Usuario.class)
+				.add(Restrictions.eq("username", userName))
+				.uniqueResult();
 	}
 
 }

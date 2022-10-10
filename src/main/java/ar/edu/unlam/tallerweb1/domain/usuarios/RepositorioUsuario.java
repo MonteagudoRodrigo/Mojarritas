@@ -1,12 +1,11 @@
 package ar.edu.unlam.tallerweb1.domain.usuarios;
 
-import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
-
 // Interface que define los metodos del Repositorio de Usuarios.
 public interface RepositorioUsuario {
 	Usuario buscarUsuario(String email, String password);
+	Usuario buscarUsuario(String userName);
 	void guardar(Usuario usuario);
     Usuario buscar(String email);
 	void modificar(Usuario usuario);
-	void registrarUsuario(String email, String password, String nombre, String apellido, String username);
+	void registrarUsuario(Usuario usuario);
 }
