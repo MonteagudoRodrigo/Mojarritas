@@ -32,4 +32,5 @@
     <mvc:resources mapping="/fonts/**" location="/fonts/" />
     <mvc:resources mapping="/img/**" location="/img/" />
     <mvc:resources mapping="/img/logo/**" location="/img/logo/" />
+    <mvc:resources mapping="/profiles/**" location="/profiles/" />
 </beans>
