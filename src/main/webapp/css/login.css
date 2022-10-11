@@ -1,9 +1,7 @@
 @charset "UTF-8";
-@import url(global.css);
 
 body{
-	background-color:  var(--mt-dark);
-    margin: 0px!important;
+	background-color: #1b1c22;
 }
 
 .login-container{
@@ -11,12 +9,6 @@ body{
 }
 
 .btn-meet{
-    background-color: var(--mt-red-meet)!important;
-    border-color: var(--mt-red-meet)!important;
-}
-
-
-
-.container{
-    max-width: 500px!important;
+    background-color: #f01e4c!important;
+    border-color: #f01e4c!important;
 }
