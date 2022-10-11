@@ -33,6 +33,11 @@ public class ControladorPublicacion {
 		
 		Publicacion publicacion = servicioPublicacion.consultarPublicacion(id);
 		
+		if(publicacion==null) {
+			modelo.put("msg", "No se ha encontrado la publicación buscada. Por favor, vuelva al inicio.");
+			return new ModelAndView("error",modelo);
+		}
+		
 		modelo.put("publicacion", publicacion.getTitulo());
 		modelo.put("descripcion", publicacion.getDescripcion());
 		modelo.put("fecha", publicacion.getFecha());
