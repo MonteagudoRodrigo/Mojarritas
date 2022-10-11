@@ -3,10 +3,11 @@ package ar.edu.unlam.tallerweb1.infrastructure;
 import ar.edu.unlam.tallerweb1.domain.usuarios.RepositorioUsuario;
 import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
 
-import java.sql.SQLException;
+import java.io.Serializable;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.exception.ConstraintViolationException;
 import org.hibernate.exception.DataException;
@@ -35,18 +36,20 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 	}
 
 	@Override
-	public Long guardar(Usuario usuario)throws ConstraintViolationException   {
-		
-			return (Long)sessionFactory.getCurrentSession().save(usuario);
-	
-		
+	public void guardar(Usuario usuario) {
+		Serializable res = sessionFactory.getCurrentSession().save(usuario);
+		System.out.println(res.toString());
 	}
 
 	@Override
-	public Usuario buscar(String email) {
-		return (Usuario) sessionFactory.getCurrentSession().createCriteria(Usuario.class)
+	public long buscar(String email) {
+		final Session session = sessionFactory.getCurrentSession();
+		return (long) session.createCriteria(Usuario.class)
+				.setProjection(Projections.rowCount())
 				.add(Restrictions.eq("email", email))
 				.uniqueResult();
+		
+				
 	}
 
 	@Override
@@ -55,8 +58,16 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 	}
 
 	@Override
-	public Long registrarUsuario(Usuario usuario)throws ConstraintViolationException {
-		return this.guardar(usuario);
+	public void registrarUsuario(Usuario usuario) {
+		this.guardar(usuario);
+	}
+	
+	@Override
+	public long buscarUsuario(String username) {
+		return (long) sessionFactory.getCurrentSession().createCriteria(Usuario.class)
+				.setProjection(Projections.rowCount())
+				.add(Restrictions.eq("username", username))
+				.uniqueResult();
 	}
 
 }

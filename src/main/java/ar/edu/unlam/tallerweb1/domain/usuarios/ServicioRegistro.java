@@ -1,7 +1,10 @@
 package ar.edu.unlam.tallerweb1.domain.usuarios;
 
-import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
+import ar.edu.unlam.tallerweb1.delivery.DatosRegistro;
+
 
 public interface ServicioRegistro {
-	Long registrarUsuario(Usuario usuario);
+	void registrarUsuario(DatosRegistro datos);
+	long existeEmail(String email);
+	long existeUsuario(String username);
 }
