@@ -6,6 +6,9 @@ package ar.edu.unlam.tallerweb1.domain.usuarios;
 public interface ServicioLogin {
 
 	Usuario consultarUsuario(String email, String password);
+	Usuario consultarUsuario(String userName);
 	
 	void actualizarUsuario(Usuario user);
+
+	
 }
