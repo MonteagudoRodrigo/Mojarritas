@@ -31,4 +31,8 @@ public class ServicioLoginImpl implements ServicioLogin {
 		servicioLoginDao.modificar(user);
 	}
 
+	@Override
+	public Usuario consultarUsuario(String userName) {
+		return servicioLoginDao.buscar(userName);
+	}
 }

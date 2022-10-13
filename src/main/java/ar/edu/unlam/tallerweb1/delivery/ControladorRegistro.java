@@ -100,10 +100,11 @@ public class ControladorRegistro{
 		model.put("register", "hidden");
 		model.put("reg_ok", "ok");
 		
-		return new ModelAndView("registro", model);
+		this.servicioRegistro.registrarUsuario(usuario);
+		
+		return new ModelAndView("redirect:/login");
 		
 		
 	}
 	
-
 }
