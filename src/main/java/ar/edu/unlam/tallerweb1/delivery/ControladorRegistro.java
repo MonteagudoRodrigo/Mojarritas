@@ -1,17 +1,14 @@
 package ar.edu.unlam.tallerweb1.delivery;
 
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unlam.tallerweb1.config.AppConfig;
@@ -27,7 +24,7 @@ public class ControladorRegistro{
 	public ControladorRegistro(ServicioRegistro servicioRegistro) {
 		this.servicioRegistro = servicioRegistro;	
 	}
-
+	
 	@RequestMapping(path = "/registro", method = RequestMethod.GET)
 	public ModelAndView irARegistro() {
 		
@@ -100,11 +97,10 @@ public class ControladorRegistro{
 		model.put("register", "hidden");
 		model.put("reg_ok", "ok");
 		
-		this.servicioRegistro.registrarUsuario(usuario);
-		
-		return new ModelAndView("redirect:/login");
+		return new ModelAndView("registro", model);
 		
 		
 	}
 	
+
 }

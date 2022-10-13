@@ -27,6 +27,7 @@
 					<%--para eso debe coincidir el valor del elemento path de cada input con el nombre de un atributo del objeto --%>
 				<img class = "w-75 my-5 mx-auto d-block"  src="img/logo/logo_dark.png" alt="">	
 				<form:form action="validar-login" method="POST" modelAttribute="datosLogin">
+			    	
 				
 					<hr class="colorgraph"><br>
 
@@ -39,7 +40,7 @@
 					
 				</form:form>
 				<div class="d-grid mt-4">
-					<h2 class="text-light fs-2 text-center">¿Aún estás registrado?</h2>
+					<h2 class="text-light fs-2 text-center">¿aún no estás registrado?</h2>
 					<a class="btn btn-primary btn-meet" href="registro">Quiero registrarme</a>
 				</div>
 				
