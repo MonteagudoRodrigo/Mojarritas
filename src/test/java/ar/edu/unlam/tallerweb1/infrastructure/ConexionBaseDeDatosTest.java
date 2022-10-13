@@ -72,23 +72,7 @@ public class ConexionBaseDeDatosTest extends SpringTest{
        
     	RepositorioUsuarioImpl nuevoRepo = new RepositorioUsuarioImpl(this.session().getSessionFactory());
        
-       Usuario usuario2 = new Usuario(); 
-       usuario2 = nuevoRepo.buscar(usuario.getEmail());
-       
-       usuario2.setEmail(emailModificado);
-       usuario2.setPassword(claveModificada);
-       usuario2.setNombre(nombreModificado);
-       usuario2.setApellido(apellidoModificado);
-       usuario2.setUsername(usuarioModificado);
-       nuevoRepo.modificar(usuario2);
-       
-       
-      
-       
-        
-        
-        assertTrue( nuevoRepo.buscar(emailModificado).getApellido().equals(apellidoModificado) );
-    }
+
     
     
     
