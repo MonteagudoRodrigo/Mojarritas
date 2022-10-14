@@ -86,7 +86,7 @@
 					                                             </span>
 		                                        			</c:if>
 		                                        			<c:if test="${user_v_state eq 'UNVERIFY'}">	
-					                                             <span class="input-group-text verify no" id="verifica-user" hidden="true">
+					                                             <span class="input-group-text verify no" id="verifica-user" hidden>
 					                                                    <i class="fa-solid fa-x"></i>
 					                                             </span>
 		                                        			</c:if>
@@ -113,7 +113,7 @@
 					                                             </span>
 		                                        			</c:if>
 		                                        			<c:if test="${email_v_state eq 'UNVERIFY'}">	
-					                                             <span class="input-group-text verify no" id="verifica-email" hidden="true">
+					                                             <span class="input-group-text verify no" id="verifica-email" hidden>
 					                                                    <i class="fa-solid fa-x"></i>
 					                                             </span>
 		                                        			</c:if>
