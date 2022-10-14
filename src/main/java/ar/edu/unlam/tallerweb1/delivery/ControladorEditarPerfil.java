@@ -12,12 +12,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ControladorEditarPerfil {
 
-	/*@RequestMapping(path = "/editar-perfil", method = RequestMethod.POST)
-	public ModelAndView editarPerfilPost(@ModelAttribute DatosPerfil datosPerfil) {
+	@RequestMapping(path = "/editar-perfil", method = RequestMethod.POST)
+	public ModelAndView editarPerfilPost(@ModelAttribute ("datosPerfil") DatosPerfil datosPerfil, HttpServletRequest request) {
 		ModelMap model= new ModelMap();
-		model.put(null, model)
+		model.put("datosPerfil", new DatosPerfil());
 		return new ModelAndView("actualizado", model);
-	}*/
+	}
 	
 	@RequestMapping(path = "/editar-perfil", method = RequestMethod.GET)
 	public ModelAndView editarPerfilGet() {
