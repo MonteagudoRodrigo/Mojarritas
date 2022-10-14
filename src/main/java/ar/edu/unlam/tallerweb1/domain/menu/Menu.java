@@ -4,6 +4,7 @@ package ar.edu.unlam.tallerweb1.domain.menu;
 
 import java.util.List;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,13 +13,13 @@ import ar.edu.unlam.tallerweb1.domain.ingrediente.Ingrediente;
 
 
 
-
+@Entity
 public class Menu {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	private List <Ingrediente> ingredientes;
+	private Ingrediente ingrediente;
 	public Long getId() {
 		return id;
 	}
@@ -31,12 +32,16 @@ public class Menu {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<Ingrediente> getIngredientes() {
-		return ingredientes;
+	public Ingrediente getIngredientes() {
+		return ingrediente;
 	}
-	public void setIngredientes(List<Ingrediente> ingredientes) {
-		this.ingredientes = ingredientes;
+	public Ingrediente getIngrediente() {
+		return ingrediente;
 	}
+	public void setIngrediente(Ingrediente ingrediente) {
+		this.ingrediente = ingrediente;
+	}
+
 	
 	
 	
