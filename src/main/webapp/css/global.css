@@ -26,6 +26,10 @@ body{
     background-color: var(--mt-light-gray)!important;
 }
 
+.bg-gray{
+    background-color: var(--mt-gray);
+}
+
 .bg-dark{
     background-color: var(--mt-dark)!important;
 }
@@ -36,7 +40,7 @@ body{
 
 
 .bg-dark-gray{
-    background-color: var(--mt-gray)!important;
+    background-color: var(--mt-dark-gray)!important;
 }
 
 .text-dark-gray{
@@ -61,6 +65,44 @@ body{
     background-color: var(--mt-light);
 }
 
+.profile{
+   position: relative;
+   padding-left: 0;	
+   border-radius: 50%;
+   	
+	overflow: hidden;
+    box-sizing: border-box;
+}
+
+.profile > img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #97BCE0;
+	object-fit: cover;
+    margin: 0px auto!important;
+}
+
+.medium{
+	width: 70px;
+    height: 70px;
+}
+
+.medium > img{
+    width: 65px;
+    height: 65px;
+}
+
+.large > img{
+    width: 195px;
+    height: 195px;
+}
+
+.large{
+	width: 200px;
+	height: 200px;
+}
+
 .bd-red-meet{
     border: 2px solid var(--mt-red-secondary);
     -webkit-box-shadow: 0px 0px 14px 8px rgba(237,30,76,0.44); 
@@ -68,7 +110,22 @@ body{
 
 }
 
+.file{
+	position: relative;
 
+	height: 50px;
+	cursor: pointer;
+	color: white;
+	text-align: center;
+	margin: auto;
+	top: -50px;
+	opacity: .8;
+
+}
+
+input[type="file"]{
+	position: absolute;
+}
 
 .btn-meet{
     background-color: var(--mt-red-meet)!important;
