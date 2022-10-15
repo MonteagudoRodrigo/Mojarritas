@@ -17,3 +17,4 @@ CREATE TABLE usuario(
 );
 
 insert into usuario(nombre, apellido, username, email, pass) values ('nombre_test','appelido_test', 'username_test','test@test','12345');
+insert into publicacion(usuario, lugarId, titulo, fecha, descripcion, cantParticipantes, cupo) values (1,1,'Fiesta','2022-01-01 00:00','Publicacion de una fiesta',5,10);

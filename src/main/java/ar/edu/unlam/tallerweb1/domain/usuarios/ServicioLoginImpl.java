@@ -38,4 +38,8 @@ public class ServicioLoginImpl implements ServicioLogin {
 	}
 
 
+	@Override
+	public Usuario consultarUsuario(String userName) {
+		return servicioLoginDao.buscar(userName);
+	}
 }
