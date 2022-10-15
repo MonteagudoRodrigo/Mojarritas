@@ -25,7 +25,7 @@
 				<%--Definicion de un form asociado a la accion /validar-login por POST. Se indica ademas que el model attribute se--%>
 				<%--debe referenciar con el nombre usuario, spring mapea los elementos de la vista con los atributos de dicho objeto--%>
 					<%--para eso debe coincidir el valor del elemento path de cada input con el nombre de un atributo del objeto --%>
-				<img class = "w-75 my-5 mx-auto d-block"  src="img/logo/logo_dark.png" alt="">	
+				<img class = "w-75 py-5 mx-auto d-block"  src="img/logo/logo_dark.png" alt="">	
 				<form:form action="validar-login" method="POST" modelAttribute="datosLogin">
 			    	
 				
