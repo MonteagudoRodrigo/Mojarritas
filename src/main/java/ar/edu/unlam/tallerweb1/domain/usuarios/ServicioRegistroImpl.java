@@ -14,21 +14,6 @@ import ar.edu.unlam.tallerweb1.config.AppConfig;
 import ar.edu.unlam.tallerweb1.delivery.DatosRegistro;
 import ar.edu.unlam.tallerweb1.utils.Archivos;
 
-
-import ar.edu.unlam.tallerweb1.config.AppConfig;
-import ar.edu.unlam.tallerweb1.delivery.DatosRegistro;
-import ar.edu.unlam.tallerweb1.utils.Archivos;
-
-
-import ar.edu.unlam.tallerweb1.config.AppConfig;
-import ar.edu.unlam.tallerweb1.delivery.DatosRegistro;
-import ar.edu.unlam.tallerweb1.utils.Archivos;
-
-
-import ar.edu.unlam.tallerweb1.config.AppConfig;
-import ar.edu.unlam.tallerweb1.delivery.DatosRegistro;
-import ar.edu.unlam.tallerweb1.utils.Archivos;
-
 @Service("servicioRegistro")
 @Transactional
 public class ServicioRegistroImpl implements ServicioRegistro{

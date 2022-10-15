@@ -16,7 +16,6 @@
 <body class="bg-dark">
 
 	<!-- CABECERA -->
-
     <%@ include file="partials/cabecera.jsp" %>
     
    
@@ -32,7 +31,6 @@
            <input class="form-control" type="text" name="" id="">
         </div>
     </main>
-
     
 </body>
 <script src="js/bootstrap.bundle.js"  type="text/javascript"></script>
