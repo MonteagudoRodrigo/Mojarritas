@@ -11,7 +11,11 @@ public class AppConfig {
 		}
 		
 		public static String getUploadDir() {
+<<<<<<< HEAD
 			return Paths.get(getDirRoot() + "profiles\\").toFile().getAbsolutePath();
+=======
+			return Paths.get(getDirRoot() + "profiles").toFile().getAbsolutePath();
+>>>>>>> 073418752eb3057b6c4987f70b5060847270b19f
 		}
 		
 		public static String getDefaultImageProfile() {

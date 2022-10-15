@@ -1,7 +1,10 @@
 package ar.edu.unlam.tallerweb1.delivery;
 
 import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
+<<<<<<< HEAD
 import ar.edu.unlam.tallerweb1.config.AppConfig;
+=======
+>>>>>>> 073418752eb3057b6c4987f70b5060847270b19f
 import ar.edu.unlam.tallerweb1.domain.Security.*;
 import ar.edu.unlam.tallerweb1.domain.usuarios.ServicioLogin;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+
+
 
 
 @Controller
@@ -24,7 +31,7 @@ public class ControladorLogin {
 	private String userToken;
 
 	@Autowired
-	public ControladorLogin(ServicioLogin servicioLogin){
+	public ControladorLogin(ServicioLogin servicioLogin) {
 		this.servicioLogin = servicioLogin;
 	}
 
@@ -32,19 +39,18 @@ public class ControladorLogin {
 	public ModelAndView irALogin() {
 
 		ModelMap modelo = new ModelMap();
-		
+
 		modelo.put("datosLogin", new DatosLogin());
-		
+
 		return new ModelAndView("login", modelo);
 	}
 
-	
 	@RequestMapping(path = "/validar-login", method = RequestMethod.POST)
 	public ModelAndView validarLogin(@ModelAttribute("datosLogin") DatosLogin datosLogin, HttpServletRequest request) throws Exception {
 		ModelMap model = new ModelMap();
 
 		Usuario usuarioBuscado = servicioLogin.consultarUsuario(datosLogin.getEmail(), datosLogin.getPassword());
-		
+
 		if (usuarioBuscado != null) {
 			
 			servicioSecurity = new ServicioSecurity();
@@ -55,11 +61,15 @@ public class ControladorLogin {
 			
 			servicioLogin.actualizarUsuario(usuarioBuscado);
 			
+<<<<<<< HEAD
 			model.put("user", usuarioBuscado);
 			model.put("upload_folder", "profiles\\");
 			model.put("separator", "\\");
 			
 			return new ModelAndView("home", model);
+=======
+			return new ModelAndView("redirect:/home");
+>>>>>>> 073418752eb3057b6c4987f70b5060847270b19f
 			
 		} else {
 			model.put("error", "Usuario o clave incorrecta");

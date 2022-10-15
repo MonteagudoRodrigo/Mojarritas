@@ -34,5 +34,8 @@
     <mvc:resources mapping="/img/logo/**" location="/img/logo/" />
     <mvc:resources mapping="/img/assets/**" location="/img/assets/" />
     <mvc:resources mapping="/profiles/**" location="/profiles/" />
+<<<<<<< HEAD
     <mvc:resources mapping="/vistas/partials/**" location="/vistas/partials/" />
+=======
+>>>>>>> 073418752eb3057b6c4987f70b5060847270b19f
 </beans>

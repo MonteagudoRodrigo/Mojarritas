@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 :root{
+<<<<<<< HEAD
     --mt-dark : #1b1c22;
     --mt-blue : #0d6efd;
     --mt-red-meet : #f01e4c;
@@ -9,6 +10,16 @@
     --mt-light : #fff; 
     --mt-gray : #505050;
     --mt-dark-gray : #444444;
+=======
+    --mt-dark : #0D0C0F;
+    --mt-blue : #0d6efd;
+    --mt-red-meet : #f01e4c;
+    --mt-red-meet-dark: #a31741;
+    --mt-red-secondary : #ed1e4c;
+    --mt-light : #fff; 
+    --mt-gray : #1E1F22;
+    --mt-dark-gray : #151618;
+>>>>>>> 073418752eb3057b6c4987f70b5060847270b19f
     --mt-light-gray : #b5b5b5;
 
 }
