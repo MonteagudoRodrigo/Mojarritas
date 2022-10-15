@@ -1,6 +1,7 @@
 package ar.edu.unlam.tallerweb1.delivery;
 
 import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
+import ar.edu.unlam.tallerweb1.config.AppConfig;
 import ar.edu.unlam.tallerweb1.domain.Security.*;
 import ar.edu.unlam.tallerweb1.domain.usuarios.ServicioLogin;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +55,11 @@ public class ControladorLogin {
 			
 			servicioLogin.actualizarUsuario(usuarioBuscado);
 			
-			return new ModelAndView("redirect:/home");
+			model.put("user", usuarioBuscado);
+			model.put("upload_folder", "profiles\\");
+			model.put("separator", "\\");
+			
+			return new ModelAndView("home", model);
 			
 		} else {
 			model.put("error", "Usuario o clave incorrecta");
