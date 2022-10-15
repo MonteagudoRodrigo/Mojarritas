@@ -18,9 +18,9 @@
 	<bean id="dataSource"
 		  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3307/meeting?serverTimezone=JST" />
+		<property name="url" value="jdbc:mysql://localhost:3306/meeting?serverTimezone=JST" />
 		<property name="username" value="root" />
-		<property name="password" value="123456" />
+		<property name="password" value="" />
 	</bean>
 
 	<!--Configuracion de la factory encargada de generar las sesiones con la base de datos, la misma -->
@@ -38,7 +38,7 @@
 				<prop key="jpa.generateDbl">true</prop>
 				<!--Dialecto especifico del motor de base de datos utilizado-->
 				<!--Hay que cambiarlo si se cambia de motor de base de datos-->
-				<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL55Dialect</prop>
 				<!--Cambiar a true si se quiere ver por consola el codigo sql generado por hibernate-->
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.format_sql">true</prop>

@@ -1,7 +1,9 @@
 package ar.edu.unlam.tallerweb1.delivery;
 
 import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
-import ar.edu.unlam.tallerweb1.config.AppConfig;
+
+
+
 import ar.edu.unlam.tallerweb1.domain.Security.*;
 import ar.edu.unlam.tallerweb1.domain.usuarios.ServicioLogin;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,10 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 
 
+
+
+
+
 @Controller
 public class ControladorLogin {
 
@@ -24,7 +30,7 @@ public class ControladorLogin {
 	private String userToken;
 
 	@Autowired
-	public ControladorLogin(ServicioLogin servicioLogin){
+	public ControladorLogin(ServicioLogin servicioLogin) {
 		this.servicioLogin = servicioLogin;
 	}
 
@@ -32,19 +38,18 @@ public class ControladorLogin {
 	public ModelAndView irALogin() {
 
 		ModelMap modelo = new ModelMap();
-		
+
 		modelo.put("datosLogin", new DatosLogin());
-		
+
 		return new ModelAndView("login", modelo);
 	}
 
-	
 	@RequestMapping(path = "/validar-login", method = RequestMethod.POST)
 	public ModelAndView validarLogin(@ModelAttribute("datosLogin") DatosLogin datosLogin, HttpServletRequest request) throws Exception {
 		ModelMap model = new ModelMap();
 
 		Usuario usuarioBuscado = servicioLogin.consultarUsuario(datosLogin.getEmail(), datosLogin.getPassword());
-		
+
 		if (usuarioBuscado != null) {
 			
 			servicioSecurity = new ServicioSecurity();
@@ -55,11 +60,13 @@ public class ControladorLogin {
 			
 			servicioLogin.actualizarUsuario(usuarioBuscado);
 			
+
 			model.put("user", usuarioBuscado);
 			model.put("upload_folder", "profiles\\");
 			model.put("separator", "\\");
 			
 			return new ModelAndView("home", model);
+
 			
 		} else {
 			model.put("error", "Usuario o clave incorrecta");
