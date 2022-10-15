@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import ar.edu.unlam.tallerweb1.domain.ingrediente.Ingrediente;
 
@@ -19,7 +20,10 @@ public class Menu {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
+	
+	@ManyToOne
 	private Ingrediente ingrediente;
+	
 	public Long getId() {
 		return id;
 	}
@@ -35,9 +39,7 @@ public class Menu {
 	public Ingrediente getIngredientes() {
 		return ingrediente;
 	}
-	public Ingrediente getIngrediente() {
-		return ingrediente;
-	}
+
 	public void setIngrediente(Ingrediente ingrediente) {
 		this.ingrediente = ingrediente;
 	}
