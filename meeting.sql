@@ -84,7 +84,7 @@ int auto_increment
 primary key,
 
 
-                    usuario
+                    usuario_id
 int,
 
 
