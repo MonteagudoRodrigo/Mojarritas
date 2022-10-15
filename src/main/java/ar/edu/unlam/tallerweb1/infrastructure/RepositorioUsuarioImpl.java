@@ -52,6 +52,7 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 				
 	}
 
+
 	@Override
 	public void modificar(Usuario usuario) {
 		sessionFactory.getCurrentSession().update(usuario);
@@ -64,6 +65,7 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 	
 	@Override
 	public long buscarUsuario(String username) {
+		
 		return (long) sessionFactory.getCurrentSession().createCriteria(Usuario.class)
 				.setProjection(Projections.rowCount())
 				.add(Restrictions.eq("username", username))

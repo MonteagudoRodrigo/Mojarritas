@@ -31,15 +31,10 @@ public class ServicioLoginImpl implements ServicioLogin {
 		servicioLoginDao.modificar(user);
 	}
 
+
+
 	@Override
 	public Usuario consultarUsuario(String userName) {
-		// TODO Auto-generated method stub
 		return null;
-	}
-
-
-	@Override
-	public Usuario consultarUsuario(String userName) {
-		return servicioLoginDao.buscar(userName);
 	}
 }
