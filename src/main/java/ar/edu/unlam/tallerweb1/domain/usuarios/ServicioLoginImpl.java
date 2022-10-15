@@ -25,9 +25,16 @@ public class ServicioLoginImpl implements ServicioLogin {
 	public Usuario consultarUsuario (String email, String password) {
 		return servicioLoginDao.buscarUsuario(email, password);
 	}
+	
+	@Override
+	public void actualizarUsuario(Usuario user) {
+		servicioLoginDao.modificar(user);
+	}
+
+
 
 	@Override
 	public Usuario consultarUsuario(String userName) {
-		return servicioLoginDao.buscar(userName);
+		return null;
 	}
 }

@@ -21,8 +21,9 @@ public class ConexionBaseDeDatosTest extends SpringTest{
     @Transactional @Rollback
     public void crearUsuario(){
         Usuario usuario = new Usuario();
-        usuario.setEmail("test@test");
-        usuario.setPassword("12345");
+        usuario.setEmail("seba@gmail.com");
+        usuario.setPassword("1234");
+       // usuario.setRol("ADMIN");
         session().save(usuario);
         assertThat(usuario.getId()).isNotNull();
     }

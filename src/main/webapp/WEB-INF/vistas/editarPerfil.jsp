@@ -22,7 +22,7 @@
 	<br>
     Password <form:input path= "password" type="password"/>
     <br>
-    Número de telefono <form:input path= "numeroTelefono" type="text"/>
+    Numero de telefono <form:input path= "numeroTelefono" type="text"/>
     <br><br>
     <button type="submit">Actualizar datos</button>
 	</form:form>		
