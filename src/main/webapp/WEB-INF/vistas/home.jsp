@@ -16,7 +16,6 @@
 <body class="bg-dark">
 
 	<!-- CABECERA -->
-
     <%@ include file="partials/cabecera.jsp" %>
     
    

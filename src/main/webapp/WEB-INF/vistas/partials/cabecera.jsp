@@ -7,10 +7,7 @@
              <ul class="nav d-flex fs-5 ">
                 <li class="nav-item">
                     <a class="nav-link text-dark-gray" href="" title="Notificaciones">
-
                         <i class="fa-solid fa-bell"></i>
-
-
                         
                     </a>
                 </li>
@@ -20,9 +17,9 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
-                        <li><a class="dropdown-item" href="#">Configuración</a></li>
+                        <li><a class="dropdown-item" href="#">Configuraciï¿½n</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                        <li><a class="dropdown-item" href="#">Cerrar Sesiï¿½n</a></li>
                     </ul>
                 </li>
                
