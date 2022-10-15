@@ -1,0 +1,238 @@
+@import url(./colors.css);
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    height: 100%;
+}
+hr{
+    color: #ffffff;
+}
+
+input[type="file"]{
+    
+    width: 150px;
+}
+
+.form{
+    position: relative;
+    z-index: 1!important;
+}
+
+/* ESTILOS DE PASOS CIRCULARES */
+
+#progressbar {
+    margin-bottom: 2.
+    0px;
+    overflow: hidden;
+    color: lightgrey;
+    text-align: center;
+    padding-left: 0px;
+    padding-top: 10px;
+   
+}
+    
+#progressbar .active {
+    color: var(--mt-red-meet);
+    transition: all .8s;
+}
+    
+#progressbar li {
+    list-style-type: none;
+    font-size: 12px;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 400
+}
+    
+#progressbar #account:before {
+    font-family: FontAwesome;
+    content: "\f13e"
+}
+    
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f007"
+}
+    
+#progressbar #payment:before {
+    font-family: FontAwesome;
+    content: "\f030"
+}
+    
+#progressbar #confirm:before {
+    font-family: FontAwesome;
+    content: "\f00c"
+}
+    
+#progressbar li:before {
+    width: 35px;
+    height: 35px;
+    line-height: 32px;
+    display: block;
+    font-size: 15px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0px auto;
+    padding: 2px;
+    transition: all .8s;
+}
+    
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 18px;
+    z-index: -1;
+    transition: all .8s;
+}
+    
+#progressbar li.active:before,
+    #progressbar li.active:after {
+    background: var(--mt-red-meet);
+    transition: all .8s;
+}
+
+/* BARRA DE PROGRTESO LINEAL*/
+
+.progress-bar {
+    height: 20px;
+ }
+   
+ .progress-bar {
+    background-color: var(--mt-red-meet);
+    transition: all .5s;
+}
+
+/* seps */
+
+.step{
+    height:350px;
+    display: none;
+  
+}
+
+
+
+.step-tittle{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.step-form{
+    max-width: 500px;
+    margin: 0px auto;
+    padding-bottom: 10px;
+    opacity: 1;
+    transition: all 5s;
+}
+
+.verify{
+   
+    border: none!important;
+    width: 35px !important;
+    font-size: 12px;
+    
+    margin: 0px;
+    display: block;
+    box-sizing: border-box;
+    line-height: 25px;
+}
+
+.ok{
+    background-color: rgb(119, 228, 173)!important;
+    color: rgb(45, 119, 103);
+}
+
+.no{
+    background-color: rgb(228, 132, 119)!important;
+    color: rgb(119, 45, 45);
+}
+
+#frm-buttons{
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#frm-buttons .btn-step{
+    width: 100px;
+}
+
+.activate{
+    display: block;
+}
+
+.hidden{
+    display: none!important;
+}
+
+/*LOADER*/
+#loader{
+    position: absolute;
+    top: calc(50% - 75px);
+    left:calc(50% - 150px);
+    display: block;
+    text-align: center;
+    padding: 0px!important;
+}
+.loader-content{
+    height: 150px;
+    width: 300px;
+    margin: 0px auto;
+}
+
+.loader{
+    width: 40%;
+    max-width: 300px;
+
+    display: block;
+    margin: 0px auto;
+    padding-bottom: 10px;
+    
+    
+}
+
+.animate{
+    -webkit-animation: loaderAnimate 4s ease-in;
+    animation: loaderAnimate 4s ease-in;
+}
+
+.fadeIn{
+    -webkit-animation: fade-in .4s ease-in;
+    animation: fade-in .4s ease-in;
+}
+
+@keyframes loaderAnimate{
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
