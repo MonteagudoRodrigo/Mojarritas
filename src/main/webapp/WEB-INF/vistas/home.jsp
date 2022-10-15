@@ -18,14 +18,14 @@
 	<!-- CABECERA -->
     <%@ include file="cabecera.jsp" %>
     
-    <!-- RESUMEN USUARIO -->
-    <%@ include file="resumen-usuario.jsp" %>
+   
+    <div class="container content pt-5 bg-light-gray">
+       
+        <div class="main-content ">
+           
+        </div>
+    </div>
     
-    <main class="container px-0">
-		 <div class="main-content bg-light-gray">
-            Aqui menu
-         </div>
-    </main>
 </body>
 <script src="js/bootstrap.bundle.js"  type="text/javascript"></script>
 </html>

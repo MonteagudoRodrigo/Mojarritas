@@ -88,9 +88,6 @@
     box-shadow: 0px 0px 10px 3px rgba(237,30,76,0.44);
 
 }
-.navbar{
-	z-index:5;
-}
 
 .main-content{
     height: 900px!important;

@@ -33,8 +33,9 @@ public class ControladorRegistro{
 		modelo.put("upload_folder",AppConfig.getUploadDir());
 		modelo.put("datosRegistro", new DatosRegistro());
 		
+		//estados iniciales de verificacion
 		modelo.put("user_v_state", DatosRegistro.state.UNVERIFY);
-		modelo.put("email_v_state", "");
+		modelo.put("email_v_state",DatosRegistro.state.UNVERIFY);
 		
 		//config inicial de errores
 		modelo.put("error_state", "hidden");

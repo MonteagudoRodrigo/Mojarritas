@@ -9,11 +9,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
-import org.hibernate.exception.ConstraintViolationException;
-import org.hibernate.exception.DataException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.util.NestedServletException;
 
 @Repository("repositorioUsuario")
 public class RepositorioUsuarioImpl implements RepositorioUsuario {
@@ -52,7 +49,6 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 				
 	}
 
-
 	@Override
 	public void modificar(Usuario usuario) {
 		sessionFactory.getCurrentSession().update(usuario);
@@ -65,7 +61,6 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 	
 	@Override
 	public long buscarUsuario(String username) {
-		
 		return (long) sessionFactory.getCurrentSession().createCriteria(Usuario.class)
 				.setProjection(Projections.rowCount())
 				.add(Restrictions.eq("username", username))
