@@ -7,7 +7,11 @@
              <ul class="nav d-flex fs-5 ">
                 <li class="nav-item">
                     <a class="nav-link text-dark-gray" href="" title="Notificaciones">
+<<<<<<< HEAD
+                        <i class="fa-solid fa-bell"></i>
+=======
                         <i class="fa-solid fa-comment-dots "></i>
+>>>>>>> 073418752eb3057b6c4987f70b5060847270b19f
                         
                     </a>
                 </li>

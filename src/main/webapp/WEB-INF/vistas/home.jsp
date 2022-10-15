@@ -16,15 +16,23 @@
 <body class="bg-dark">
 
 	<!-- CABECERA -->
-    <%@ include file="cabecera.jsp" %>
+
+    <%@ include file="partials/cabecera.jsp" %>
     
    
-    <div class="container content pt-5 bg-light-gray">
-       
-        <div class="main-content ">
-           
+   <!--CONTENEDOR PRINCIPAL-->
+    <main class="container content px-0 bg-light-gray">
+        
+        <!-- DETALLES PERFIL -->
+        <%@ include file="partials/resumen-usuario.jsp" %>
+
+        
+        <div class="main-content px-3 pt-3">
+            <!--AQUI TODO EL CONTENIDO-->
+           <input class="form-control" type="text" name="" id="">
         </div>
-    </div>
+    </main>
+
     
 </body>
 <script src="js/bootstrap.bundle.js"  type="text/javascript"></script>
