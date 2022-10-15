@@ -346,11 +346,11 @@ mes.addEventListener("change", function(){
 	var cantDiasSelect = dia.childElementCount;
 
 	while(cantDiasSelect > canDiaMes){
-		dia.lastChild.remove()
+		dia.lastChild.remove();
 		cantDiasSelect = dia.childElementCount;
 	}
 
-	while(cantDiasSelect <= canDiaMes){
+	while(cantDiasSelect < canDiaMes){
 		var option = document.createElement("option");
 		option.value = cantDiasSelect;
 		option.text = cantDiasSelect;

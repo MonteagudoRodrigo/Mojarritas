@@ -27,6 +27,7 @@
 					<%--para eso debe coincidir el valor del elemento path de cada input con el nombre de un atributo del objeto --%>
 				<img class = "w-75 my-5 mx-auto d-block"  src="img/logo/logo_dark.png" alt="">	
 				<form:form action="validar-login" method="POST" modelAttribute="datosLogin">
+			    	
 				
 					<hr class="colorgraph"><br>
 

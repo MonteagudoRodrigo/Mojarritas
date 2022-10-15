@@ -8,4 +8,6 @@ public interface ServicioLogin {
 	Usuario consultarUsuario(String email, String password);
 	
 	void actualizarUsuario(Usuario user);
+
+	Usuario consultarUsuario(String userName);
 }
