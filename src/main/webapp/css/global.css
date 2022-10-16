@@ -1,4 +1,5 @@
 @import url(colors.css);
+@import url(fonts-style.css);
 
 html{
     height: 100%;
@@ -7,6 +8,8 @@ html{
 body{
     height: 100%!important;
 }
+
+/** CONTENEDORES **/
 
 .container{
     max-width: 900px!important;
@@ -22,38 +25,9 @@ body{
     height: auto;
     padding: 10px;
 }
-.bg-light-gray{
-    background-color: var(--mt-light-gray)!important;
-}
-
-.bg-gray{
-    background-color: var(--mt-gray);
-}
-
-.bg-dark{
-    background-color: var(--mt-dark)!important;
-}
-
-.bg-red-secondary{
-    background-color: var(--mt-red-secondary)!important;
-}
 
 
-.bg-dark-gray{
-    background-color: var(--mt-dark-gray)!important;
-}
-
-.text-light-gray{
-    color: var(--mt-light-gray)!important;
-}
-
-.text-dark-gray{
-    color: var(--mt-dark-gray)!important;
-}
-
-.text-gray{
-    color: var(--mt-gray)!important;
-}
+/** GENERALES **/
 
 .mt-brand{
     max-width: 120px;
@@ -133,19 +107,10 @@ input[type="file"]{
 .btn-meet{
     background-color: var(--mt-red-meet)!important;
     border-color: var(--mt-red-meet)!important;
+    color: var(--mt-light);
 }
 
-.fs-7{
-    font-size: 13px;
-}
 
-.fs-8{
-    font-size: 12px;
-}
-
-.italic {
-    font-style: italic;
-}
 
 .form-control:focus {
     color: #31363a;

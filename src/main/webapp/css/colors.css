@@ -1,17 +1,9 @@
 @charset "UTF-8";
 
 :root{
-    /*--mt-dark : #1b1c22;
-    --mt-blue : #0d6efd;
-    --mt-red-meet : #f01e4c;*/
+ 
     --mt-red-meet-light : #c98292;
-   /* --mt-red-secondary : #ed1e4c;
-    --mt-light : #fff; 
-    --mt-gray : #505050;
-    --mt-dark-gray : #444444;
-    --mt-light-gray : #b5b5b5;
-    */
-     --mt-dark : #0D0C0F;
+    --mt-dark : #0D0C0F;
     --mt-blue : #0d6efd;
     --mt-red-meet : #f01e4c;
     --mt-red-meet-dark: #a31741;
@@ -21,4 +13,41 @@
     --mt-dark-gray : #151618;
     --mt-light-gray : #b5b5b5;
 
+}
+
+/** CLASES FONDOS **/
+
+.bg-light-gray{
+    background-color: var(--mt-light-gray)!important;
+}
+
+.bg-gray{
+    background-color: var(--mt-gray);
+}
+
+.bg-dark{
+    background-color: var(--mt-dark)!important;
+}
+
+.bg-red-secondary{
+    background-color: var(--mt-red-secondary)!important;
+}
+
+
+.bg-dark-gray{
+    background-color: var(--mt-dark-gray)!important;
+}
+
+/** COLASES TEXTOS **/
+
+.text-light-gray{
+    color: var(--mt-light-gray)!important;
+}
+
+.text-dark-gray{
+    color: var(--mt-dark-gray)!important;
+}
+
+.text-gray{
+    color: var(--mt-gray)!important;
 }
