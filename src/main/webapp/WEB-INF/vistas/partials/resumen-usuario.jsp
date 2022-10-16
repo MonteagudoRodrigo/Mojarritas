@@ -1,5 +1,5 @@
 <!--DETALLE PERFIL-->
-        <div class="d-flex bg-dark-gray px-2 px-md-5 py-3">
+        <div class="d-flex bg-gray px-2 px-md-5 py-3">
             <img src="${upload_folder}${user.imagen}" alt="profile" class="profile medium bd-red-meet me-4">
             <div class="my-auto">
               <h5 class="text-light mb-0 fs-7">@${user.username}</h5> 
