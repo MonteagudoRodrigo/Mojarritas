@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 
 import ar.edu.unlam.tallerweb1.domain.publicaciones.Publicacion;
 import ar.edu.unlam.tallerweb1.domain.publicaciones.RepositorioPublicacion;
-import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
 
 @Repository("repositorioPublicacion")
 public class RepositorioPublicacionImpl implements RepositorioPublicacion{
