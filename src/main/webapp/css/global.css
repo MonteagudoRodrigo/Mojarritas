@@ -107,7 +107,13 @@ input[type="file"]{
 .btn-meet{
     background-color: var(--mt-red-meet)!important;
     border-color: var(--mt-red-meet)!important;
-    color: var(--mt-light);
+    color: var(--mt-light)!important;
+}
+
+.btn-meet:hover{
+    background-color: var(--mt-red-meet-hover)!important;
+    border-color: var(--mt-red-meet-hover)!important;
+    color: var(--mt-light)!important;
 }
 
 

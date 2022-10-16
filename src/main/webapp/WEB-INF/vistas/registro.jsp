@@ -19,7 +19,7 @@
 	    <link href="css/checkmark.css" rel="stylesheet">     
 </head>
 
-<body class="bg-dark-gray">
+<body class="bg-dark">
 		
         <!--CONTAINER GENERAL-->
         <div class="container-fluid text-center">
