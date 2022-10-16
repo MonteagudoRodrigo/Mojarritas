@@ -61,17 +61,5 @@ public class RepositorioPublicacionImpl implements RepositorioPublicacion{
 			.add(Restrictions.eq("usuario", usuario))
 			.list();
 	}
-	
-	@Override
-	public List<Publicacion> buscarPor(String value) {
-		return (List <Publicacion>)this.sessionFactory.getCurrentSession()
-			.createCriteria(Publicacion.class)
-			.createAlias("usuario", "user")
-			.add(Restrictions.or(Restrictions.like("descripcion", "%"+value+"%"),Restrictions.like("titulo", "%"+value+"%")
-					,Restrictions.like("user.nombre", "%"+value+"%")))
-			.list();
-				
-	}
-	
 
 }

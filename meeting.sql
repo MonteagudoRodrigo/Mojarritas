@@ -18,14 +18,14 @@ CREATE TABLE usuario(
 
 drop table if exists publicacion;
 CREATE TABLE publicacion(
-					id int auto_increment primary key,
-					usuario_id int,
-					lugarId int,
-					titulo varchar(50),
-					fecha varchar(50),
-					descripcion varchar(50),
-					cantParticipantes int,
-					cupo int
+                    id int auto_increment primary key,
+                    usuario_id int,
+                    lugarId int,
+                    titulo varchar(50),
+                    fecha varchar(50),
+                    descripcion varchar(50),
+                    cantParticipantes int,
+                    cupo int
 );
 
 insert into usuario(nombre, apellido, username, email, pass, sexo,imagen) values ('nombre_test','appelido_test', 'username_test','test@test','12345',1,'default.png');

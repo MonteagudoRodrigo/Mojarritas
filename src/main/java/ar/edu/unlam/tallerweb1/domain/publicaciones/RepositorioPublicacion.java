@@ -11,5 +11,4 @@ public interface RepositorioPublicacion {
 		void guardar(Publicacion publicacion);
 		void modificar(Publicacion publicacion);
 		void crearPublicacion(Publicacion publicacion);
-		List<Publicacion> buscarPor(String titulo);
 }
