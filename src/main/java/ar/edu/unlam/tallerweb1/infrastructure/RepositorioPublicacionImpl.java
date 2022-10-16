@@ -55,11 +55,14 @@ public class RepositorioPublicacionImpl implements RepositorioPublicacion{
 	}
 
 	@Override
-	public List<Publicacion> buscarPor(Usuario usuario) {
-		return this.sessionFactory.getCurrentSession()
+	public List<Publicacion> buscarPor(String value) {
+		return (List <Publicacion>)this.sessionFactory.getCurrentSession()
 			.createCriteria(Publicacion.class)
-			.add(Restrictions.eq("usuario", usuario))
+			.createAlias("usuario", "user")
+			.add(Restrictions.or(Restrictions.like("descripcion", "%"+value+"%"),Restrictions.like("titulo", "%"+value+"%")
+					,Restrictions.like("user.nombre", "%"+value+"%")))
 			.list();
+
 	}
 
 }
