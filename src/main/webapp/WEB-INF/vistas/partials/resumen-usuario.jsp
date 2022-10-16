@@ -3,7 +3,7 @@
             <img src="${upload_folder}${user.imagen}" alt="profile" class="profile medium bd-red-meet me-4">
             <div class="my-auto">
               <h5 class="text-light mb-0 fs-7">@${user.username}</h5> 
-              <small class="text-light">${user.email}</small> 
+              <small class="text-light-gray italic fs-8">${user.email}</small> 
             </div>
             <div class="d-flex flex-col mx-auto text-light my-auto text-center">
                 <div class="px-2 px-md-5">

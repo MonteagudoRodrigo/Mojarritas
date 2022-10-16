@@ -1,7 +1,6 @@
 @import url(colors.css);
 
 html{
-    background-color: aqua;
     height: 100%;
 }
 
@@ -16,11 +15,12 @@ body{
 }
 
 .content{
-    padding-top: 55px;
+    padding-top: 45px;
 }
 
 .main-content{
-    height: 900px;
+    height: auto;
+    padding: 10px;
 }
 .bg-light-gray{
     background-color: var(--mt-light-gray)!important;
@@ -43,15 +43,21 @@ body{
     background-color: var(--mt-dark-gray)!important;
 }
 
+.text-light-gray{
+    color: var(--mt-light-gray)!important;
+}
+
 .text-dark-gray{
     color: var(--mt-dark-gray)!important;
 }
 
 .text-gray{
-    color: var(--mt-dark-gray)!important;
+    color: var(--mt-gray)!important;
 }
+
 .mt-brand{
-    max-width: 150px;
+    max-width: 120px;
+    width: 100%;
 }
 
 .navbar{
@@ -59,18 +65,12 @@ body{
     z-index: 10;
 }
 
-.profile{
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    background-color: var(--mt-light);
-}
 
 .profile{
    position: relative;
    padding-left: 0;	
    border-radius: 50%;
-   	
+   	background-color: var(--mt-light);
 	overflow: hidden;
     box-sizing: border-box;
 }
@@ -83,6 +83,8 @@ body{
 	object-fit: cover;
     margin: 0px auto!important;
 }
+
+
 
 .medium{
 	width: 70px;
@@ -135,6 +137,14 @@ input[type="file"]{
 
 .fs-7{
     font-size: 13px;
+}
+
+.fs-8{
+    font-size: 12px;
+}
+
+.italic {
+    font-style: italic;
 }
 
 .form-control:focus {
