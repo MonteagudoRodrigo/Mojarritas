@@ -17,29 +17,8 @@
 	</head>
 	<body>
 		<div class = "container-md">
-			<div id="loginbox"  class="login-container mx-auto">
-				<div class="d-grid center">
-					<h1 class="h3" style="color:white;text-align:center">Nueva publicación</h1>
-				</div>
-				<form:form action="validar-publicacion" method="POST" modelAttribute="datosPublicacion">
-					<form:input path="lugar" 				id="lugar"	 			type="text" class="form-control my-3" placeholder="Lugar" />
-					<form:input path="titulo" 				id="titulo" 			type="text" class="form-control my-3" placeholder="Título" />
-					<form:input path="fecha" 				id="fecha" 				type="text" class="form-control my-3" placeholder="YYYY-MM-DD" />
-					<form:input path="descripcion" 			id="descripcion"		type="text" class="form-control my-3" placeholder="Descripción" />
-					<form:input path="cupo" 				id="cupo" 				type="number" class="form-control my-3" placeholder="Cupo máximo de participantes" />
-					
-					<div class="d-grid center">
-						<button class="btn btn-primary" Type="Submit">Crear publicación</button>
-					</div>
-				</form:form>
-				<c:if test="${not empty error}">
-					<div class="alert alert-danger mt-4" role="alert">
-						<i class="fa-solid fa-triangle-exclamation"></i>
-						${error}
-					</div>
-			        
-		        </c:if>
-				${msg}
+			<div id=""  class="login-container mx-auto">
+				
 			</div>
 		</div>
 		

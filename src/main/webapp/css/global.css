@@ -2,7 +2,7 @@
 @import url(fonts-style.css);
 
 html{
-    height: 100%;
+    height: 100%!important;
 }
 
 body{
@@ -14,6 +14,7 @@ body{
 .container{
     max-width: 900px!important;
     height: 100%!important;
+    overflow-y: hidden!important;
 
 }
 
@@ -22,8 +23,9 @@ body{
 }
 
 .main-content{
-    height: auto;
+    height: 100%;
     padding: 10px;
+    overflow-y: auto!important;
 }
 
 
@@ -41,7 +43,7 @@ body{
 
 
 .profile{
-   position: relative;
+
    padding-left: 0;	
    border-radius: 50%;
    	background-color: var(--mt-light);
@@ -49,30 +51,45 @@ body{
     box-sizing: border-box;
 }
 
-.profile > img{
+img .profile{
     position: absolute;
     top: 0;
     left: 0;
     background-color: #97BCE0;
-	object-fit: cover;
+	object-fit: content;
     margin: 0px auto!important;
+    overflow:hidden;
+    flex-shrink:0;
 }
 
 
 
 .medium{
 	width: 70px;
-    height: 70px;
+	height: 70px;
+   
 }
 
-.medium > img{
+img .medium{
     width: 65px;
-    height: 65px;
+  	height: 65px;
+}
+
+.x-medium{
+    width: 80px;
+    min-width: 80px;
+   height: 80px!important;
+}
+
+
+.x-medium > img{
+    width: 75px;
+    height: 75px;
 }
 
 .large > img{
     width: 195px;
-    height: 195px;
+   height: 195px;
 }
 
 .large{
@@ -104,6 +121,7 @@ input[type="file"]{
 	position: absolute;
 }
 
+
 .btn-meet{
     background-color: var(--mt-red-meet)!important;
     border-color: var(--mt-red-meet)!important;
@@ -116,7 +134,17 @@ input[type="file"]{
     color: var(--mt-light)!important;
 }
 
+.fs-7{
+    font-size: 13px;
+}
 
+.fs-8{
+	font-size: 11px;
+}
+
+.fs-9{
+	font-size: 10px;
+}
 
 .form-control:focus {
     color: #31363a;
@@ -125,3 +153,20 @@ input[type="file"]{
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgba(237,30,76,0.1);
   }
+  
+  /** ANIMACIONES */
+  
+  .fadeIn{
+    -webkit-animation: fade-in .4s ease-in;
+    animation: fade-in .4s ease-in;
+}
+
+
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

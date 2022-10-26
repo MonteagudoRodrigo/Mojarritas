@@ -35,8 +35,8 @@
 		<!-- MENU PRINCIPAL -->
 		 <%@ include file="partials/menu-principal.jsp" %>
 		 
-		<!-- MENU FEED -->
-		 <%@ include file="partials/menu-feed.jsp" %> 
+		<!-- MENU PUBLICACION -->
+		 <%@ include file="partials/menu-publicacion.jsp" %> 
         
         <div class="main-content px-3 pt-3 pb-0 mb-0">
             <!--AQUI TODO EL CONTENIDO-->
@@ -69,33 +69,7 @@
                       
                        
                    </div>
-             <hr class="my-1"/> 
-            </div>
-           
-
-            <div class="mt-card-body px-3">
-                
-               
-                <p>
-                    ${publicacion.descripcion}    
-                </p>
-
-                <div class="mt-card-place d-flex shadow-sm">
-                    <img class="img-place me-3" src="${pageContext.request.contextPath}/img/assets/unnamed.jpg" alt="">
-                    <div class="place-details d-flex flex-column">
-                        <h5 class="fs-6 mb-0">Nombre del lugar</h5>
-                        <p class="fs-7">Estrellas</p>
-                        <div class="mt-auto">
-                       
-                         <p class="place-site fs-9 mb-0">
-                          <i class="fa-sharp fa-solid fa-location-dot fs-8"></i>
-                          Miguel Cané 1856, Villa Luzuriaga, Buenos Aires, Argentina</p>
-                        </div>
-                       
-                    </div>
-                </div>
-
-                <div class="mt-card-actions mt-3 ">
+                    <div class="mt-card-actions mt-3 ">
                     <div class="actions d-flex text-center align-items-center">
                         <div class="mt-card-like me-3 ">
                             <a href=""><i class="fa-regular fa-heart"></i></a>
@@ -111,14 +85,13 @@
                         </div>
                     </div>
 
-                    <div class="actions d-flex text-center align-items-center">
-                        <a class="btn btn-meet me-3" href="">Unirme</a>
-
-                       
-                    </div>
+                
                 </div>
-
+            
             </div>
+           
+
+          
 
        </div>
         
@@ -129,7 +102,7 @@
         </div>
     </main>
 
-<script src="js/menu.js" type="text/javascript"></script>    
+ <script src="js/menu.js" type="text/javascript"></script>    
 </body>
 
 </html>

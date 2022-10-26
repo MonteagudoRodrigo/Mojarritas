@@ -5,5 +5,7 @@ import java.util.List;
 public interface ServicioPublicacion {
 		Publicacion consultarPublicacion(Long id);
 		void crearPublicacion(Publicacion publicacion);
-		List<Publicacion> buscarPor(String titulo);
+		List<Publicacion> searchForAll(String searchValue);
+		List<Publicacion> globalList();
+		List<Publicacion> ListPubicacionUser(Long id);
 }

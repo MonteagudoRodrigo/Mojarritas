@@ -10,5 +10,7 @@ public interface RepositorioPublicacion {
 		void guardar(Publicacion publicacion);
 		void modificar(Publicacion publicacion);
 		void crearPublicacion(Publicacion publicacion);
-		List<Publicacion> buscarPor(String value);
+		List<Publicacion> searchForAll(String value);
+		List<Publicacion> globalList();
+		List<Publicacion> ListPubicacionUser(Long id);
 }

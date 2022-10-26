@@ -2,7 +2,7 @@
  <nav class="navbar position-fixed w-100" style="background-color: var(--mt-light)">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="img/logo/Logo.png" class="mt-brand"  alt="meeting">
+                <img src="${pageContext.request.contextPath}/img/logo/Logo.png" class="mt-brand"  alt="meeting">
             </a>
              <ul class="nav d-flex fs-5 ">
                 <li class="nav-item">

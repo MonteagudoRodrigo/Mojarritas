@@ -23,7 +23,7 @@ CREATE TABLE publicacion(
                     lugarId int,
                     titulo varchar(50),
                     fecha varchar(50),
-                    descripcion varchar(50),
+                    descripcion varchar(255),
                     cantParticipantes int,
                     cupo int
 );
