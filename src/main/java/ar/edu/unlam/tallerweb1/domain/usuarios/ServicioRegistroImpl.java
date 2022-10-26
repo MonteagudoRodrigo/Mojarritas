@@ -9,14 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import ar.edu.unlam.tallerweb1.config.AppConfig;
 import ar.edu.unlam.tallerweb1.delivery.DatosRegistro;
 import ar.edu.unlam.tallerweb1.utils.Archivos;
 
+
 @Service("servicioRegistro")
 @Transactional
-public class ServicioRegistroImpl implements ServicioRegistro{
+public class ServicioRegistroImpl implements ServicioRegistro {
 
 	private RepositorioUsuario servicioRegistroDao;
 	

@@ -19,7 +19,7 @@
 	    <link href="css/checkmark.css" rel="stylesheet">     
 </head>
 
-<body class="bg-dark-gray">
+<body class="bg-dark">
 		
         <!--CONTAINER GENERAL-->
         <div class="container-fluid text-center">
@@ -243,7 +243,7 @@
                         <hr>
                         <button class="btn btn-primary btn-secondary btn-step" id="prev-btn" type="button">Atras</button> 
                         <button class="btn btn-primary btn-step" id="next-btn" type="button">Siguiente</button> 
-                        <button class="btn btn-primary btn-meet" id="submit-btn" type="submit">Confirmar Registro</button>
+                        <button class="btn btn-meet" id="submit-btn" type="submit">Confirmar Registro</button>
                     </div>
                         
                     

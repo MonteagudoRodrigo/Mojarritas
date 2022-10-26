@@ -2,17 +2,20 @@
  <nav class="navbar position-fixed w-100" style="background-color: var(--mt-light)">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="img/logo/Logo.png" class="mt-brand"  alt="meeting">
+                <img src="${pageContext.request.contextPath}/img/logo/Logo.png" class="mt-brand"  alt="meeting">
             </a>
              <ul class="nav d-flex fs-5 ">
                 <li class="nav-item">
-                    <a class="nav-link text-dark-gray" href="" title="Notificaciones">
+                    <a class="nav-link text-gray" href="" title="Notificaciones">
+
                         <i class="fa-solid fa-bell"></i>
+
+
                         
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark-gray" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Opciones">
+                    <a class="nav-link dropdown-toggle text-gray" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Opciones">
                         <i class="fa-solid fa-gear"></i> 
                     </a>
                     <ul class="dropdown-menu">

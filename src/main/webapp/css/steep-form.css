@@ -205,10 +205,7 @@ input[type="file"]{
     animation: loaderAnimate 4s ease-in;
 }
 
-.fadeIn{
-    -webkit-animation: fade-in .4s ease-in;
-    animation: fade-in .4s ease-in;
-}
+
 
 @keyframes loaderAnimate{
     0%{
@@ -225,14 +222,5 @@ input[type="file"]{
     }
     100%{
         opacity: 0;
-    }
-}
-
-@keyframes fade-in{
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
     }
 }

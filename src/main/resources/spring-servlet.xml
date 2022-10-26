@@ -35,4 +35,6 @@
     <mvc:resources mapping="/img/assets/**" location="/img/assets/" />
     <mvc:resources mapping="/profiles/**" location="/profiles/" />
     <mvc:resources mapping="/vistas/partials/**" location="/vistas/partials/" />
+
+
 </beans>
