@@ -8,32 +8,11 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.util.NestedServletException;
-
 
 import ar.edu.unlam.tallerweb1.config.AppConfig;
 import ar.edu.unlam.tallerweb1.delivery.DatosRegistro;
 import ar.edu.unlam.tallerweb1.utils.Archivos;
 
-
-import ar.edu.unlam.tallerweb1.config.AppConfig;
-import ar.edu.unlam.tallerweb1.delivery.DatosRegistro;
-import ar.edu.unlam.tallerweb1.utils.Archivos;
-
-
-import ar.edu.unlam.tallerweb1.config.AppConfig;
-import ar.edu.unlam.tallerweb1.delivery.DatosRegistro;
-import ar.edu.unlam.tallerweb1.utils.Archivos;
-
-
-import ar.edu.unlam.tallerweb1.config.AppConfig;
-import ar.edu.unlam.tallerweb1.delivery.DatosRegistro;
-import ar.edu.unlam.tallerweb1.utils.Archivos;
-
-
-import ar.edu.unlam.tallerweb1.config.AppConfig;
-import ar.edu.unlam.tallerweb1.delivery.DatosRegistro;
-import ar.edu.unlam.tallerweb1.utils.Archivos;
 
 @Service("servicioRegistro")
 @Transactional

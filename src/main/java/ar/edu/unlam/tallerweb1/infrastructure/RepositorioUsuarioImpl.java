@@ -44,9 +44,7 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 		return (long) session.createCriteria(Usuario.class)
 				.setProjection(Projections.rowCount())
 				.add(Restrictions.eq("email", email))
-				.uniqueResult();
-		
-				
+				.uniqueResult();			
 	}
 
 	@Override

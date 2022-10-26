@@ -1,40 +1,49 @@
 package ar.edu.unlam.tallerweb1.domain.usuarios;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-// Implelemtacion del Servicio de usuarios, la anotacion @Service indica a Spring que esta clase es un componente que debe
-// ser manejado por el framework, debe indicarse en applicationContext que busque en el paquete ar.edu.unlam.tallerweb1.servicios
-// para encontrar esta clase.
-// La anotacion @Transactional indica que se debe iniciar una transaccion de base de datos ante la invocacion de cada metodo del servicio,
-// dicha transaccion esta asociada al transaction manager definido en el archivo spring-servlet.xml y el mismo asociado al session factory definido
-// en hibernateCOntext.xml. De esta manera todos los metodos de cualquier dao invocados dentro de un servicio se ejecutan en la misma transaccion
+
 @Service("servicioLogin")
 @Transactional
 public class ServicioLoginImpl implements ServicioLogin {
 
-	private RepositorioUsuario servicioLoginDao;
+	private RepositorioUsuario repositorioUsuario;
 
 	@Autowired
-	public ServicioLoginImpl(RepositorioUsuario servicioLoginDao){
-		this.servicioLoginDao = servicioLoginDao;
+	public ServicioLoginImpl(RepositorioUsuario repositorioUsuario){
+		this.repositorioUsuario = repositorioUsuario;
 	}
 
 	@Override
-	public Usuario consultarUsuario (String email, String password) {
-		return servicioLoginDao.buscarUsuario(email, password);
+	public boolean Auth(String email, String password) {
+		
+		Usuario user = repositorioUsuario.buscarUsuario(email, password);
+		
+		if( user != null ) {
+			//se agrega el usuario a la session
+			this.setToSession(user);
+			
+			return true;
+		}
+		
+		
+		return false;
 	}
 	
-	@Override
-	public void actualizarUsuario(Usuario user) {
-		servicioLoginDao.modificar(user);
+	private void setToSession(Usuario user) {
+		
+		ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+		
+		HttpSession session = attr.getRequest().getSession(true);
+	
+		session.setAttribute("user-session", user);
 	}
-
-
-
-	@Override
-	public Usuario consultarUsuario(String userName) {
-		return null;
-	}
+	
+	
 }
