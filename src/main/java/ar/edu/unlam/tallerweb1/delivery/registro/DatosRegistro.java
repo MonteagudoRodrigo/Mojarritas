@@ -1,4 +1,4 @@
-package ar.edu.unlam.tallerweb1.delivery;
+package ar.edu.unlam.tallerweb1.delivery.registro;
 
 
 import org.springframework.web.multipart.MultipartFile;

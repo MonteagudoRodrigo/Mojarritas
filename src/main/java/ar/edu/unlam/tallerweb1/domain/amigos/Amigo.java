@@ -1,32 +1,34 @@
-package ar.edu.unlam.tallerweb1.domain.usuarios;
+package ar.edu.unlam.tallerweb1.domain.amigos;
 
-import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
+
+import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
+
 
 @Entity
 public class Amigo {
 	
-	@EmbeddedId
-	AmigosClave id;
+	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	
 	
 	@ManyToOne 
-	@MapsId ("userId")
-	@JoinColumn( name= "usuario_id")
+	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 	
 	
 	@ManyToOne 
-	@MapsId ("friendsId")
-	@JoinColumn( name= "amigo_id")
+	@JoinColumn(name = "amigo_id")
 	private Usuario amigo;
 	
 	
@@ -46,6 +48,14 @@ public class Amigo {
 
 	public void setAmigo(Usuario amigo) {
 		this.amigo = amigo;
+	}
+
+	public boolean isConfirmado() {
+		return confirmado;
+	}
+
+	public void setConfirmado(boolean confirmado) {
+		this.confirmado = confirmado;
 	}
 
 

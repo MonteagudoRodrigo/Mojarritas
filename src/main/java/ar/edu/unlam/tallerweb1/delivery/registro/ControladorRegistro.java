@@ -1,4 +1,4 @@
-package ar.edu.unlam.tallerweb1.delivery;
+package ar.edu.unlam.tallerweb1.delivery.registro;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unlam.tallerweb1.config.AppConfig;
-import ar.edu.unlam.tallerweb1.domain.usuarios.ServicioRegistro;
+import ar.edu.unlam.tallerweb1.domain.registro.ServicioRegistro;
 
 
 

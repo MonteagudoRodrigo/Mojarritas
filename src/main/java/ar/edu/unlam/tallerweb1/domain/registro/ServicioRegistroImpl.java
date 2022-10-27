@@ -1,4 +1,4 @@
-package ar.edu.unlam.tallerweb1.domain.usuarios;
+package ar.edu.unlam.tallerweb1.domain.registro;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ar.edu.unlam.tallerweb1.config.AppConfig;
-import ar.edu.unlam.tallerweb1.delivery.DatosRegistro;
+import ar.edu.unlam.tallerweb1.delivery.registro.DatosRegistro;
+import ar.edu.unlam.tallerweb1.domain.usuarios.RepositorioUsuario;
+import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
 import ar.edu.unlam.tallerweb1.utils.Archivos;
 
 

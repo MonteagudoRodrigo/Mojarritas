@@ -12,6 +12,7 @@ import ar.edu.unlam.tallerweb1.domain.publicaciones.Publicacion;
 import ar.edu.unlam.tallerweb1.domain.publicaciones.ServicioPublicacion;
 import ar.edu.unlam.tallerweb1.domain.publicaciones.ServicioPublicacionImpl;
 import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
+import ar.edu.unlam.tallerweb1.infrastructure.publicacion.RepositorioPublicacionImpl;
 
 public class PublicacionTest extends SpringTest{
 	

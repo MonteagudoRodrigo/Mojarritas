@@ -1,6 +1,6 @@
-package ar.edu.unlam.tallerweb1.infrastructure;
+package ar.edu.unlam.tallerweb1.infrastructure.usuarios;
 
-import ar.edu.unlam.tallerweb1.domain.usuarios.Amigo;
+import ar.edu.unlam.tallerweb1.domain.amigos.Amigo;
 import ar.edu.unlam.tallerweb1.domain.usuarios.RepositorioUsuario;
 import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
 

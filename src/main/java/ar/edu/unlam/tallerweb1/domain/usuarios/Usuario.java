@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import ar.edu.unlam.tallerweb1.domain.amigos.Amigo;
+
 
 
 @Entity
@@ -28,10 +30,10 @@ public class Usuario {
 	private String token;
 	private String imagen;
 	
-	@OneToMany(mappedBy= "usuario")
+	@OneToMany(mappedBy = "usuario")
 	Set<Amigo> f_usuario;
 	
-	@OneToMany(mappedBy= "amigo")
+	@OneToMany(mappedBy = "amigo")
 	Set<Amigo> f_amigo;
 	
 	public String getToken() {

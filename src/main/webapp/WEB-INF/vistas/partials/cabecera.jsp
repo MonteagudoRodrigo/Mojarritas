@@ -1,10 +1,10 @@
 
- <nav class="navbar position-fixed w-100" style="background-color: var(--mt-light)">
+ <nav class="navbar position-fixed w-100 z-index-100" style="background-color: var(--mt-light)">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="${pageContext.request.contextPath}/img/logo/Logo.png" class="mt-brand"  alt="meeting">
             </a>
-             <ul class="nav z-index-100 d-flex fs-5 ">
+             <ul class="nav  d-flex fs-5 ">
                 <li class="nav-item">
                     <a class="nav-link text-gray" href="" title="Notificaciones">
 

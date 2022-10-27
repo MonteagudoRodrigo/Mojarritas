@@ -1,6 +1,6 @@
-package ar.edu.unlam.tallerweb1.domain.usuarios;
+package ar.edu.unlam.tallerweb1.domain.registro;
 
-import ar.edu.unlam.tallerweb1.delivery.DatosRegistro;
+import ar.edu.unlam.tallerweb1.delivery.registro.DatosRegistro;
 
 
 public interface ServicioRegistro {
