@@ -10,5 +10,7 @@ public interface RepositorioUsuario {
 	void modificar(Usuario usuario);
 	void registrarUsuario(Usuario usuario);
 	long buscarUsuario(String username);
+	void agregarAmigo(Amigo amigo);
+	void guardar(Amigo amigo);
 	
 }
