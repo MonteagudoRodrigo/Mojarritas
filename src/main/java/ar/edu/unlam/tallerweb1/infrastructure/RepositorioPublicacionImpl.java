@@ -4,13 +4,13 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import ar.edu.unlam.tallerweb1.domain.publicaciones.Publicacion;
 import ar.edu.unlam.tallerweb1.domain.publicaciones.RepositorioPublicacion;
+import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
 
 @Repository("repositorioPublicacion")
 public class RepositorioPublicacionImpl implements RepositorioPublicacion{
@@ -55,33 +55,11 @@ public class RepositorioPublicacionImpl implements RepositorioPublicacion{
 	}
 
 	@Override
-	public List<Publicacion> searchForAll(String value) {
-		return (List <Publicacion>)this.sessionFactory.getCurrentSession()
+	public List<Publicacion> buscarPor(Usuario usuario) {
+		return this.sessionFactory.getCurrentSession()
 			.createCriteria(Publicacion.class)
-			.createAlias("usuario", "user")
-			.add(Restrictions.or(Restrictions.like("descripcion", "%"+value+"%"),Restrictions.like("titulo", "%"+value+"%")
-					,Restrictions.like("user.nombre", "%"+value+"%")))
+			.add(Restrictions.eq("usuario", usuario))
 			.list();
-
-	}
-	
-	@Override
-	public List<Publicacion> globalList() {
-		return (List <Publicacion>) this.sessionFactory.getCurrentSession()
-			.createCriteria(Publicacion.class)
-			.addOrder(Order.desc("id"))
-			.list();
-
-	}
-	
-	@Override
-	public List<Publicacion> ListPubicacionUser(Long id) {
-		return (List <Publicacion>) this.sessionFactory.getCurrentSession()
-				.createCriteria(Publicacion.class)
-				.createAlias("usuario", "user")
-				.add(Restrictions.eq("user.id", id))
-				.addOrder(Order.desc("id"))
-				.list();
 	}
 
 }

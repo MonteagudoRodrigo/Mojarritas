@@ -1,7 +1,5 @@
 package ar.edu.unlam.tallerweb1.domain.publicaciones;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,38 +8,20 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class ServicioPublicacionImpl implements ServicioPublicacion{
 
-	private RepositorioPublicacion repositorioPublicacion;
+	private RepositorioPublicacion servicioPublicacionDao;
 	
 	@Autowired
-	public ServicioPublicacionImpl(RepositorioPublicacion repositorioPublicacion) {
-		this.repositorioPublicacion = repositorioPublicacion;
+	public ServicioPublicacionImpl(RepositorioPublicacion servicioPublicacionDao) {
+		this.servicioPublicacionDao = servicioPublicacionDao;
 	}
 
 	@Override
 	public Publicacion consultarPublicacion(Long id) {
-		return repositorioPublicacion.buscarPublicacion(id);
+		return servicioPublicacionDao.buscarPublicacion(id);
 	}
 
 	@Override
 	public void crearPublicacion(Publicacion publicacion) {
-		this.repositorioPublicacion.crearPublicacion(publicacion);
-	}
-	
-	@Override
-	public List<Publicacion> searchForAll(String value) {
-		return this.repositorioPublicacion.searchForAll(value);
-
-	}
-	
-	@Override
-	public List<Publicacion> globalList() {
-		return this.repositorioPublicacion.globalList();
-
-	}
-	
-	@Override
-	public List<Publicacion> ListPubicacionUser(Long id) {
-		return this.repositorioPublicacion.ListPubicacionUser(id);
-
+		this.servicioPublicacionDao.crearPublicacion(publicacion);
 	}
 }

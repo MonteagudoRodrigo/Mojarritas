@@ -29,6 +29,6 @@ public class PublicacionTest extends SpringTest{
 		RepositorioPublicacionImpl repositorio = new RepositorioPublicacionImpl(this.session().getSessionFactory());
 		session().save(publicacion);
 		
-		//assertTrue(repositorio.buscarPor(usuario).contains(publicacion));
+		assertTrue(repositorio.buscarPor(usuario).contains(publicacion));
 	}
 }
