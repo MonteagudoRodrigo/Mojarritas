@@ -1,11 +1,13 @@
 package ar.edu.unlam.tallerweb1.domain.usuarios;
 
 import java.sql.Date;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 
@@ -26,6 +28,11 @@ public class Usuario {
 	private String token;
 	private String imagen;
 	
+	@OneToMany(mappedBy= "usuario")
+	Set<Amigo> f_usuario;
+	
+	@OneToMany(mappedBy= "amigo")
+	Set<Amigo> f_amigo;
 	
 	public String getToken() {
 		return token;

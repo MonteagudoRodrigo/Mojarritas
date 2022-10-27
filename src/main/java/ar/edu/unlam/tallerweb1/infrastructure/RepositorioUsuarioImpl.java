@@ -1,5 +1,6 @@
 package ar.edu.unlam.tallerweb1.infrastructure;
 
+import ar.edu.unlam.tallerweb1.domain.usuarios.Amigo;
 import ar.edu.unlam.tallerweb1.domain.usuarios.RepositorioUsuario;
 import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
 
@@ -65,4 +66,15 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 				.uniqueResult();
 	}
 
+	@Override
+	public void agregarAmigo(Amigo amigo) {
+		this.guardar(amigo);
+	}
+	
+	@Override
+	public void guardar(Amigo amigo) {
+		Serializable res = sessionFactory.getCurrentSession().save(amigo);
+		System.out.println(res.toString());
+	}
+		
 }
