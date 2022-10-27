@@ -8,4 +8,5 @@ public interface ServicioPublicacion {
 		List<Publicacion> searchForAll(String searchValue);
 		List<Publicacion> globalList();
 		List<Publicacion> ListPubicacionUser(Long id);
+		
 }

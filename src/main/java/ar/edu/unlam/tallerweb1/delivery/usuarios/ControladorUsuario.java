@@ -21,15 +21,5 @@ public class ControladorUsuario {
 		this.servicioUsuario = servicioUsuario;
 	}
 	
-	@RequestMapping("/amigos/enviar-solicitud")
-	public void agregarAmigo(@RequestParam long id, HttpSession session) {
-		//obtenemos usuario logueado
-		 
-		//seteamos el id al usuario que será amigo
-		Usuario user_friend = new Usuario();
-		user_friend.setId(id);
-		
-		this.servicioUsuario.agregarAmigo((Usuario) session.getAttribute("user-session"), user_friend);
-		
-	}
+
 }

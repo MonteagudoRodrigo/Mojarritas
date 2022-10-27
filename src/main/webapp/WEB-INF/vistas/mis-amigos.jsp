@@ -40,60 +40,29 @@
         
         <div class="main-content px-3 pt-3 pb-0 mb-0">
             <!--AQUI TODO EL CONTENIDO-->
-            <c:forEach  items="${publicaciones}" var="publicacion">
+            <c:forEach  items="${amigos}" var="amigo">
             	
             	  <!-- TARGETA PUBLICACION -->
            <div class="mt-card px-3 bg-light mx-5 pb-2 mb-3 shadow fadeIn">
-            <div> 
+            
                 
-                 <div class="mt-card-header d-flex  px-3">
+                 
                     <div class="profile-box text-center bg-gray-secondary shadow">
-                        <img class="profile medium mx-3 mb-1 mt-3 bd-red-meet" src="${pageContext.request.contextPath}/profiles/${publicacion.usuario.imagen}" alt="">
-                        <h5 class="fs-7 text-center text-light">${publicacion.usuario.nombre}</h5>
-                      
+                        <img class="profile medium mx-3 mb-1 mt-3 bd-red-meet" src="${pageContext.request.contextPath}/profiles/${amigo.amigo.imagen}" alt="">   
                     </div>
                     <div class="w-100 d-flex flex-column pt-3 ps-3">
-                         <h4>${publicacion.titulo}</h4>
+                         <h5 class="fs-7 text-center text-light">${amigo.amigo.nombre} ${amigo.amigo.apellido}</h5>
                          <div class="fecha d-flex justify-content-between align-items-baseline align-middle mt-auto text-gray">
-                            <div class="d-flex">
-                            	<p class="mb-0 fs-6"><strong class="fs-7">Participantes:</strong>10/<strong>10</strong></p>
-                            </div>
-                            <div class="d-flex">
-	                            <p class="italic px-2 my-0 py-0 fs-6 ">${publicacion.fecha}</p>
-	                            <p class="italic px-2 my-0 py-0fs-6 ">hora</p>
-                            </div>
+                           
+                           <a href="#" class="btn btn-meet">Amigo</a>
                             
                          </div>
                        
                     </div>
                       
-                       
-                   </div>
-                    <div class="mt-card-actions mt-3 ">
-                    <div class="actions d-flex text-center align-items-center">
-                        <div class="mt-card-like me-3 ">
-                            <a href=""><i class="fa-regular fa-heart"></i></a>
-                            <p>124</p>
-                        </div>
-                        <div class="mt-card-view me-3">
-                            <a href=""><i class="fa-regular fa-eye"></i></a>
-                            <p>1256</p>
-                        </div>
-                         <div class="mt-card-add">
-                            <a href="">  <i class="fa-regular fa-bookmark"></i></a>
-                          <p>100</p>
-                        </div>
-                    </div>
+             
 
-                
-                </div>
-            
-            </div>
-           
-
-          
-
-       </div>
+       		</div>
         
             
  				
