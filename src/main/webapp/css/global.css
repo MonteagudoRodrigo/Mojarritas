@@ -14,8 +14,16 @@ body{
 .container{
     max-width: 900px!important;
     height: 100%!important;
-    overflow-y: hidden!important;
+    
 
+}
+
+.z-index-100{
+	z-index: 100!important;
+}
+
+.overflow-y-hidden{
+	overflow-y: hidden!important;
 }
 
 .content{

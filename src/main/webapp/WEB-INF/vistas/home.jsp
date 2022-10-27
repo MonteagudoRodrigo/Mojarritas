@@ -38,7 +38,7 @@
 		<!-- MENU FEED -->
 		 <%@ include file="partials/menu-feed.jsp" %> 
         
-        <div class="main-content px-3 pt-3 pb-0 mb-0">
+        <div class="main-content px-3 pt-3 pb-0 mb-0 overflow-y-hidden">
             <!--AQUI TODO EL CONTENIDO-->
             <c:forEach  items="${publicaciones}" var="publicacion">
             	
@@ -128,8 +128,10 @@
            
         </div>
     </main>
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.bundle.js" type="text/javascript"></script>
 
-<script src="js/menu.js" type="text/javascript"></script>    
+<script src="${pageContext.request.contextPath}/js/menu.js" type="text/javascript"></script>    
 </body>
 
 </html>
