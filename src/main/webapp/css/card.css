@@ -1,0 +1,98 @@
+.mt-card{
+	
+}
+
+.card-user{
+    margin-left: 10px;
+    width: 100%;
+    
+    
+    
+}
+
+.fecha{
+    text-align:center;
+    justify-content: end;
+    
+}
+
+.line{
+    content: '';
+    background-color: var(--mt-red-meet);
+    width: 100%;
+    height: 2px;
+    position: relative;
+    top: 50%;
+
+} 
+
+.mt-card-place{
+	cursor: pointer;
+    background-color: rgb(226, 226, 226);
+    border-radius: 2px;
+    padding: 10px;
+    transition: all ease .4s;
+}
+
+.mt-card-place:hover{
+	
+    background-color: #d6d6d6;
+   
+}
+
+.place-details{
+	width:100%;
+}
+
+.place-site{
+	text-align:right;
+	margin-top:auto!important;
+}
+
+.img-place{
+    width: 20%;
+   
+}
+
+.mt-card-actions{
+    display: flex;
+    justify-content: space-between;
+}
+
+.actions a{
+    font-size: 18px;
+    color: var(--mt-gray);
+}
+
+.actions a.btn{
+    font-size: 12px;
+    color: var(--mt-light);
+}
+
+
+
+.actions p{
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0px!important;
+}
+
+.profile-box{
+	
+	cursor:pointer;
+} 
+
+.profile{
+	
+	transition: all ease .4s;
+}
+
+.profile-box:hover .profile{
+	border-radius:0;
+	width: 102px;
+	height: 90px;
+	margin: 0px 0px!important;
+	border: none;
+	box-shadow:none;
+	
+}

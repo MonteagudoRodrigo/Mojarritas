@@ -1,0 +1,184 @@
+@import url(colors.css);
+@import url(fonts-style.css);
+
+html{
+    height: 100%!important;
+}
+
+body{
+    height: 100%!important;
+}
+
+/** CONTENEDORES **/
+
+.container{
+    max-width: 900px!important;
+    height: 100%!important;
+    
+
+}
+
+.z-index-100{
+	z-index: 100!important;
+}
+
+.z-index-0{
+	z-index: 0!important;
+}
+
+.overflow-y-hidden{
+	overflow-y: hidden!important;
+}
+
+.content{
+    padding-top: 45px;
+}
+
+.main-content{
+    height: 100%;
+    padding: 10px;
+    overflow-y: auto!important;
+}
+
+
+/** GENERALES **/
+
+.mt-brand{
+    max-width: 120px;
+    width: 100%;
+}
+
+.navbar{
+    padding: 0px!important;
+    z-index: 0;
+}
+
+
+.profile{
+
+   padding-left: 0;	
+   border-radius: 50%;
+   	background-color: var(--mt-light);
+	overflow: hidden;
+    box-sizing: border-box;
+}
+
+img .profile{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #97BCE0;
+	object-fit: content;
+    margin: 0px auto!important;
+    overflow:hidden;
+    flex-shrink:0;
+}
+
+
+
+.medium{
+	width: 70px;
+	height: 70px;
+   
+}
+
+img .medium{
+    width: 65px;
+  	height: 65px;
+}
+
+.x-medium{
+    width: 80px;
+    min-width: 80px;
+   height: 80px!important;
+}
+
+
+.x-medium > img{
+    width: 75px;
+    height: 75px;
+}
+
+.large > img{
+    width: 195px;
+   height: 195px;
+}
+
+.large{
+	width: 200px;
+	height: 200px;
+}
+
+.bd-red-meet{
+    border: 2px solid var(--mt-red-secondary);
+    -webkit-box-shadow: 0px 0px 14px 8px rgba(237,30,76,0.44); 
+    box-shadow: 0px 0px 14px 8px rgba(237,30,76,0.44);
+
+}
+
+.file{
+	position: relative;
+
+	height: 50px;
+	cursor: pointer;
+	color: white;
+	text-align: center;
+	margin: auto;
+	top: -50px;
+	opacity: .8;
+
+}
+
+input[type="file"]{
+	position: absolute;
+}
+
+
+.btn-meet{
+    background-color: var(--mt-red-meet)!important;
+    border-color: var(--mt-red-meet)!important;
+    color: var(--mt-light)!important;
+}
+
+.btn-meet:hover{
+    background-color: var(--mt-red-meet-hover)!important;
+    border-color: var(--mt-red-meet-hover)!important;
+    color: var(--mt-light)!important;
+}
+
+.fs-7{
+    font-size: 13px;
+}
+
+.fs-8{
+	font-size: 11px;
+}
+
+.fs-9{
+	font-size: 10px;
+}
+
+.form-control:focus {
+    color: #31363a;
+    background-color: #fff;
+    border-color: var(--mt-red-meet-light);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(237,30,76,0.1);
+  }
+  
+  /** ANIMACIONES */
+  
+  .fadeIn{
+    -webkit-animation: fade-in .4s ease-in;
+    animation: fade-in .4s ease-in;
+}
+
+
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
