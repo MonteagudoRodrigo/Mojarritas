@@ -13,9 +13,9 @@
                   
                 </ul>
                 
-                 <form class="mx-2 w-50" action="search" method= "GET" >
+                 <form class="mx-2 w-50" action="/proyecto-limpio-spring/usuario/buscar" method= "GET" >
                     <div class="input-group input-group-sm">
-                        <input type="text" name="value" class="form-control" path="titulo" placeholder="Buscar Amigos" />
+                        <input type="text" name="nombre" class="form-control" path="titulo" placeholder="Buscar Amigos" />
                         <button class="btn btn-meet" type="submit" id="button-addon1" title="Buscar Publicación"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                 </form>

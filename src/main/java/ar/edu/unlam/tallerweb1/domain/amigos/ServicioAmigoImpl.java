@@ -20,14 +20,14 @@ public class ServicioAmigoImpl implements ServicioAmigo {
 	}
 
 	@Override
-	public boolean enviarSolicitud(Usuario userFrom, Usuario userTo) {
+	public void enviarSolicitud(Usuario userFrom, Usuario userTo) {
 		Amigo amigo = new Amigo();
 		
 		amigo.setUsuario(userFrom);
 		amigo.setAmigo(userTo);
 		amigo.setConfirmado(false);
 		
-		return this.repositorioAmigo.guardarSolicitud(amigo);
+		 this.repositorioAmigo.guardarSolicitud(amigo);
 	}
 
 	@Override
@@ -38,8 +38,7 @@ public class ServicioAmigoImpl implements ServicioAmigo {
 
 	@Override
 	public List<Amigo> listarAmigos(Usuario ofUser) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.repositorioAmigo.listarAmigos(ofUser.getId());
 	}
 
 	@Override
@@ -47,6 +46,8 @@ public class ServicioAmigoImpl implements ServicioAmigo {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 	
 	

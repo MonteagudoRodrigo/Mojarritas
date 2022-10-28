@@ -1,13 +1,14 @@
 package ar.edu.unlam.tallerweb1.infrastructure.usuarios;
 
-import ar.edu.unlam.tallerweb1.domain.amigos.Amigo;
 import ar.edu.unlam.tallerweb1.domain.usuarios.RepositorioUsuario;
 import ar.edu.unlam.tallerweb1.domain.usuarios.Usuario;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,15 +67,16 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 				.uniqueResult();
 	}
 
-	@Override
-	public void agregarAmigo(Amigo amigo) {
-		this.guardar(amigo);
-	}
+
 	
+
 	@Override
-	public void guardar(Amigo amigo) {
-		Serializable res = sessionFactory.getCurrentSession().save(amigo);
-		System.out.println(res.toString());
+	public List<Usuario> listarTodos(String nombre) {
+		return (List <Usuario>)this.sessionFactory.getCurrentSession()
+				.createCriteria(Usuario.class)
+				.add(Restrictions.or(Restrictions.like("nombre", "%"+nombre+"%"),Restrictions.like("apellido", "%"+nombre+"%")
+						,Restrictions.like("username", "%"+nombre+"%")))
+				.list();
 	}
 		
 }

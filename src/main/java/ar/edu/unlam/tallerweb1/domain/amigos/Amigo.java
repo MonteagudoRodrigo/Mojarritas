@@ -1,7 +1,6 @@
 package ar.edu.unlam.tallerweb1.domain.amigos;
 
 
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -56,6 +55,10 @@ public class Amigo {
 
 	public void setConfirmado(boolean confirmado) {
 		this.confirmado = confirmado;
+	}
+	
+	public boolean getConfirmado() {
+		return this.confirmado;
 	}
 
 

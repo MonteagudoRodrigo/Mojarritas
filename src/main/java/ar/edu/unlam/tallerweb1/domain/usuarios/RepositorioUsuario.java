@@ -1,6 +1,8 @@
 package ar.edu.unlam.tallerweb1.domain.usuarios;
 
-import ar.edu.unlam.tallerweb1.domain.amigos.Amigo;
+import java.util.List;
+
+
 
 // Interface que define los metodos del Repositorio de Usuarios.
 public interface RepositorioUsuario {
@@ -10,7 +12,6 @@ public interface RepositorioUsuario {
 	void modificar(Usuario usuario);
 	void registrarUsuario(Usuario usuario);
 	long buscarUsuario(String username);
-	void agregarAmigo(Amigo amigo);
-	void guardar(Amigo amigo);
+	List<Usuario> listarTodos(String nombre);
 	
 }

@@ -40,33 +40,38 @@
         
         <div class="main-content px-3 pt-3 pb-0 mb-0">
             <!--AQUI TODO EL CONTENIDO-->
-            <c:forEach  items="${amigos}" var="amigo">
+          
+            
+            	<c:forEach  items="${amigos}" var="amigo">
             	
             	  <!-- TARGETA PUBLICACION -->
-           <div class="mt-card px-3 bg-light mx-5 pb-2 mb-3 shadow fadeIn">
-            
-                
-                 
-                    <div class="profile-box text-center bg-gray-secondary shadow">
-                        <img class="profile medium mx-3 mb-1 mt-3 bd-red-meet" src="${pageContext.request.contextPath}/profiles/${amigo.amigo.imagen}" alt="">   
-                    </div>
-                    <div class="w-100 d-flex flex-column pt-3 ps-3">
-                         <h5 class="fs-7 text-center text-light">${amigo.amigo.nombre} ${amigo.amigo.apellido}</h5>
-                         <div class="fecha d-flex justify-content-between align-items-baseline align-middle mt-auto text-gray">
-                           
-                           <a href="#" class="btn btn-meet">Amigo</a>
-                            
-                         </div>
-                       
-                    </div>
-                      
-             
-
-       		</div>
+		           <div class="mt-card px-3 bg-light mx-5 pb-2 mb-3 shadow fadeIn">
+		            
+		                
+		                 
+		                    <div class="profile-box text-center bg-gray-secondary shadow">
+		                        <img class="profile medium mx-3 mb-1 mt-3 bd-red-meet" src="${pageContext.request.contextPath}/profiles/${amigo.amigo.imagen}" alt="">   
+		                    </div>
+		                    <div class="w-100 d-flex flex-column pt-3 ps-3">
+		                         <h5 class="fs-7 text-center text-light">${amigo.amigo.nombre} ${amigo.amigo.apellido}</h5>
+		                         <div class="fecha d-flex justify-content-between align-items-baseline align-middle mt-auto text-gray">
+		                           
+		                           <a href="#" class="btn btn-meet">Amigo</a>
+		                            
+		                         </div>
+		                       
+		                    </div>
+		                      
+		             
+		
+		       		</div>
         
             
  				
  			</c:forEach>
+          
+ 			
+ 		
            
         </div>
     </main>

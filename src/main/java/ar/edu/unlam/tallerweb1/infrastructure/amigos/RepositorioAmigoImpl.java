@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import ar.edu.unlam.tallerweb1.domain.amigos.Amigo;
 import ar.edu.unlam.tallerweb1.domain.amigos.RepositorioAmigo;
+import ar.edu.unlam.tallerweb1.domain.publicaciones.Publicacion;
 
 @Repository("RepositorioAmigo")
 public class RepositorioAmigoImpl implements RepositorioAmigo {
@@ -21,8 +22,8 @@ public class RepositorioAmigoImpl implements RepositorioAmigo {
 	}
 
 	@Override
-	public boolean guardarSolicitud(Amigo amigo) {
-		return (boolean) this.sessionFactory.getCurrentSession().save(amigo);
+	public void guardarSolicitud(Amigo amigo) {
+		this.sessionFactory.getCurrentSession().save(amigo);
 		
 	}
 
@@ -31,7 +32,8 @@ public class RepositorioAmigoImpl implements RepositorioAmigo {
 		return (List<Amigo>) this.sessionFactory.getCurrentSession()
 				.createCriteria(Amigo.class)
 				.createAlias("usuario", "user")
-				.add(Restrictions.and(Restrictions.eq("user.id", idUser), Restrictions.eq("confirmado", 1)));
+				.add(Restrictions.and(Restrictions.eq("user.id", idUser), Restrictions.eq("confirmado", true)))
+				.list();
 		
 	}
 
@@ -40,6 +42,9 @@ public class RepositorioAmigoImpl implements RepositorioAmigo {
 		return (List<Amigo>) this.sessionFactory.getCurrentSession()
 				.createCriteria(Amigo.class)
 				.createAlias("amigo", "user")
-				.add(Restrictions.and(Restrictions.eq("user.id", idUser), Restrictions.eq("confirmado", 0)));
+				.add(Restrictions.and(Restrictions.eq("user.id", idUser), Restrictions.eq("confirmado", false)))
+				.list();
 	}
+
+	
 }

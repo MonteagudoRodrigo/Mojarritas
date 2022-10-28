@@ -4,9 +4,10 @@ import java.util.List;
 
 public interface RepositorioAmigo {
 	
-	boolean guardarSolicitud(Amigo amigo);
+	void guardarSolicitud(Amigo amigo);
 	List<Amigo> listarAmigos(long idUser);
 	List<Amigo> listarSolicitudes(long idUser);
+	
 	
 
 }
