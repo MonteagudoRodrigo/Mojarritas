@@ -33,19 +33,29 @@ public class Amigo {
 	
 	private boolean confirmado;
 	
-	public Usuario getUsuario() {
+	
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Usuario getUsuarioFrom() {
 		return usuario;
 	}
 
-	public void setUsuario(Usuario usuario) {
+	public void setUsuarioFrom(Usuario usuario) {
 		this.usuario = usuario;
 	}
 
-	public Usuario getAmigo() {
+	public Usuario getUsuarioTo() {
 		return amigo;
 	}
 
-	public void setAmigo(Usuario amigo) {
+	public void setUsuarioTo(Usuario amigo) {
 		this.amigo = amigo;
 	}
 

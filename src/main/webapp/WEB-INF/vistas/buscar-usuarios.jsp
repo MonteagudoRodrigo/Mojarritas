@@ -48,26 +48,35 @@
 	 			<c:forEach  items="${usuarios}" var="usuario">
 	            	
 	            	  <!-- TARGETA PUBLICACION -->
-			           <div class="mt-card px-3 bg-light mx-5 pb-2 mb-3 shadow fadeIn">
+			           <div class="mt-card d-flex align-items-center px-3 bg-light mx-3 pb-2 mb-2 shadow fadeIn">
 			            
 			                
 			                 
-			                    <div class="profile-box text-center bg-gray-secondary shadow">
+			                    <div class="col-2">
 			                        <img class="profile medium mx-3 mb-1 mt-3 bd-red-meet" src="${pageContext.request.contextPath}/profiles/${usuario.imagen}" alt="">   
 			                    </div>
-			                    <div class="w-100 d-flex flex-column pt-3 ps-3">
-			                         <h5 class="fs-7 text-center text-light">${usuario.nombre} ${usuario.apellido}</h5>
-			                         <div class="fecha d-flex justify-content-between align-items-baseline align-middle mt-auto text-gray">
-			                           
-			                           <a h="/proyecto-limpio-spring/amigos/solicitud?idUserTo=${usuario.id}&idUserFrom=${user.id}" class="btn btn-meet" btn-friend>
-			                           	
-			                           		Enviar solicitud
-			                           
-			                           </a>
-			                            
-			                         </div>
-			                       
-			                    </div>
+			                    
+			                    <div class="col-10 d-flex align-items-center justify-content-between  pt-3">
+					                         <h5 class="fs-7">${usuario.nombre} ${usuario.apellido}</h5>
+		
+								<div class="dropdown">
+									<a class="btn btn-meet "
+										h="/proyecto-limpio-spring/amigos/solicitud?idUserTo=${usuario.id}&idUserFrom=${user.id}"
+										role="button" aria-expanded="false" btn-friend> Enviar
+										solicitud </a>
+		
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" >Cancelar
+												Solicitud</a></li>
+									</ul>
+								</div>
+		
+		
+								<!--  -->
+				
+				
+
+							</div>
 			                      
 			             
 			
@@ -80,6 +89,7 @@
            
         </div>
     </main>
+<script src="${pageContext.request.contextPath}/js/bootstrap.bundle.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/js/jquery-1.11.3.min.js" type="text/javascript"></script>
  <script src="${pageContext.request.contextPath}/js/ajax.js" type="text/javascript"></script>    
 </body>

@@ -1,5 +1,6 @@
 package ar.edu.unlam.tallerweb1.infrastructure.amigos;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
@@ -22,8 +23,11 @@ public class RepositorioAmigoImpl implements RepositorioAmigo {
 	}
 
 	@Override
-	public void guardarSolicitud(Amigo amigo) {
-		this.sessionFactory.getCurrentSession().save(amigo);
+	public Serializable guardarSolicitud(Amigo amigo) {
+		Serializable res = this.sessionFactory.getCurrentSession().save(amigo);
+		System.out.println(res.toString());
+		return res;
+		
 		
 	}
 
@@ -44,6 +48,12 @@ public class RepositorioAmigoImpl implements RepositorioAmigo {
 				.createAlias("amigo", "user")
 				.add(Restrictions.and(Restrictions.eq("user.id", idUser), Restrictions.eq("confirmado", false)))
 				.list();
+	}
+
+	@Override
+	public void eliminarSolicitud(Amigo amigo) {
+		 this.sessionFactory.getCurrentSession().delete(amigo);
+		
 	}
 
 	

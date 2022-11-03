@@ -21,8 +21,8 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
 	}
 
 	@Override
-	public List<Usuario> listarTodos(String nombre) {
-		return this.repositorioUsuario.listarTodos(nombre);
+	public List<Usuario> listarTodos(Long id, String nombre) {
+		return this.repositorioUsuario.listarTodos(id, nombre);
 	}
 	
 

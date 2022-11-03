@@ -33,7 +33,7 @@ public class ControladorUsuario {
 		
 			ModelMap model = new ModelMap();
 			
-			List<Usuario> usuarios = this.servicioUsuario.listarTodos(nombre);
+			List<Usuario> usuarios = this.servicioUsuario.listarTodos(userAuthorized.getId(), nombre);
 			
 			model.put("usuarios", usuarios);
 			model.put("user", userAuthorized);

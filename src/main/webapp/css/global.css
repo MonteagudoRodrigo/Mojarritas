@@ -9,6 +9,13 @@ body{
     height: 100%!important;
 }
 
+
+/** override **/
+.dropdown-item{
+	cursor: pointer!important;
+}
+
+
 /** CONTENEDORES **/
 
 .container{
@@ -156,6 +163,10 @@ input[type="file"]{
 
 .fs-9{
 	font-size: 10px;
+}
+
+.mt-card{
+	box-sizing: border-box;
 }
 
 .form-control:focus {

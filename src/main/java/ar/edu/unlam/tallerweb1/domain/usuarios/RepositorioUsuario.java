@@ -12,6 +12,6 @@ public interface RepositorioUsuario {
 	void modificar(Usuario usuario);
 	void registrarUsuario(Usuario usuario);
 	long buscarUsuario(String username);
-	List<Usuario> listarTodos(String nombre);
+	List<Usuario> listarTodos(Long id, String nombre);
 	
 }

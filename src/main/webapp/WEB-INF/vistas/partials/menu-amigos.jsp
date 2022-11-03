@@ -5,10 +5,10 @@
                         Amigos
                     </li>
                     <li class="nav-item me-3">
-                        <a href="/proyecto-limpio-spring/publicacion/create" class="nav-link "><i class="fa-solid fa-user-group"></i>Mis amigos</a>
+                        <a href="/proyecto-limpio-spring/publicacion/create" class="nav-link "><i class="fa-solid fa-user-group me-1"></i>Mis amigos</a>
                     </li>
                      <li class="nav-item me-3">
-                        <a href="/proyecto-limpio-spring/publicacion/create" class="nav-link "><i class="fa-solid fa-user-clock"></i>Solicitudes</a>
+                        <a href="/proyecto-limpio-spring/publicacion/create" class="nav-link "><i class="fa-solid fa-user-clock me-1"></i>Solicitudes</a>
                     </li>
                   
                 </ul>

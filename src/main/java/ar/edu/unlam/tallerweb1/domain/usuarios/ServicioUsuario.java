@@ -6,5 +6,5 @@ import ar.edu.unlam.tallerweb1.domain.amigos.Amigo;
 
 public interface ServicioUsuario {
 
-	List<Usuario> listarTodos(String nombre);
+	List<Usuario> listarTodos(Long id, String nombre);
 }

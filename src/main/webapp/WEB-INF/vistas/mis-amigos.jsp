@@ -45,30 +45,42 @@
             	<c:forEach  items="${amigos}" var="amigo">
             	
             	  <!-- TARGETA PUBLICACION -->
-		           <div class="mt-card px-3 bg-light mx-5 pb-2 mb-3 shadow fadeIn">
-		            
-		                
-		                 
-		                    <div class="profile-box text-center bg-gray-secondary shadow">
-		                        <img class="profile medium mx-3 mb-1 mt-3 bd-red-meet" src="${pageContext.request.contextPath}/profiles/${amigo.amigo.imagen}" alt="">   
-		                    </div>
-		                    <div class="w-100 d-flex flex-column pt-3 ps-3">
-		                         <h5 class="fs-7 text-center text-light">${amigo.amigo.nombre} ${amigo.amigo.apellido}</h5>
-		                         <div class="fecha d-flex justify-content-between align-items-baseline align-middle mt-auto text-gray">
-		                           
-		                           <a href="#" class="btn btn-meet">Amigo</a>
-		                            
-		                         </div>
-		                       
-		                    </div>
-		                      
-		             
+				<div class="mt-card d-flex align-items-center px-3 bg-light mx-3 pb-2 mb-2 shadow fadeIn">
+
+
+
+					<div class="col-2">
+						<img class="profile medium mx-3 mb-1 mt-3 bd-red-meet"
+							src="${pageContext.request.contextPath}/profiles/${amigo.amigo.imagen}"
+							alt="">
+					</div>
+
+					<div
+						class="col-10 d-flex align-items-center justify-content-between  pt-3">
+						<h5 class="fs-7 ">${amigo.amigo.nombre}
+							${amigo.amigo.apellido}</h5>
+
+						
+						<div class="dropdown">
+									<a class="btn btn-meet dropdown-toggle" data-bs-toggle="dropdown"
+										role="button" aria-expanded="false" btn-friend> Opciones </a>
 		
-		       		</div>
-        
-            
- 				
- 			</c:forEach>
+									<ul class="dropdown-menu">
+										<li><a class="dropdown-item" href="#">Eliminar de amigos</a></li>
+									</ul>
+						</div>
+
+
+					</div>
+
+
+
+				</div>
+
+
+
+
+			</c:forEach>
           
  			
  		
@@ -76,7 +88,10 @@
         </div>
     </main>
 
+<script src="${pageContext.request.contextPath}/js/bootstrap.bundle.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-1.11.3.min.js" type="text/javascript"></script>
  <script src="js/menu.js" type="text/javascript"></script>    
+ 
 </body>
 
 </html>

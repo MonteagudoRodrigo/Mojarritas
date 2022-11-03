@@ -1,5 +1,6 @@
 package ar.edu.unlam.tallerweb1.delivery.amigos;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -29,7 +30,7 @@ public class ControladorAmigo {
 	
 	@ResponseBody
 	@RequestMapping("/amigos/solicitud")
-	public boolean enviarSolicitud(@RequestParam long idUserTo, long idUserFrom ) {
+	public Serializable enviarSolicitud(@RequestParam long idUserTo, long idUserFrom ) {
 		
 		 
 		//seteamos el id al usuario que será amigo
@@ -39,9 +40,19 @@ public class ControladorAmigo {
 		Usuario user_from = new Usuario();
 		user_from.setId(idUserFrom);
 		
-		this.servicioAmigo.enviarSolicitud(user_from, user_to);
+		Serializable res = this.servicioAmigo.enviarSolicitud(user_from, user_to).toString();
+		System.out.println("respuesta del controlador: " + res.toString());
+		return res;
 		
-		return true;
+	}
+	
+	@ResponseBody
+	@RequestMapping("/amigos/solicitud/cancelar")
+	public Serializable enviarSolicitud(@RequestParam long id) {
+		
+	
+		return this.servicioAmigo.cancelarSolicitud(id);
+		
 		
 	}
 	

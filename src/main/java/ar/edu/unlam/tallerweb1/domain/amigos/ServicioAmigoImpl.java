@@ -1,5 +1,6 @@
 package ar.edu.unlam.tallerweb1.domain.amigos;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +21,14 @@ public class ServicioAmigoImpl implements ServicioAmigo {
 	}
 
 	@Override
-	public void enviarSolicitud(Usuario userFrom, Usuario userTo) {
+	public Serializable enviarSolicitud(Usuario userFrom, Usuario userTo) {
 		Amigo amigo = new Amigo();
 		
-		amigo.setUsuario(userFrom);
-		amigo.setAmigo(userTo);
+		amigo.setUsuarioFrom(userFrom);
+		amigo.setUsuarioTo(userTo);
 		amigo.setConfirmado(false);
 		
-		 this.repositorioAmigo.guardarSolicitud(amigo);
+		return this.repositorioAmigo.guardarSolicitud(amigo);
 	}
 
 	@Override
@@ -45,6 +46,14 @@ public class ServicioAmigoImpl implements ServicioAmigo {
 	public List<Amigo> listarSolicitudes(Usuario ofUser) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public boolean cancelarSolicitud(long id) {
+		Amigo amigo = new Amigo();
+		amigo.setId(id);
+		this.repositorioAmigo.eliminarSolicitud(amigo);
+		return true;
 	}
 
 	

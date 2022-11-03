@@ -71,12 +71,14 @@ public class RepositorioUsuarioImpl implements RepositorioUsuario {
 	
 
 	@Override
-	public List<Usuario> listarTodos(String nombre) {
-		return (List <Usuario>)this.sessionFactory.getCurrentSession()
+	public List<Usuario> listarTodos(Long id, String nombre) {
+		return (List <Usuario>) this.sessionFactory.getCurrentSession()
 				.createCriteria(Usuario.class)
-				.add(Restrictions.or(Restrictions.like("nombre", "%"+nombre+"%"),Restrictions.like("apellido", "%"+nombre+"%")
+				.add(Restrictions.and(Restrictions.not(Restrictions.eq("id", id)), Restrictions.or(Restrictions.like("nombre", "%"+nombre+"%"),Restrictions.like("apellido", "%"+nombre+"%"))   
 						,Restrictions.like("username", "%"+nombre+"%")))
 				.list();
+		
+		
 	}
 		
 }
